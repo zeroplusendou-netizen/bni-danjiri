@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BNI だんじりチャプターの活動報告。定例会の様子、成功事例、メンバーの声など、チャプターのリアルな活動をご紹介します。">
+    <meta name="keywords" content="BNI,だんじり,活動報告,成功事例,メンバーの声,大阪,ビジネス交流会">
+    
+    <title>活動報告 | BNI だんじりチャプター</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        .activity-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #a01118 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .activity-hero h1 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+        
+        .activity-hero p {
+            font-size: 20px;
+            opacity: 0.95;
+        }
+        
+        .activity-section {
+            padding: 80px 0;
+        }
+        
+        .activity-section.alt {
+            background-color: var(--light-bg);
+        }
+        
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+        
+        .activity-card {
+            background-color: #fff;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .activity-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            color: #ccc;
+        }
+        
+        .activity-content {
+            padding: 24px;
+        }
+        
+        .activity-date {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .activity-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        
+        .activity-description {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #666;
+            margin-bottom: 16px;
+        }
+        
+        .activity-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .activity-tag {
+            padding: 4px 12px;
+            background-color: var(--light-bg);
+            color: var(--primary-color);
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: 4px;
+        }
+        
+        .success-stories {
+            background: linear-gradient(135deg, var(--secondary-color), #3a3a3a);
+            color: #fff;
+            padding: 80px 0;
+        }
+        
+        .success-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 48px;
+            border-radius: var(--radius-md);
+            margin-bottom: 32px;
+        }
+        
+        .success-header {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-color), #d48d0c);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            flex-shrink: 0;
+        }
+        
+        .success-info h3 {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+        
+        .success-info p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .success-body {
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+        
+        .success-result {
+            background-color: rgba(245, 166, 35, 0.2);
+            padding: 20px;
+            border-left: 4px solid var(--accent-color);
+            border-radius: 4px;
+        }
+        
+        .success-result strong {
+            color: var(--accent-color);
+            font-size: 18px;
+        }
+        
+        .testimonials {
+            padding: 80px 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+        
+        .testimonial-card {
+            background-color: #fff;
+            padding: 32px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 16px;
+            left: 24px;
+            font-size: 80px;
+            color: var(--primary-color);
+            opacity: 0.1;
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-content {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), #a01118);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        
+        .testimonial-info h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 4px;
+        }
+        
+        .testimonial-info p {
+            font-size: 14px;
+            color: #888;
+        }
+        
+        @media (max-width: 768px) {
+            .activity-hero h1 {
+                font-size: 32px;
+            }
+            
+            .activity-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav-logo">
+                <img src="images/bni-logo.png" alt="BNI Logo" class="logo-img">
+                <span class="chapter-name">だんじりチャプター</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">トップページ</a></li>
+                <li><a href="index.html#about" class="nav-link">チャプターとは</a></li>
+                <li><a href="members.html" class="nav-link">メンバー紹介</a></li>
+                <li><a href="activity.html" class="nav-link">活動報告</a></li>
+                <li><a href="visitor.html" class="nav-link">ビジター見学</a></li>
+                <li><a href="contact.html" class="nav-link btn-primary-nav">見学申込</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ヒーロー -->
+    <section class="activity-hero">
+        <div class="container">
+            <h1>活動報告</h1>
+            <p>定例会の様子と成功事例をご紹介</p>
+        </div>
+    </section>
+
+    <!-- 最新の活動報告 -->
+    <section class="activity-section">
+        <div class="container">
+            <h2 class="section-title center">最新の活動報告</h2>
+            <p class="section-subtitle center">定例会の様子をお届けします</p>
+            
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <i class="fas fa-calendar-week"></i>
+                    </div>
+                    <div class="activity-content">
+                        <span class="activity-date">2024年11月27日</span>
+                        <h3 class="activity-title">第52回 定例会開催レポート</h3>
+                        <p class="activity-description">
+                            本日も22名のメンバーが集結!オンラインながら熱量の高い定例会となりました。今週は8件の紹介が生まれ、メンバー同士の信頼関係がさらに深まりました。
+                        </p>
+                        <div class="activity-tags">
+                            <span class="activity-tag">#定例会</span>
+                            <span class="activity-tag">#紹介8件</span>
+                            <span class="activity-tag">#Zoom</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="activity-content">
+                        <span class="activity-date">2024年11月20日</span>
+                        <h3 class="activity-title">メンバー間コラボで大型案件成約!</h3>
+                        <p class="activity-description">
+                            税理士×不動産×ブランディングの3名がコラボし、クライアントの事業拡大を支援。BNIならではのチーム力が発揮されました!
+                        </p>
+                        <div class="activity-tags">
+                            <span class="activity-tag">#成功事例</span>
+                            <span class="activity-tag">#コラボ</span>
+                            <span class="activity-tag">#大型案件</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="activity-content">
+                        <span class="activity-date">2024年11月13日</span>
+                        <h3 class="activity-title">新メンバー加入!チームがさらに強化</h3>
+                        <p class="activity-description">
+                            ITコンサルタントの〇〇さんが正式メンバーに!22名の多様な専門家チームがさらにパワーアップしました。
+                        </p>
+                        <div class="activity-tags">
+                            <span class="activity-tag">#新メンバー</span>
+                            <span class="activity-tag">#ITコンサル</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="activity-content">
+                        <span class="activity-date">2024年11月6日</span>
+                        <h3 class="activity-title">教育プログラム「効果的な紹介の方法」</h3>
+                        <p class="activity-description">
+                            メンバー向け教育プログラムを実施。質の高い紹介を生み出すためのノウハウを全員で学びました。
+                        </p>
+                        <div class="activity-tags">
+                            <span class="activity-tag">#教育</span>
+                            <span class="activity-tag">#スキルアップ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="activity-content">
+                        <span class="activity-date">2024年10月30日</span>
+                        <h3 class="activity-title">月間紹介数が過去最高を記録!</h3>
+                        <p class="activity-description">
+                            10月の紹介総数が24件と過去最高を記録!メンバー全員の「Givers Gain®」精神が結実した1ヶ月でした。
+                        </p>
+                        <div class="activity-tags">
+                            <span class="activity-tag">#月間レポート</span>
+                            <span class="activity-tag">#過去最高</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="activity-content">
+                        <span class="activity-date">2024年10月23日</span>
+                        <h3 class="activity-title">ビジター見学者5名をお迎えしました</h3>
+                        <p class="activity-description">
+                            今週は5名のビジター見学者をお迎え!オンライン開催の利点を活かし、東京・福岡からも参加いただきました。
+                        </p>
+                        <div class="activity-tags">
+                            <span class="activity-tag">#ビジター</span>
+                            <span class="activity-tag">#全国展開</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 成功事例 -->
+    <section class="success-stories">
+        <div class="container">
+            <h2 class="section-title center white">成功事例</h2>
+            <p class="section-subtitle center white">メンバー間の紹介から生まれた成果</p>
+            
+            <div style="margin-top: 48px;">
+                <div class="success-card">
+                    <div class="success-header">
+                        <div class="success-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="success-info">
+                            <h3>税理士 × 不動産 コラボ案件</h3>
+                            <p>相続税対策を含む不動産売却サポート</p>
+                        </div>
+                    </div>
+                    <div class="success-body">
+                        <p>
+                            税理士の中野さんが、相続税対策で悩むクライアントを不動産メンバーに紹介。
+                            税務面と不動産売却の両面からサポートすることで、クライアントの課題を包括的に解決しました。
+                        </p>
+                    </div>
+                    <div class="success-result">
+                        <strong>結果:</strong> クライアントの相続税負担を40%削減し、不動産売却も成功。
+                        紹介元・紹介先双方に大きな売上貢献が生まれました。
+                    </div>
+                </div>
+
+                <div class="success-card">
+                    <div class="success-header">
+                        <div class="success-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="success-info">
+                            <h3>ブランディング × Web制作 連携</h3>
+                            <p>新規事業の立ち上げ支援</p>
+                        </div>
+                    </div>
+                    <div class="success-body">
+                        <p>
+                            ブランディング設計の遠藤さんが、起業準備中のクライアントをWebクリエイターに紹介。
+                            ブランドコンセプトからWebサイト制作まで一貫してサポートし、事業の成功をバックアップしました。
+                        </p>
+                    </div>
+                    <div class="success-result">
+                        <strong>結果:</strong> クライアントの事業が順調にスタート。
+                        初年度売上目標を6ヶ月で達成する快挙を成し遂げました。
+                    </div>
+                </div>
+
+                <div class="success-card">
+                    <div class="success-header">
+                        <div class="success-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="success-info">
+                            <h3>整体 × 保険 クロス紹介</h3>
+                            <p>健康とお金の不安を同時解決</p>
+                        </div>
+                    </div>
+                    <div class="success-body">
+                        <p>
+                            整体院の中井さんが、身体の不調で悩むクライアントに保険メンバーを紹介。
+                            逆に保険メンバーからは健康不安を抱えるクライアントが整体院に紹介され、双方向の紹介が実現しました。
+                        </p>
+                    </div>
+                    <div class="success-result">
+                        <strong>結果:</strong> 月間で双方向5件ずつの紹介が継続中。
+                        信頼関係がさらに深まり、長期的なパートナーシップが構築されました。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- メンバーの声 -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title center">メンバーの声</h2>
+            <p class="section-subtitle center">実際に活動しているメンバーのリアルな声</p>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-content">
+                        「BNIに入会してから、質の高い紹介が毎週のように届くようになりました。オンライン開催なので時間効率も良く、本当に助かっています!」
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>中野 豊</h4>
+                            <p>わたる税理士事務所</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-content">
+                        「Givers Gain®の精神が素晴らしい!まず相手に貢献することで、自分も助けられる。この好循環が心地よく、ビジネスも人間関係も充実しています。」
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>遠藤 大輔</h4>
+                            <p>Enter Japan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-content">
+                        「22名の多様な専門家と深い信頼関係を築けたことが最大の財産です。困ったときに頼れる仲間がいるって、本当に心強いです!」
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>中井 葵</h4>
+                            <p>整体院ICHI</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2>あなたも成功事例の<br>主役になりませんか?</h2>
+                <p>まずは見学から。リアルなBNIを体験してください!</p>
+                <a href="contact.html" class="btn btn-secondary btn-xlarge">
+                    <i class="fas fa-calendar-check"></i> 見学を申し込む
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>BNI だんじりチャプター</h3>
+                    <p>大阪東エリアで活動するビジネスリファーラル組織。Givers Gain®の理念のもと、信頼でつながるネットワーキングを実践しています。</p>
+                </div>
+                <div class="footer-section">
+                    <h4>リンク</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">トップページ</a></li>
+                        <li><a href="members.html">メンバー一覧</a></li>
+                        <li><a href="activity.html">活動報告</a></li>
+                        <li><a href="visitor.html">ビジター見学</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>定例会情報</h4>
+                    <ul class="footer-info">
+                        <li><i class="fas fa-calendar-alt"></i> 毎週水曜日</li>
+                        <li><i class="fas fa-clock"></i> 10:30〜12:00</li>
+                        <li><i class="fas fa-video"></i> Zoom開催</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 大阪東エリア</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>お問い合わせ</h4>
+                    <p>見学のお申し込み・ご質問は<br>こちらから</p>
+                    <a href="contact.html" class="btn btn-primary btn-small">お問い合わせフォーム</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BNI だんじりチャプター. All Rights Reserved.</p>
+                <p class="footer-disclaimer">BNI®およびGivers Gain®は、BNI Global, LLCの登録商標です。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

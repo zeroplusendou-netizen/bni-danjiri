@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BNI だんじりチャプターへのお問い合わせ・見学申込はこちらから。担当者より3営業日以内にご連絡いたします。">
+    <meta name="keywords" content="BNI,だんじり,お問い合わせ,見学申込,大阪,ビジネス交流会">
+    
+    <title>お問い合わせ・見学申込 | BNI だんじりチャプター</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        .contact-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #a01118 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .contact-hero h1 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+        
+        .contact-hero p {
+            font-size: 20px;
+            opacity: 0.95;
+        }
+        
+        .contact-section {
+            padding: 80px 0;
+        }
+        
+        .contact-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .contact-intro {
+            background-color: var(--light-bg);
+            padding: 32px;
+            border-radius: var(--radius-md);
+            margin-bottom: 48px;
+            text-align: center;
+        }
+        
+        .contact-intro h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 16px;
+        }
+        
+        .contact-intro p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #666;
+        }
+        
+        .form-group {
+            margin-bottom: 32px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+        }
+        
+        .form-group label .required {
+            color: var(--primary-color);
+            margin-left: 4px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-size: 16px;
+            font-family: var(--font-ja);
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(227, 28, 36, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-hint {
+            font-size: 14px;
+            color: #888;
+            margin-top: 8px;
+        }
+        
+        .form-submit {
+            text-align: center;
+            margin-top: 48px;
+        }
+        
+        .form-submit button {
+            padding: 20px 80px;
+            background: linear-gradient(135deg, var(--primary-color), #a01118);
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .form-submit button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .form-submit button i {
+            margin-right: 8px;
+        }
+        
+        .privacy-note {
+            background-color: var(--light-bg);
+            padding: 24px;
+            border-radius: var(--radius-sm);
+            margin-top: 32px;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #666;
+        }
+        
+        .privacy-note h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 12px;
+        }
+        
+        .contact-info-section {
+            background-color: var(--light-bg);
+            padding: 80px 0;
+        }
+        
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+        
+        .info-card {
+            background-color: #fff;
+            padding: 32px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .info-card i {
+            font-size: 48px;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+        }
+        
+        .info-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 16px;
+        }
+        
+        .info-card p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-hero h1 {
+                font-size: 32px;
+            }
+            
+            .form-submit button {
+                padding: 16px 48px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav-logo">
+                <img src="images/bni-logo.png" alt="BNI Logo" class="logo-img">
+                <span class="chapter-name">だんじりチャプター</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">トップページ</a></li>
+                <li><a href="index.html#about" class="nav-link">チャプターとは</a></li>
+                <li><a href="members.html" class="nav-link">メンバー紹介</a></li>
+                <li><a href="activity.html" class="nav-link">活動報告</a></li>
+                <li><a href="visitor.html" class="nav-link">ビジター見学</a></li>
+                <li><a href="contact.html" class="nav-link btn-primary-nav">見学申込</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ヒーロー -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>お問い合わせ・見学申込</h1>
+            <p>担当者より3営業日以内にご連絡いたします</p>
+        </div>
+    </section>
+
+    <!-- お問い合わせフォーム -->
+    <section class="contact-section">
+        <div class="container contact-container">
+            <div class="contact-intro">
+                <h3><i class="fas fa-envelope"></i> まずはお気軽にお問い合わせください</h3>
+                <p>
+                    ビジター見学のお申し込み、入会に関するご質問、チャプターについての疑問など、<br>
+                    どんなことでもお気軽にお問い合わせください。
+                </p>
+            </div>
+
+            <form id="contactForm" action="#" method="post">
+                <div class="form-group">
+                    <label for="name">お名前 <span class="required">*必須</span></label>
+                    <input type="text" id="name" name="name" placeholder="例: 山田 太郎" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">会社名・屋号</label>
+                    <input type="text" id="company" name="company" placeholder="例: 株式会社〇〇 / 個人事業主の場合は屋号">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">メールアドレス <span class="required">*必須</span></label>
+                    <input type="email" id="email" name="email" placeholder="例: example@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">電話番号 <span class="required">*必須</span></label>
+                    <input type="tel" id="phone" name="phone" placeholder="例: 090-1234-5678" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="business">業種・専門分野 <span class="required">*必須</span></label>
+                    <input type="text" id="business" name="business" placeholder="例: 税理士 / Webデザイナー / 不動産仲介" required>
+                    <p class="form-hint">※ 1業種1名制のため、事前に業種の空き状況を確認させていただきます。</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="inquiry-type">お問い合わせ種別 <span class="required">*必須</span></label>
+                    <select id="inquiry-type" name="inquiry-type" required>
+                        <option value="">選択してください</option>
+                        <option value="visitor">ビジター見学を申し込む</option>
+                        <option value="membership">入会について相談したい</option>
+                        <option value="question">チャプターについて質問したい</option>
+                        <option value="other">その他</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="preferred-date">希望見学日(任意)</label>
+                    <input type="text" id="preferred-date" name="preferred-date" placeholder="例: 12月6日(水) / 12月13日(水)">
+                    <p class="form-hint">※ 定例会は毎週水曜 10:30〜12:00 開催です。</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">メッセージ <span class="required">*必須</span></label>
+                    <textarea id="message" name="message" placeholder="お問い合わせ内容、ご質問などをご記入ください。" required></textarea>
+                </div>
+
+                <div class="form-submit">
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i> 送信する
+                    </button>
+                </div>
+
+                <div class="privacy-note">
+                    <h4><i class="fas fa-shield-alt"></i> 個人情報の取り扱いについて</h4>
+                    <p>
+                        お預かりした個人情報は、お問い合わせへの回答、ビジター見学のご案内、BNI関連情報の提供のみに使用いたします。
+                        第三者への提供は一切行いません。詳しくは<a href="#" style="color: var(--primary-color);">プライバシーポリシー</a>をご覧ください。
+                    </p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- お問い合わせに関する情報 -->
+    <section class="contact-info-section">
+        <div class="container">
+            <h2 class="section-title center">お問い合わせに関して</h2>
+            <p class="section-subtitle center">安心してお問い合わせください</p>
+            
+            <div class="info-cards">
+                <div class="info-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>回答時間</h3>
+                    <p>担当者より<strong>3営業日以内</strong>にメールまたは電話でご連絡いたします。</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>プライバシー保護</h3>
+                    <p>お預かりした情報は厳重に管理し、目的外使用は一切いたしません。</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>無理な勧誘なし</h3>
+                    <p>見学後の入会は自由です。無理な勧誘は一切行いませんのでご安心ください。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 定例会情報 -->
+    <section class="contact-section">
+        <div class="container">
+            <div style="background: linear-gradient(135deg, var(--secondary-color), #3a3a3a); color: #fff; padding: 48px; border-radius: var(--radius-md); text-align: center;">
+                <h3 style="font-size: 28px; font-weight: 900; margin-bottom: 24px; color: var(--accent-color);">
+                    <i class="fas fa-calendar-alt"></i> 定例会情報
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-bottom: 32px;">
+                    <div>
+                        <div style="font-size: 14px; opacity: 0.8; margin-bottom: 8px;">開催日時</div>
+                        <div style="font-size: 20px; font-weight: 700;">毎週水曜 10:30〜12:00</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 14px; opacity: 0.8; margin-bottom: 8px;">開催方法</div>
+                        <div style="font-size: 20px; font-weight: 700;">Zoom (オンライン)</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 14px; opacity: 0.8; margin-bottom: 8px;">拠点</div>
+                        <div style="font-size: 20px; font-weight: 700;">大阪東エリア</div>
+                    </div>
+                </div>
+                <p style="font-size: 16px; opacity: 0.9; line-height: 1.7;">
+                    全国どこからでも参加可能なオンライン開催です。<br>
+                    まずは見学から、お気軽にお問い合わせください!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>BNI だんじりチャプター</h3>
+                    <p>大阪東エリアで活動するビジネスリファーラル組織。Givers Gain®の理念のもと、信頼でつながるネットワーキングを実践しています。</p>
+                </div>
+                <div class="footer-section">
+                    <h4>リンク</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">トップページ</a></li>
+                        <li><a href="members.html">メンバー一覧</a></li>
+                        <li><a href="activity.html">活動報告</a></li>
+                        <li><a href="visitor.html">ビジター見学</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>定例会情報</h4>
+                    <ul class="footer-info">
+                        <li><i class="fas fa-calendar-alt"></i> 毎週水曜日</li>
+                        <li><i class="fas fa-clock"></i> 10:30〜12:00</li>
+                        <li><i class="fas fa-video"></i> Zoom開催</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 大阪東エリア</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>お問い合わせ</h4>
+                    <p>見学のお申し込み・ご質問は<br>こちらから</p>
+                    <a href="contact.html" class="btn btn-primary btn-small">お問い合わせフォーム</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BNI だんじりチャプター. All Rights Reserved.</p>
+                <p class="footer-disclaimer">BNI®およびGivers Gain®は、BNI Global, LLCの登録商標です。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

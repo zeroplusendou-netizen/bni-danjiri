@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BNI だんじりチャプター公式サイト。大阪東エリアでオンライン開催中。ビジネスが加速する出会いを、だんじりから。毎週水曜10:30〜Zoom定例会。22名の信頼できるビジネスパートナーがあなたを待っています。">
+    <meta name="keywords" content="BNI,だんじり,大阪,ビジネス交流会,リファーラル,紹介,ネットワーキング,オンライン,Zoom">
+    
+    <!-- OGP -->
+    <meta property="og:title" content="BNI だんじりチャプター | ビジネスが加速する出会いを">
+    <meta property="og:description" content="毎週水曜10:30〜Zoom開催。22名の信頼できるビジネスパートナーと出会えるオンライン交流会。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://enterjapan.jp/bni-danjiri/images/bni-logo.png">
+    
+    <title>BNI だんじりチャプター | ビジネスが加速する出会いを</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- 構造化データ (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BNI だんじりチャプター",
+      "description": "大阪東エリアで活動するBNIチャプター。毎週水曜日10:30〜Zoomでオンライン定例会を開催。",
+      "url": "https://enterjapan.jp/bni-danjiri/",
+      "logo": "https://enterjapan.jp/bni-danjiri/images/bni-logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "見学申込",
+        "availableLanguage": "Japanese"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "大阪東エリア"
+      }
+    }
+    </script>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav-logo">
+                <img src="images/bni-logo.png" alt="BNI Logo" class="logo-img">
+                <span class="chapter-name">だんじりチャプター</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about" class="nav-link">チャプターとは</a></li>
+                <li><a href="#value" class="nav-link">得られる価値</a></li>
+                <li><a href="members.html" class="nav-link">メンバー紹介</a></li>
+                <li><a href="activity.html" class="nav-link">活動報告</a></li>
+                <li><a href="visitor.html" class="nav-link">ビジター見学</a></li>
+                <li><a href="contact.html" class="nav-link btn-primary-nav">見学申込</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <h1 class="hero-title">
+                ビジネスが加速する出会いを、<br>
+                <span class="highlight">だんじり</span>から。
+            </h1>
+            <p class="hero-subtitle">
+                毎週水曜 10:30〜 Zoomで開催する、<br>
+                信頼でつながるビジネスネットワーキング
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">22<span>名</span></div>
+                    <div class="stat-label">メンバー数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">約200<span>件/年</span></div>
+                    <div class="stat-label">紹介実績</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1.08<span>億円/年</span></div>
+                    <div class="stat-label">売上貢献</div>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <a href="contact.html" class="btn btn-primary btn-large">
+                    <i class="fas fa-calendar-check"></i> 見学を申し込む
+                </a>
+                <a href="members.html" class="btn btn-secondary btn-large">
+                    <i class="fas fa-users"></i> メンバー紹介
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BNI実績 -->
+    <section class="bni-stats">
+        <div class="container">
+            <h2 class="section-title center">BNI Japanの実績</h2>
+            <p class="section-subtitle center">世界最大級のビジネスリファーラル組織</p>
+            <div class="stats-grid">
+                <div class="stats-card">
+                    <i class="fas fa-users"></i>
+                    <div class="stats-number">380</div>
+                    <div class="stats-label">チャプター数</div>
+                </div>
+                <div class="stats-card">
+                    <i class="fas fa-user-tie"></i>
+                    <div class="stats-number">12,390<span>名</span></div>
+                    <div class="stats-label">メンバー数</div>
+                </div>
+                <div class="stats-card">
+                    <i class="fas fa-handshake"></i>
+                    <div class="stats-number">117,774<span>件</span></div>
+                    <div class="stats-label">年間紹介数</div>
+                </div>
+                <div class="stats-card">
+                    <i class="fas fa-yen-sign"></i>
+                    <div class="stats-number">612<span>億円</span></div>
+                    <div class="stats-label">年間売上貢献</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- だんじりチャプターとは -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2 class="section-title">だんじりチャプターとは</h2>
+                    <p class="about-description">
+                        BNI だんじりチャプターは、大阪東エリアで活動するビジネスリファーラル組織です。
+                        <strong>毎週水曜日 10:30〜12:00</strong>、Zoomでオンライン定例会を開催しています。
+                    </p>
+                    <p class="about-description">
+                        「<strong>Givers Gain®（与える者は与えられる）</strong>」の理念のもと、
+                        メンバー同士が信頼関係を築き、質の高いビジネス紹介を交換し合っています。
+                    </p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h3>毎週の定例会</h3>
+                                <p>水曜 10:30〜12:00 Zoom開催</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h3>1業種1名制</h3>
+                                <p>競合なしで安心して紹介できる</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h3>グローバルネットワーク</h3>
+                                <p>世界中のBNIメンバーと繋がれる</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="chapter-info-card">
+                        <h3><i class="fas fa-info-circle"></i> チャプター情報</h3>
+                        <ul class="info-list">
+                            <li><i class="fas fa-user-friends"></i> <strong>メンバー数:</strong> 22名</li>
+                            <li><i class="fas fa-calendar-alt"></i> <strong>開催日時:</strong> 毎週水曜 10:30〜12:00</li>
+                            <li><i class="fas fa-video"></i> <strong>開催方法:</strong> Zoom (オンライン)</li>
+                            <li><i class="fas fa-map-marker-alt"></i> <strong>拠点:</strong> 大阪東エリア</li>
+                            <li><i class="fas fa-handshake"></i> <strong>年間紹介数:</strong> 約200件</li>
+                            <li><i class="fas fa-chart-line"></i> <strong>年間売上貢献:</strong> 約1.08億円</li>
+                        </ul>
+                        <a href="visitor.html" class="btn btn-primary btn-block">見学の流れを見る</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 得られる5つの価値 -->
+    <section id="value" class="value">
+        <div class="container">
+            <h2 class="section-title center">だんじりで得られる5つの価値</h2>
+            <p class="section-subtitle center">ビジネスを成長させる確かな価値</p>
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>質の高い紹介</h3>
+                    <p>信頼関係に基づいた、成約率の高いビジネス紹介が毎週届きます。</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>強固なネットワーク</h3>
+                    <p>22名の専門家と深い信頼関係を構築。いつでも相談できる仲間ができます。</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>売上の向上</h3>
+                    <p>紹介による新規顧客獲得で、安定した売上成長を実現できます。</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>ビジネススキル向上</h3>
+                    <p>毎週のプレゼンや教育プログラムで、営業・マーケティングスキルが磨かれます。</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>信頼の構築</h3>
+                    <p>1業種1名制で競合なし。安心してビジネスを紹介し合える環境です。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- オンライン参加の7つの価値 -->
+    <section class="online-value">
+        <div class="container">
+            <h2 class="section-title center white">オンライン参加の7つの価値</h2>
+            <p class="section-subtitle center white">Zoomだからこそ実現できるメリット</p>
+            <div class="online-grid">
+                <div class="online-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>全国どこからでも参加OK</h3>
+                    <p>大阪以外からも参加可能。場所を選ばずビジネスを拡大できます。</p>
+                </div>
+                <div class="online-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>移動時間ゼロ</h3>
+                    <p>通勤・移動不要で時間を有効活用。朝の貴重な時間を節約できます。</p>
+                </div>
+                <div class="online-card">
+                    <i class="fas fa-baby"></i>
+                    <h3>子育て・介護中でも参加可能</h3>
+                    <p>自宅から参加できるので、家庭の事情に柔軟に対応できます。</p>
+                </div>
+                <div class="online-card">
+                    <i class="fas fa-yen-sign"></i>
+                    <h3>交通費・宿泊費不要</h3>
+                    <p>オンラインなので経費削減。コストを抑えてネットワーキングできます。</p>
+                </div>
+                <div class="online-card">
+                    <i class="fas fa-video"></i>
+                    <h3>録画で復習可能</h3>
+                    <p>欠席時も録画で内容を確認。学びを逃しません。</p>
+                </div>
+                <div class="online-card">
+                    <i class="fas fa-users"></i>
+                    <h3>気軽にビジター参加</h3>
+                    <p>オンラインだから初参加のハードルが低い。まずは気軽に見学できます。</p>
+                </div>
+                <div class="online-card">
+                    <i class="fas fa-laptop"></i>
+                    <h3>資料共有が簡単</h3>
+                    <p>画面共有で資料やプレゼンを効果的に伝えられます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Givers Gain®ストーリー -->
+    <section class="givers-gain">
+        <div class="container">
+            <div class="givers-content">
+                <div class="givers-text">
+                    <h2 class="section-title">Givers Gain<sup>®</sup></h2>
+                    <h3 class="givers-subtitle">与える者は与えられる</h3>
+                    <p class="givers-description">
+                        BNIの根幹にある哲学「<strong>Givers Gain®</strong>」。
+                    </p>
+                    <p class="givers-description">
+                        これは、「まず相手に価値を与えることで、自分も価値を受け取れる」という考え方です。
+                    </p>
+                    <p class="givers-description">
+                        だんじりチャプターでは、この理念のもと、メンバー全員が
+                        <strong>「誰かの役に立ちたい」</strong>という想いで紹介を行っています。
+                    </p>
+                    <p class="givers-description">
+                        その結果、信頼が信頼を呼び、年間約200件の質の高い紹介が生まれ、
+                        <strong>約1.08億円の売上貢献</strong>を実現しています。
+                    </p>
+                    <blockquote class="givers-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>「紹介は、最高の信頼の証です。私たちは、その信頼に応え続けます。」</p>
+                        <cite>— BNI だんじりチャプター メンバー一同</cite>
+                    </blockquote>
+                </div>
+                <div class="givers-visual">
+                    <div class="givers-circle">
+                        <div class="circle-item">与える</div>
+                        <div class="circle-arrow">→</div>
+                        <div class="circle-item">信頼</div>
+                        <div class="circle-arrow">→</div>
+                        <div class="circle-item">紹介</div>
+                        <div class="circle-arrow">→</div>
+                        <div class="circle-item">成長</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- カテゴリー別メンバー紹介 -->
+    <section id="members" class="members">
+        <div class="container">
+            <h2 class="section-title center">カテゴリー別メンバー紹介</h2>
+            <p class="section-subtitle center">22名の信頼できる専門家たち</p>
+            <div class="category-grid">
+                <a href="members.html#real-estate" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>不動産</h3>
+                    <div class="category-count">2名</div>
+                    <p>不動産賃貸・売買</p>
+                </a>
+                <a href="members.html#insurance" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>保険（生命・法人・個人・損害）</h3>
+                    <div class="category-count">4名</div>
+                    <p>生命保険、損害保険</p>
+                </a>
+                <a href="members.html#professional" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>士業</h3>
+                    <div class="category-count">4名</div>
+                    <p>税理士、司法書士、社労士、弁護士</p>
+                </a>
+                <a href="members.html#creative" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>クリエイティブ・制作 / ファッション</h3>
+                    <div class="category-count">3名</div>
+                    <p>オーダースーツ、映像制作、グッズ制作</p>
+                </a>
+                <a href="members.html#it" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>IT・通信・デジタル導線</h3>
+                    <div class="category-count">3名</div>
+                    <p>HP制作、携帯料金見直し、SNS運用</p>
+                </a>
+                <a href="members.html#life" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>ライフサポート / 健康</h3>
+                    <div class="category-count">3名</div>
+                    <p>会員制サウナ、就労支援、雑務代行</p>
+                </a>
+                <a href="members.html#sports" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>スポーツ・アスリート</h3>
+                    <div class="category-count">1名</div>
+                    <p>プロキックボクサー</p>
+                </a>
+                <a href="members.html#business" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>経営支援</h3>
+                    <div class="category-count">2名</div>
+                    <p>ブランディング、社外人事部</p>
+                </a>
+            </div>
+            <div class="members-cta">
+                <a href="members.html" class="btn btn-primary btn-large">
+                    <i class="fas fa-users"></i> 全メンバーを見る
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ビジター参加案内 -->
+    <section class="visitor-guide">
+        <div class="container">
+            <h2 class="section-title center">ビジター見学の流れ</h2>
+            <p class="section-subtitle center">初めての方でも安心してご参加いただけます</p>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>見学申込</h3>
+                    <p>申込フォームから希望日をお知らせください。</p>
+                </div>
+                <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>事前案内</h3>
+                    <p>ZoomのURLと参加方法をメールでお送りします。</p>
+                </div>
+                <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>定例会参加</h3>
+                    <p>水曜10:30〜 Zoomで定例会に参加します。</p>
+                </div>
+                <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>個別相談</h3>
+                    <p>終了後、ご希望の方には個別相談も可能です。</p>
+                </div>
+            </div>
+            <div class="visitor-benefits">
+                <h3><i class="fas fa-gift"></i> ビジター見学のメリット</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> 定例会の雰囲気をリアルに体験できる</li>
+                    <li><i class="fas fa-check"></i> メンバーと直接会話できる</li>
+                    <li><i class="fas fa-check"></i> BNIの仕組みを詳しく知れる</li>
+                    <li><i class="fas fa-check"></i> オンラインだから気軽に参加できる</li>
+                </ul>
+            </div>
+            <div class="visitor-cta">
+                <a href="contact.html" class="btn btn-primary btn-large">
+                    <i class="fas fa-calendar-check"></i> 見学を申し込む
+                </a>
+                <a href="visitor.html" class="btn btn-secondary btn-large">
+                    <i class="fas fa-info-circle"></i> 詳しく見る
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title center">よくある質問</h2>
+            <p class="section-subtitle center">ビジター見学・入会について</p>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>見学は無料ですか?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>はい、初回の見学は無料です。お気軽にご参加ください。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>どんな業種でも参加できますか?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>はい。ただし、1業種1名制のため、すでにメンバーがいる業種の場合は、空きが出るまでお待ちいただく場合があります。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>定例会の時間はどのくらいですか?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>毎週水曜日 10:30〜12:00 の90分間です。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>入会費や年会費はありますか?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>はい、BNIの入会金・年会費が必要です。詳しくは見学時にご説明いたします。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>毎週参加しないといけませんか?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>BNIでは高い出席率が求められます。信頼関係構築のため、可能な限り毎週のご参加をお願いしています。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>オンライン参加に必要なものは?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>パソコンまたはスマートフォン、安定したインターネット環境、Zoomアプリ(無料)が必要です。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 最終CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2>ビジネスを加速させる出会いが、<br>ここにあります。</h2>
+                <p>まずは気軽に見学から始めませんか?<br>22名の信頼できるビジネスパートナーがあなたを待っています。</p>
+                <a href="contact.html" class="btn btn-primary btn-xlarge">
+                    <i class="fas fa-calendar-check"></i> 今すぐ見学を申し込む
+                </a>
+                <p class="final-note">次回定例会: 毎週水曜 10:30〜12:00 (Zoom開催)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>BNI だんじりチャプター</h3>
+                    <p>大阪東エリアで活動するビジネスリファーラル組織。Givers Gain®の理念のもと、信頼でつながるネットワーキングを実践しています。</p>
+                </div>
+                <div class="footer-section">
+                    <h4>リンク</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">トップページ</a></li>
+                        <li><a href="members.html">メンバー一覧</a></li>
+                        <li><a href="activity.html">活動報告</a></li>
+                        <li><a href="visitor.html">ビジター見学</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>定例会情報</h4>
+                    <ul class="footer-info">
+                        <li><i class="fas fa-calendar-alt"></i> 毎週水曜日</li>
+                        <li><i class="fas fa-clock"></i> 10:30〜12:00</li>
+                        <li><i class="fas fa-video"></i> Zoom開催</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 大阪東エリア</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>お問い合わせ</h4>
+                    <p>見学のお申し込み・ご質問は<br>こちらから</p>
+                    <a href="contact.html" class="btn btn-primary btn-small">お問い合わせフォーム</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BNI だんじりチャプター. All Rights Reserved.</p>
+                <p class="footer-disclaimer">BNI®およびGivers Gain®は、BNI Global, LLCの登録商標です。</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BNI だんじりチャプターのビジター見学案内。Zoomでオンライン参加可能。初めての方でも安心してご参加いただけます。毎週水曜10:30〜開催。">
+    <meta name="keywords" content="BNI,だんじり,ビジター,見学,オンライン,Zoom,大阪,ビジネス交流会">
+    
+    <title>ビジター見学案内 | BNI だんじりチャプター</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        .visitor-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #a01118 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .visitor-hero h1 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+        
+        .visitor-hero p {
+            font-size: 20px;
+            opacity: 0.95;
+        }
+        
+        .visitor-section {
+            padding: 80px 0;
+        }
+        
+        .visitor-section.alt {
+            background-color: var(--light-bg);
+        }
+        
+        .flow-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+        
+        .flow-card {
+            background-color: #fff;
+            padding: 32px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .flow-card::after {
+            content: '→';
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 32px;
+            color: var(--primary-color);
+            font-weight: 900;
+        }
+        
+        .flow-card:last-child::after {
+            display: none;
+        }
+        
+        .flow-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .flow-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), #a01118);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 900;
+            margin: 0 auto 24px;
+        }
+        
+        .flow-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--secondary-color);
+        }
+        
+        .flow-card p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #666;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+        
+        .benefit-card {
+            background-color: #fff;
+            padding: 32px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            transition: var(--transition);
+        }
+        
+        .benefit-card:hover {
+            transform: translateX(8px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), #a01118);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .benefit-icon i {
+            font-size: 28px;
+            color: #fff;
+        }
+        
+        .benefit-content h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--secondary-color);
+        }
+        
+        .benefit-content p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #666;
+        }
+        
+        .requirements-box {
+            background: linear-gradient(135deg, var(--secondary-color), #3a3a3a);
+            color: #fff;
+            padding: 48px;
+            border-radius: var(--radius-md);
+            margin-top: 48px;
+        }
+        
+        .requirements-box h3 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 32px;
+            text-align: center;
+            color: var(--accent-color);
+        }
+        
+        .requirements-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        
+        .requirement-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: var(--radius-sm);
+        }
+        
+        .requirement-item i {
+            font-size: 24px;
+            color: var(--accent-color);
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+        
+        .requirement-content h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .requirement-content p {
+            font-size: 15px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .faq-section {
+            max-width: 800px;
+            margin: 48px auto 0;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary-color), #a01118);
+            color: #fff;
+            padding: 64px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            margin-top: 48px;
+        }
+        
+        .cta-box h3 {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 24px;
+        }
+        
+        .cta-box p {
+            font-size: 18px;
+            margin-bottom: 32px;
+            opacity: 0.95;
+        }
+        
+        @media (max-width: 1024px) {
+            .flow-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .flow-card::after {
+                display: none;
+            }
+            
+            .requirements-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .visitor-hero h1 {
+                font-size: 32px;
+            }
+            
+            .flow-grid,
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav-logo">
+                <img src="images/bni-logo.png" alt="BNI Logo" class="logo-img">
+                <span class="chapter-name">だんじりチャプター</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">トップページ</a></li>
+                <li><a href="index.html#about" class="nav-link">チャプターとは</a></li>
+                <li><a href="members.html" class="nav-link">メンバー紹介</a></li>
+                <li><a href="activity.html" class="nav-link">活動報告</a></li>
+                <li><a href="visitor.html" class="nav-link">ビジター見学</a></li>
+                <li><a href="contact.html" class="nav-link btn-primary-nav">見学申込</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ヒーロー -->
+    <section class="visitor-hero">
+        <div class="container">
+            <h1>ビジター見学案内</h1>
+            <p>初めての方でも安心してご参加いただけます</p>
+        </div>
+    </section>
+
+    <!-- 見学の流れ -->
+    <section class="visitor-section">
+        <div class="container">
+            <h2 class="section-title center">見学の流れ</h2>
+            <p class="section-subtitle center">4つのステップで簡単に参加できます</p>
+            
+            <div class="flow-grid">
+                <div class="flow-card">
+                    <div class="flow-number">1</div>
+                    <h3>見学申込</h3>
+                    <p>お申込フォームから希望日をお知らせください。担当者より48時間以内にご連絡いたします。</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-number">2</div>
+                    <h3>事前案内</h3>
+                    <p>ZoomのURLと参加方法、定例会の流れを記載した案内をメールでお送りします。</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-number">3</div>
+                    <h3>定例会参加</h3>
+                    <p>毎週水曜 10:30〜12:00、Zoomで定例会に参加。リアルなBNIを体験できます。</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-number">4</div>
+                    <h3>個別相談</h3>
+                    <p>定例会終了後、ご希望の方には個別相談も可能です。不明点を解消できます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ビジター見学のメリット -->
+    <section class="visitor-section alt">
+        <div class="container">
+            <h2 class="section-title center">ビジター見学のメリット</h2>
+            <p class="section-subtitle center">実際に体験することで、BNIの価値を実感できます</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>定例会の雰囲気をリアルに体験</h3>
+                        <p>実際のメンバーのプレゼンや紹介の様子を見学できます。BNIの活動を肌で感じられます。</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>メンバーと直接会話</h3>
+                        <p>定例会後の交流タイムで、メンバーと自由に会話できます。人柄や専門性を直接確認できます。</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>BNIの仕組みを詳しく知れる</h3>
+                        <p>リファーラルの仕組み、メンバー同士の関係性、活動内容を理解できます。</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>オンラインだから気軽に参加</h3>
+                        <p>Zoom開催なので、全国どこからでも参加可能。移動時間ゼロで気軽に見学できます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 参加に必要なもの -->
+    <section class="visitor-section">
+        <div class="container">
+            <h2 class="section-title center">参加に必要なもの</h2>
+            <p class="section-subtitle center">オンライン参加のため、準備は簡単です</p>
+            
+            <div class="requirements-box">
+                <h3><i class="fas fa-check-circle"></i> 必要なもの</h3>
+                <div class="requirements-list">
+                    <div class="requirement-item">
+                        <i class="fas fa-laptop"></i>
+                        <div class="requirement-content">
+                            <h4>パソコンまたはスマートフォン</h4>
+                            <p>カメラ・マイク付きの端末をご用意ください。</p>
+                        </div>
+                    </div>
+                    <div class="requirement-item">
+                        <i class="fas fa-wifi"></i>
+                        <div class="requirement-content">
+                            <h4>安定したインターネット環境</h4>
+                            <p>スムーズな参加のため、Wi-Fiまたは有線接続を推奨します。</p>
+                        </div>
+                    </div>
+                    <div class="requirement-item">
+                        <i class="fas fa-video"></i>
+                        <div class="requirement-content">
+                            <h4>Zoomアプリ(無料)</h4>
+                            <p>事前にインストールしておくとスムーズです。</p>
+                        </div>
+                    </div>
+                    <div class="requirement-item">
+                        <i class="fas fa-id-card"></i>
+                        <div class="requirement-content">
+                            <h4>名刺(任意)</h4>
+                            <p>交流タイムで使用します。画面共有でもOKです。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- よくある質問 -->
+    <section class="visitor-section alt">
+        <div class="container">
+            <h2 class="section-title center">よくある質問</h2>
+            <p class="section-subtitle center">ビジター見学について</p>
+            
+            <div class="faq-section">
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>見学は無料ですか?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>はい、初回の見学は無料です。お気軽にご参加ください。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>何回まで見学できますか?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>基本的に2回まで見学可能です。2回目以降のご参加については、初回見学時にご相談ください。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>顔出し必須ですか?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>はい、BNIは信頼関係を重視しているため、カメラONでのご参加をお願いしています。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>途中参加・途中退出は可能ですか?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>定例会は時間厳守が原則です。やむを得ない場合は事前にご連絡ください。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>見学当日、何か話さないといけませんか?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>簡単な自己紹介(お名前・事業内容)をお願いする場合があります。1分程度です。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>見学後、必ず入会しないといけませんか?</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>いいえ、見学後にじっくりご検討いただけます。無理な勧誘は一切ありません。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>自分の業種が既に埋まっている場合は?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>1業種1名制のため、空きが出るまでお待ちいただくか、他のチャプターをご案内いたします。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="visitor-section">
+        <div class="container">
+            <div class="cta-box">
+                <h3>まずは気軽に見学から。</h3>
+                <p>オンラインだから、全国どこからでも参加OK!<br>22名の信頼できるビジネスパートナーがあなたを待っています。</p>
+                <a href="contact.html" class="btn btn-secondary btn-xlarge">
+                    <i class="fas fa-calendar-check"></i> 今すぐ見学を申し込む
+                </a>
+                <p style="margin-top: 24px; font-size: 16px; opacity: 0.9;">次回定例会: 毎週水曜 10:30〜12:00 (Zoom開催)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>BNI だんじりチャプター</h3>
+                    <p>大阪東エリアで活動するビジネスリファーラル組織。Givers Gain®の理念のもと、信頼でつながるネットワーキングを実践しています。</p>
+                </div>
+                <div class="footer-section">
+                    <h4>リンク</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">トップページ</a></li>
+                        <li><a href="members.html">メンバー一覧</a></li>
+                        <li><a href="activity.html">活動報告</a></li>
+                        <li><a href="visitor.html">ビジター見学</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>定例会情報</h4>
+                    <ul class="footer-info">
+                        <li><i class="fas fa-calendar-alt"></i> 毎週水曜日</li>
+                        <li><i class="fas fa-clock"></i> 10:30〜12:00</li>
+                        <li><i class="fas fa-video"></i> Zoom開催</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 大阪東エリア</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>お問い合わせ</h4>
+                    <p>見学のお申し込み・ご質問は<br>こちらから</p>
+                    <a href="contact.html" class="btn btn-primary btn-small">お問い合わせフォーム</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BNI だんじりチャプター. All Rights Reserved.</p>
+                <p class="footer-disclaimer">BNI®およびGivers Gain®は、BNI Global, LLCの登録商標です。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
