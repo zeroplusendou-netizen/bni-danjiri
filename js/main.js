@@ -130,55 +130,208 @@ window.addEventListener('scroll', () => {
 });
 
 // ========================================
-// フォーム: バリデーション (contact.htmlで使用)
+// フォーム: 紹介経路の条件付き表示
+// ========================================
+const referralSource = document.getElementById('referral-source');
+const referrerNameGroup = document.getElementById('referrer-name-group');
+const referrerNameInput = document.getElementById('referrer-name');
+
+if (referralSource && referrerNameGroup && referrerNameInput) {
+    referralSource.addEventListener('change', function() {
+        if (this.value === 'メンバーからの紹介') {
+            referrerNameGroup.style.display = 'block';
+            referrerNameInput.required = true;
+        } else {
+            referrerNameGroup.style.display = 'none';
+            referrerNameInput.required = false;
+            referrerNameInput.value = ''; // 値をクリア
+        }
+    });
+}
+
+// ========================================
+// フォーム: EmailJS + Formspree送信処理 (contact.htmlで使用)
 // ========================================
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    // EmailJS初期化（後で設定が必要）
+    // 使用方法: https://dashboard.emailjs.com/ でアカウント作成後、
+    // YOUR_PUBLIC_KEY, YOUR_SERVICE_ID, YOUR_TEMPLATE_ID を設定
+    
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        // 入力値取得
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const phone = document.getElementById('phone').value.trim();
-        const message = document.getElementById('message').value.trim();
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.innerHTML;
         
-        // バリデーション
-        let isValid = true;
-        let errorMessage = '';
+        // 送信中の表示
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 送信中...';
+        submitButton.disabled = true;
         
-        if (!name) {
-            isValid = false;
-            errorMessage += 'お名前を入力してください。\n';
+        try {
+            // 1. Formspreeへ送信（管理者通知用）
+            const formData = new FormData(contactForm);
+            const formspreeResponse = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (!formspreeResponse.ok) {
+                throw new Error('Formspree送信失敗');
+            }
+            
+            // 2. EmailJSで自動返信メール送信
+            const emailjsConfig = {
+                publicKey: 'eOUHlUfpj7a5NtbC3',     // ✅ 設定済み
+                serviceId: 'service_dq4a61m',       // ✅ Gmail経由で設定済み
+                templateId: 'template_jyirxvn'      // ✅ 自動返信テンプレート設定済み
+            };
+            
+            // EmailJSが設定されている場合のみ実行
+            if (emailjsConfig.publicKey !== 'YOUR_PUBLIC_KEY') {
+                try {
+                    // EmailJS初期化
+                    emailjs.init(emailjsConfig.publicKey);
+                    
+                    // フォームデータを取得
+                    const templateParams = {
+                        to_email: document.getElementById('email').value,
+                        to_name: document.getElementById('name').value,
+                        company: document.getElementById('company').value || '未入力',
+                        phone: document.getElementById('phone').value,
+                        business: document.getElementById('business').value,
+                        preferred_date: document.getElementById('preferred-date').value || '未定',
+                        referral_source: document.getElementById('referral-source').value,
+                        referrer_name: document.getElementById('referrer-name').value || '該当なし',
+                        message: document.getElementById('message').value || '特になし'
+                    };
+                    
+                    // EmailJS送信
+                    await emailjs.send(
+                        emailjsConfig.serviceId,
+                        emailjsConfig.templateId,
+                        templateParams
+                    );
+                } catch (emailError) {
+                    console.warn('EmailJS自動返信の送信に失敗しましたが、管理者への通知は成功しています:', emailError);
+                    // EmailJS失敗してもFormspreeは成功しているので続行
+                }
+            }
+            
+            // 送信成功
+            showSuccessMessage();
+            contactForm.reset();
+            
+            // 紹介者名欄を非表示に戻す
+            if (referrerNameGroup) {
+                referrerNameGroup.style.display = 'none';
+                if (referrerNameInput) {
+                    referrerNameInput.required = false;
+                }
+            }
+            
+        } catch (error) {
+            console.error('送信エラー:', error);
+            alert('送信に失敗しました。しばらくしてから再度お試しください。');
+        } finally {
+            // ボタンを元に戻す
+            submitButton.innerHTML = originalButtonText;
+            submitButton.disabled = false;
         }
-        
-        if (!email) {
-            isValid = false;
-            errorMessage += 'メールアドレスを入力してください。\n';
-        } else if (!isValidEmail(email)) {
-            isValid = false;
-            errorMessage += 'メールアドレスの形式が正しくありません。\n';
+    });
+}
+
+// 送信成功メッセージを表示
+function showSuccessMessage() {
+    // 成功メッセージのHTML要素を作成
+    const successDiv = document.createElement('div');
+    successDiv.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(135deg, #E31C24, #a01118);
+        color: white;
+        padding: 40px 60px;
+        border-radius: 16px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        z-index: 10000;
+        text-align: center;
+        animation: fadeInScale 0.3s ease;
+    `;
+    
+    successDiv.innerHTML = `
+        <div style="font-size: 64px; margin-bottom: 20px;">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h3 style="font-size: 28px; font-weight: 700; margin-bottom: 16px;">送信完了</h3>
+        <p style="font-size: 18px; line-height: 1.6; opacity: 0.95;">
+            この度は、BNI だんじりチャプターの見学申込をいただき、<br>
+            誠にありがとうございます。<br><br>
+            自動返信メールをお送りしましたので、ご確認ください。<br>
+            メールには見学当日のご案内とZoomリンクを記載しております。<br><br>
+            <span style="font-size: 15px; opacity: 0.85;">
+            ※ 日程に不備がある場合や定員に達している場合は、<br>
+            担当者よりご連絡させていただきます。
+            </span>
+        </p>
+    `;
+    
+    // オーバーレイ（背景）を作成
+    const overlay = document.createElement('div');
+    overlay.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 9999;
+        animation: fadeIn 0.3s ease;
+    `;
+    
+    // アニメーション用のCSSを追加
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-        
-        if (!phone) {
-            isValid = false;
-            errorMessage += '電話番号を入力してください。\n';
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
         }
-        
-        if (!message) {
-            isValid = false;
-            errorMessage += 'メッセージを入力してください。\n';
-        }
-        
-        if (!isValid) {
-            alert(errorMessage);
-            return;
-        }
-        
-        // 送信成功メッセージ
-        alert('お問い合わせありがとうございます!\n担当者より3営業日以内にご連絡いたします。');
-        contactForm.reset();
+    `;
+    document.head.appendChild(style);
+    
+    // ページに追加
+    document.body.appendChild(overlay);
+    document.body.appendChild(successDiv);
+    
+    // 3秒後に自動で閉じる
+    setTimeout(() => {
+        successDiv.style.animation = 'fadeOut 0.3s ease';
+        overlay.style.animation = 'fadeOut 0.3s ease';
+        setTimeout(() => {
+            document.body.removeChild(successDiv);
+            document.body.removeChild(overlay);
+        }, 300);
+    }, 3000);
+    
+    // クリックで閉じる
+    overlay.addEventListener('click', () => {
+        document.body.removeChild(successDiv);
+        document.body.removeChild(overlay);
     });
 }
 

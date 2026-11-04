@@ -3,413 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BNI だんじりチャプターへのお問い合わせ・見学申込はこちらから。担当者より3営業日以内にご連絡いたします。">
-    <meta name="keywords" content="BNI,だんじり,お問い合わせ,見学申込,大阪,ビジネス交流会">
+    <!-- キャッシュクリア設定：変更を即座に反映させるため -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     
-    <title>お問い合わせ・見学申込 | BNI だんじりチャプター</title>
+    <title>お問い合わせ | BNI だんじりチャプター</title>
     
+    <link rel="icon" href="images/0000111222333444.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/0000111222333444.png">
+
+    <!-- フォントとアイコンの読み込み -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- CSS読み込み（キャッシュ対策のためバージョンを付与） -->
+    <link rel="stylesheet" href="css/styles.css?v=20260504_final">
     
     <style>
         .contact-hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #a01118 100%);
-            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #E31C24 0%, #a01118 100%);
+            padding: 100px 0 60px;
             text-align: center;
             color: #fff;
         }
-        
-        .contact-hero h1 {
-            font-size: 48px;
-            font-weight: 900;
-            margin-bottom: 16px;
-        }
-        
-        .contact-hero p {
-            font-size: 20px;
-            opacity: 0.95;
-        }
-        
-        .contact-section {
-            padding: 80px 0;
-        }
-        
-        .contact-container {
-            max-width: 900px;
+        .contact-section { padding: 60px 0; background-color: #f8f9fa; }
+        .contact-form-container {
+            max-width: 800px;
             margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        
-        .contact-intro {
-            background-color: var(--light-bg);
-            padding: 32px;
-            border-radius: var(--radius-md);
-            margin-bottom: 48px;
-            text-align: center;
-        }
-        
-        .contact-intro h3 {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 16px;
-        }
-        
-        .contact-intro p {
-            font-size: 16px;
-            line-height: 1.7;
-            color: #666;
-        }
-        
-        .form-group {
-            margin-bottom: 32px;
-        }
-        
-        .form-group label {
-            display: block;
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 8px;
-        }
-        
-        .form-group label .required {
-            color: var(--primary-color);
-            margin-left: 4px;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 16px;
-            border: 2px solid var(--border-color);
-            border-radius: var(--radius-sm);
-            font-size: 16px;
-            font-family: var(--font-ja);
-            transition: var(--transition);
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(227, 28, 36, 0.1);
-        }
-        
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .form-hint {
-            font-size: 14px;
-            color: #888;
-            margin-top: 8px;
-        }
-        
-        .form-submit {
-            text-align: center;
-            margin-top: 48px;
-        }
-        
-        .form-submit button {
-            padding: 20px 80px;
-            background: linear-gradient(135deg, var(--primary-color), #a01118);
+        .form-group { margin-bottom: 24px; }
+        .form-label { display: block; font-weight: 700; margin-bottom: 8px; }
+        .form-label span { background-color: #E31C24; color: #fff; font-size: 11px; padding: 2px 6px; border-radius: 4px; margin-left: 8px; }
+        .form-label span.optional-label { background-color: #f0f2f5; color: #555; }
+        .form-control { width: 100%; padding: 12px 16px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; box-sizing: border-box; }
+        .btn-submit {
+            background-color: #E31C24;
             color: #fff;
             border: none;
-            border-radius: var(--radius-sm);
-            font-size: 18px;
+            padding: 16px 48px;
+            border-radius: 6px;
             font-weight: 700;
             cursor: pointer;
-            transition: var(--transition);
-            box-shadow: var(--shadow-md);
+            width: 100%;
+            font-size: 18px;
+            transition: 0.3s;
         }
-        
-        .form-submit button:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .form-submit button i {
-            margin-right: 8px;
-        }
-        
-        .privacy-note {
-            background-color: var(--light-bg);
-            padding: 24px;
-            border-radius: var(--radius-sm);
-            margin-top: 32px;
-            font-size: 14px;
-            line-height: 1.7;
-            color: #666;
-        }
-        
-        .privacy-note h4 {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 12px;
-        }
-        
-        .contact-info-section {
-            background-color: var(--light-bg);
-            padding: 80px 0;
-        }
-        
-        .info-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-            margin-top: 48px;
-        }
-        
-        .info-card {
-            background-color: #fff;
-            padding: 32px;
-            border-radius: var(--radius-md);
-            text-align: center;
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .info-card i {
-            font-size: 48px;
-            color: var(--primary-color);
-            margin-bottom: 16px;
-        }
-        
-        .info-card h3 {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 16px;
-        }
-        
-        .info-card p {
-            font-size: 15px;
-            line-height: 1.7;
-            color: #666;
-        }
-        
-        @media (max-width: 768px) {
-            .contact-hero h1 {
-                font-size: 32px;
-            }
-            
-            .form-submit button {
-                padding: 16px 48px;
-                font-size: 16px;
-            }
+        .btn-submit:disabled { background-color: #ccc; cursor: not-allowed; }
+        .application-deadline { background: #fff4f3; border: 2px solid #e31c24; border-radius: 10px; padding: 18px 20px; margin-bottom: 28px; color: #642024; }
+        .application-deadline strong { display: block; font-size: 18px; margin-bottom: 6px; }
+        .application-deadline p { margin: 0; line-height: 1.8; }
+        .meeting-options { display: flex; flex-wrap: wrap; gap: 12px; }
+        .meeting-option { display: flex; align-items: center; gap: 9px; padding: 12px 18px; border: 1px solid #d7dce2; border-radius: 8px; cursor: pointer; background: #fff; }
+        .meeting-option:has(input:checked) { border-color: #e31c24; background: #fff4f3; }
+        .meeting-option input { width: 19px; height: 19px; accent-color: #e31c24; }
+        .form-help { display: block; margin-top: 7px; color: #5b6470; font-size: 13px; line-height: 1.65; }
+        @media(max-width: 600px) {
+            .contact-form-container { padding: 24px 18px; }
+            .contact-section { padding: 32px 0; }
+            .meeting-option { flex: 1; justify-content: center; min-width: 105px; }
+            input[type="date"].form-control { min-height: 52px; max-width: 100%; }
         }
     </style>
 </head>
 <body>
-    <!-- ヘッダー -->
     <header class="header">
-        <nav class="nav container">
-            <div class="nav-logo">
-                <img src="images/bni-logo.png" alt="BNI Logo" class="logo-img">
-                <span class="chapter-name">だんじりチャプター</span>
-            </div>
-            <button class="nav-toggle" id="navToggle" aria-label="メニュー">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">トップページ</a></li>
-                <li><a href="index.html#about" class="nav-link">チャプターとは</a></li>
-                <li><a href="members.html" class="nav-link">メンバー紹介</a></li>
-                <li><a href="activity.html" class="nav-link">活動報告</a></li>
-                <li><a href="visitor.html" class="nav-link">ビジター見学</a></li>
-                <li><a href="contact.html" class="nav-link btn-primary-nav">見学申込</a></li>
-            </ul>
+        <nav class="nav container" style="padding: 15px 0; display: flex; align-items: center; justify-content: space-between;">
+            <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+                <img src="images/bni-logo.png" alt="BNI Logo" width="80">
+                <span style="font-weight: 900; font-size: 1.2rem;">だんじりチャプター</span>
+            </a>
         </nav>
     </header>
 
-    <!-- ヒーロー -->
     <section class="contact-hero">
         <div class="container">
-            <h1>お問い合わせ・見学申込</h1>
-            <p>担当者より3営業日以内にご連絡いたします</p>
+            <h1>見学申込・お問い合わせ</h1>
+            <p>水曜日の定例会へのご参加をお待ちしております</p>
         </div>
     </section>
 
-    <!-- お問い合わせフォーム -->
-    <section class="contact-section">
-        <div class="container contact-container">
-            <div class="contact-intro">
-                <h3><i class="fas fa-envelope"></i> まずはお気軽にお問い合わせください</h3>
-                <p>
-                    ビジター見学のお申し込み、入会に関するご質問、チャプターについての疑問など、<br>
-                    どんなことでもお気軽にお問い合わせください。
-                </p>
-            </div>
-
-            <form id="contactForm" action="#" method="post">
-                <div class="form-group">
-                    <label for="name">お名前 <span class="required">*必須</span></label>
-                    <input type="text" id="name" name="name" placeholder="例: 山田 太郎" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="company">会社名・屋号</label>
-                    <input type="text" id="company" name="company" placeholder="例: 株式会社〇〇 / 個人事業主の場合は屋号">
-                </div>
-
-                <div class="form-group">
-                    <label for="email">メールアドレス <span class="required">*必須</span></label>
-                    <input type="email" id="email" name="email" placeholder="例: example@email.com" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">電話番号 <span class="required">*必須</span></label>
-                    <input type="tel" id="phone" name="phone" placeholder="例: 090-1234-5678" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="business">業種・専門分野 <span class="required">*必須</span></label>
-                    <input type="text" id="business" name="business" placeholder="例: 税理士 / Webデザイナー / 不動産仲介" required>
-                    <p class="form-hint">※ 1業種1名制のため、事前に業種の空き状況を確認させていただきます。</p>
-                </div>
-
-                <div class="form-group">
-                    <label for="inquiry-type">お問い合わせ種別 <span class="required">*必須</span></label>
-                    <select id="inquiry-type" name="inquiry-type" required>
-                        <option value="">選択してください</option>
-                        <option value="visitor">ビジター見学を申し込む</option>
-                        <option value="membership">入会について相談したい</option>
-                        <option value="question">チャプターについて質問したい</option>
-                        <option value="other">その他</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="preferred-date">希望見学日(任意)</label>
-                    <input type="text" id="preferred-date" name="preferred-date" placeholder="例: 12月6日(水) / 12月13日(水)">
-                    <p class="form-hint">※ 定例会は毎週水曜 10:30〜12:00 開催です。</p>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">メッセージ <span class="required">*必須</span></label>
-                    <textarea id="message" name="message" placeholder="お問い合わせ内容、ご質問などをご記入ください。" required></textarea>
-                </div>
-
-                <div class="form-submit">
-                    <button type="submit">
-                        <i class="fas fa-paper-plane"></i> 送信する
-                    </button>
-                </div>
-
-                <div class="privacy-note">
-                    <h4><i class="fas fa-shield-alt"></i> 個人情報の取り扱いについて</h4>
-                    <p>
-                        お預かりした個人情報は、お問い合わせへの回答、ビジター見学のご案内、BNI関連情報の提供のみに使用いたします。
-                        第三者への提供は一切行いません。詳しくは<a href="#" style="color: var(--primary-color);">プライバシーポリシー</a>をご覧ください。
-                    </p>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <!-- お問い合わせに関する情報 -->
-    <section class="contact-info-section">
-        <div class="container">
-            <h2 class="section-title center">お問い合わせに関して</h2>
-            <p class="section-subtitle center">安心してお問い合わせください</p>
-            
-            <div class="info-cards">
-                <div class="info-card">
-                    <i class="fas fa-clock"></i>
-                    <h3>回答時間</h3>
-                    <p>担当者より<strong>3営業日以内</strong>にメールまたは電話でご連絡いたします。</p>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-user-shield"></i>
-                    <h3>プライバシー保護</h3>
-                    <p>お預かりした情報は厳重に管理し、目的外使用は一切いたしません。</p>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-hand-holding-heart"></i>
-                    <h3>無理な勧誘なし</h3>
-                    <p>見学後の入会は自由です。無理な勧誘は一切行いませんのでご安心ください。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 定例会情報 -->
     <section class="contact-section">
         <div class="container">
-            <div style="background: linear-gradient(135deg, var(--secondary-color), #3a3a3a); color: #fff; padding: 48px; border-radius: var(--radius-md); text-align: center;">
-                <h3 style="font-size: 28px; font-weight: 900; margin-bottom: 24px; color: var(--accent-color);">
-                    <i class="fas fa-calendar-alt"></i> 定例会情報
-                </h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-bottom: 32px;">
-                    <div>
-                        <div style="font-size: 14px; opacity: 0.8; margin-bottom: 8px;">開催日時</div>
-                        <div style="font-size: 20px; font-weight: 700;">毎週水曜 10:30〜12:00</div>
+            <div class="contact-form-container">
+                <form id="contactForm">
+                    <div class="application-deadline" role="note">
+                        <strong><i class="fas fa-circle-exclamation" aria-hidden="true"></i> お申し込み期限について</strong>
+                        <p>定例会へのご参加は、事前準備の都合上、原則として開催日の3日前までにお申し込みくださいますようお願いいたします。</p>
                     </div>
-                    <div>
-                        <div style="font-size: 14px; opacity: 0.8; margin-bottom: 8px;">開催方法</div>
-                        <div style="font-size: 20px; font-weight: 700;">Zoom (オンライン)</div>
+                    <!-- GAS側が期待するフィールド名を網羅 -->
+                    <div class="form-group">
+                        <label for="visit_date" class="form-label">参加希望日 <span>必須</span></label>
+                        <select id="visit_date" name="visit_date" class="form-control" required>
+                            <option value="" disabled selected>選択してください</option>
+
+                           <option value="11月11日">11月11日</option>
+                           <option value="11月18日">11月18日</option>
+                           <option value="11月25日">11月25日</option>
+                           <option value="12月2日">12月2日</option>
+                           <option value="12月9日">12月9日</option>
+                           <option value="12月16日">12月16日</option>
+                           <option value="12月23日">12月23日</option>
+                        </select>
                     </div>
-                    <div>
-                        <div style="font-size: 14px; opacity: 0.8; margin-bottom: 8px;">拠点</div>
-                        <div style="font-size: 20px; font-weight: 700;">大阪東エリア</div>
+
+                    <div class="form-group">
+                        <label for="name" class="form-label">氏名 <span>必須</span></label>
+                        <input type="text" id="name" name="name" class="form-control" required placeholder="例：山田 太郎">
                     </div>
-                </div>
-                <p style="font-size: 16px; opacity: 0.9; line-height: 1.7;">
-                    全国どこからでも参加可能なオンライン開催です。<br>
-                    まずは見学から、お気軽にお問い合わせください!
-                </p>
+
+                    <div class="form-group">
+                        <label for="company" class="form-label">屋号（社名）</label>
+                        <input type="text" id="company" name="company" class="form-control" placeholder="例：株式会社〇〇">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="job" class="form-label">仕事内容</label>
+                        <input type="text" id="job" name="job" class="form-control" placeholder="例：Webデザイン、内装工事など">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">メールアドレス <span>必須</span></label>
+                        <input type="email" id="email" name="email" class="form-control" required placeholder="例：info@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="form-label">携帯番号 <span>必須</span></label>
+                        <input type="tel" id="phone" name="phone" class="form-control" required placeholder="例：090-1234-5678">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="meeting_date" class="form-label">事前ミーティングの候補日 <span class="optional-label">任意</span></label>
+                        <input type="date" id="meeting_date" name="meeting_date" class="form-control">
+                        <small class="form-help">ご都合のよい日付をカレンダーからお選びください。日程は担当者からのご連絡にて確定いたします。</small>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-label" id="meeting_method_label">事前ミーティングの実施方法 <span class="optional-label">任意</span></div>
+                        <div class="meeting-options" role="radiogroup" aria-labelledby="meeting_method_label">
+                            <label class="meeting-option"><input type="radio" name="meeting_method" value="Zoom"> Zoom（推奨）</label>
+                            <label class="meeting-option"><input type="radio" name="meeting_method" value="電話"> 電話</label>
+                        </div>
+                        <small class="form-help">事前ミーティングはZoomでの実施を推奨しております。</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="referrer" class="form-label">ご紹介者</label>
+                        <input type="text" id="referrer" name="referrer" class="form-control" placeholder="例：田中 花子">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="visitor_history" class="form-label">ビジター経験 <span>必須</span></label>
+                        <select id="visitor_history" name="visitor_history" class="form-control" required>
+                            <option value="初めて">初めて</option>
+                            <option value="2回目以降">2回目以降</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">お問い合わせ内容</label>
+                        <textarea id="message" name="message" class="form-control" rows="4"></textarea>
+                    </div>
+
+                    <div class="form-submit">
+                        <button type="submit" class="btn-submit" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i> 送信する
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- フッター -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h3>BNI だんじりチャプター</h3>
-                    <p>大阪東エリアで活動するビジネスリファーラル組織。Givers Gain®の理念のもと、信頼でつながるネットワーキングを実践しています。</p>
-                </div>
-                <div class="footer-section">
-                    <h4>リンク</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">トップページ</a></li>
-                        <li><a href="members.html">メンバー一覧</a></li>
-                        <li><a href="activity.html">活動報告</a></li>
-                        <li><a href="visitor.html">ビジター見学</a></li>
-                        <li><a href="contact.html">お問い合わせ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>定例会情報</h4>
-                    <ul class="footer-info">
-                        <li><i class="fas fa-calendar-alt"></i> 毎週水曜日</li>
-                        <li><i class="fas fa-clock"></i> 10:30〜12:00</li>
-                        <li><i class="fas fa-video"></i> Zoom開催</li>
-                        <li><i class="fas fa-map-marker-alt"></i> 大阪東エリア</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>お問い合わせ</h4>
-                    <p>見学のお申し込み・ご質問は<br>こちらから</p>
-                    <a href="contact.html" class="btn btn-primary btn-small">お問い合わせフォーム</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 BNI だんじりチャプター. All Rights Reserved.</p>
-                <p class="footer-disclaimer">BNI®およびGivers Gain®は、BNI Global, LLCの登録商標です。</p>
-            </div>
-        </div>
+    <footer class="footer" style="padding: 40px 0; text-align: center; background: #333; color: #fff;">
+        <p>&copy; 2026 BNI だんじりチャプター. All Rights Reserved.</p>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const meetingDate = document.getElementById('meeting_date');
+            if (meetingDate) {
+                const today = new Date();
+                const localDate = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+                meetingDate.min = localDate;
+            }
+            
+            // 設定URL：最新のデプロイURLを使用
+            const googleSheetURL = 'https://script.google.com/macros/s/AKfycbzrVgd0kXhkPHC44YMteYChd2H8v0Xcq5CnQFaIKLTre549tXp7zoiubJPhtdcn4M2D/exec';
+            const formspreeURL = 'https://formspree.io/f/xrbnrpww';
+
+            if(form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault(); 
+                    
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 送信中...';
+
+                    const formData = new FormData(form);
+
+                    // 1. LINE通知送信
+                    const linePromise = fetch('send_line.php', { method: 'POST', body: formData });
+                    
+                    // 2. スプレッドシート記録 兼 自動返信メール (GAS)
+                    const sheetPromise = fetch(googleSheetURL, { method: 'POST', body: formData, mode: 'no-cors' });
+                    
+                    // 3. 予備通知 (Formspree)
+                    const formspreePromise = fetch(formspreeURL, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+
+                    // すべての送信処理を実行
+                    Promise.all([linePromise, sheetPromise, formspreePromise])
+                    .then(() => {
+                        alert('お申し込みありがとうございます！\nZoomのご案内メールを送信しましたので、必ずご確認ください。');
+                        form.reset(); 
+                    })
+                    .catch(err => {
+                        console.error('Error:', err);
+                        alert('送信完了しました。');
+                    })
+                    .finally(() => {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> 送信する';
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>

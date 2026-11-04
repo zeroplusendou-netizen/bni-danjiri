@@ -1,0 +1,41 @@
+name: Import original large public images from XServer (one time)
+on:
+  push:
+    branches: [sync-live-20261104]
+    paths: ['.github/workflows/import-live-assets.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: sync-live-20261104
+          persist-credentials: true
+      - name: Fetch original images and verify integrity
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p images
+          curl -fLsS --retry 3 --max-time 120 'https://bni-danjiri.jp/images/0000111222333444.png' -o images/0000111222333444.png
+          curl -fLsS --retry 3 --max-time 120 'https://bni-danjiri.jp/images/IMG_0015.JPG' -o images/IMG_0015.JPG
+          curl -fLsS --retry 3 --max-time 120 'https://bni-danjiri.jp/images/IMG_8023.jpg' -o images/IMG_8023.jpg
+          printf '%s\n' \
+            'a207108c38ecdf332c42a28aaf6a7397125d700123a2418a8e473ecc300a94da  images/0000111222333444.png' \
+            '17e6ea1ea63d68fcc056206983538fe6e679397af193927cd2fe7b8b58b9a5c0  images/IMG_0015.JPG' \
+            '1385ab9319f8a227106e18e61dad1c1a8cbb9af30ce979b1e1658d4f4d70ef3e  images/IMG_8023.jpg' | sha256sum -c -
+      - name: Commit original public images
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- images/0000111222333444.png images/IMG_0015.JPG images/IMG_8023.jpg
+          if ! git diff --cached --quiet; then
+            git commit -m 'Import three original images from live XServer site'
+            git push origin HEAD:sync-live-20261104
+          fi

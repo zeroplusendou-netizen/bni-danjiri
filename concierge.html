@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <title>AIお悩み解決コンシェルジュ | BNI だんじりチャプター</title>
+    
+    <link rel="icon" href="images/0000111222333444.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/0000111222333444.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #E31C24;   /* だんじり赤 */
+            --secondary-color: #1A1A1A; /* 漆黒アクセント */
+            --accent-color: #F5A623;    /* ゴールド */
+            --text-dark: #333333;
+            --bg-light: #FFFFFF;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Noto Sans JP', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.7; }
+
+        /* ヘッダースタイル */
+        .header { background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 10px 0; position: sticky; top: 0; z-index: 1000; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { text-decoration: none; color: var(--secondary-color); display: flex; align-items: center; gap: 12px; }
+        .nav-logo img { width: 80px; }
+        .chapter-name { font-size: 20px; font-weight: 900; }
+
+        /* メインエリア（だんじりレッドグラデーション） */
+        .tool-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #a01118 100%);
+            padding: 80px 20px;
+            color: #fff;
+            text-align: center;
+            min-height: calc(100vh - 65px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tool-container { width: 100%; max-width: 800px; margin: 0 auto; }
+        .tool-main-copy { font-size: clamp(1.8rem, 4.5vw, 2.8rem); font-weight: 900; line-height: 1.4; margin-bottom: 15px; }
+        .tool-sub-copy { font-size: clamp(0.95rem, 2vw, 1.15rem); opacity: 0.9; max-width: 600px; margin: 0 auto 35px auto; }
+
+        /* ウィジェット外枠 */
+        .ai-card-widget {
+            background: rgba(255, 255, 255, 0.12);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .ai-widget-title { font-size: 22px; font-weight: 900; color: var(--accent-color); margin-bottom: 20px; letter-spacing: 0.5px; }
+
+        /* フリー入力エリア */
+        .ai-input-group { display: flex; flex-direction: column; gap: 15px; max-width: 580px; margin: 0 auto; }
+        .ai-free-field { width: 100%; padding: 18px 25px; font-size: 16px; border: none; border-radius: 50px; outline: none; box-shadow: 0 5px 15px rgba(0,0,0,0.1); color: #333; text-align: center; font-weight: 700; }
+        
+        .btn-trigger-search {
+            padding: 16px 35px;
+            background: linear-gradient(135deg, var(--accent-color) 0%, #e08b09 100%);
+            color: #fff;
+            font-weight: 900;
+            font-size: 16px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(245, 166, 35, 0.4);
+            transition: transform 0.2s;
+        }
+        .btn-trigger-search:hover { transform: translateY(-2px); }
+
+        .widget-divider { font-size: 14px; font-weight: 900; margin: 20px 0; opacity: 0.9; letter-spacing: 1px; }
+
+        /* 質問に進むボタン（確実に反応するスタイル） */
+        .btn-toggle-steps {
+            background: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 15px;
+            display: inline-block;
+            outline: none;
+        }
+        .btn-toggle-steps:hover { background: #fff; color: var(--primary-color); }
+
+        /* 質問進行パネル（初期非表示） */
+        .step-slide-panel { display: none; text-align: center; width: 100%; }
+        .step-question-text { font-size: 20px; font-weight: 900; margin-bottom: 8px; color: #fff; }
+        .step-explain-text { font-size: 13px; opacity: 0.85; margin-bottom: 25px; }
+
+        .steps-options-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; width: 100%; }
+        .step-choice-card {
+            background: #ffffff;
+            color: #333;
+            padding: 22px 15px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid transparent;
+        }
+        .step-choice-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); border-color: var(--accent-color); }
+        .step-choice-card i { font-size: 26px; color: var(--primary-color); margin-bottom: 10px; }
+        .step-choice-card h4 { font-size: 15px; font-weight: 700; line-height: 1.4; }
+
+        .step-progress-track { width: 100%; height: 6px; background: rgba(255,255,255,0.2); margin-top: 30px; border-radius: 3px; overflow: hidden; }
+        .step-progress-fill { width: 0%; height: 100%; background: var(--accent-color); transition: width 0.3s; }
+
+        /* 結果コンテナ */
+        .output-result-container { display: none; max-width: 800px; margin: 30px auto 0 auto; text-align: left; }
+        .result-intro-banner { background: #fff; border-radius: 16px; padding: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .result-headline-title { font-size: 22px; font-weight: 900; color: var(--primary-color); margin-bottom: 10px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        
+        .member-match-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+            border-left: 5px solid var(--primary-color);
+        }
+        .member-photo { width: 110px; height: 145px; object-fit: cover; border-radius: 6px; flex-shrink: 0; background: #ddd; }
+        .member-meta-info { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
+        .member-card-tag { font-size: 11px; color: var(--accent-color); font-weight: 900; margin-bottom: 3px; }
+        .member-card-name { font-size: 20px; font-weight: 900; margin-bottom: 3px; color: var(--secondary-color); }
+        .member-card-comp { font-size: 12px; color: #666; margin-bottom: 10px; font-weight: 700; }
+        .member-text-copy-area { background: #fff; padding: 12px; border-radius: 6px; font-size: 13.5px; color: #444; border: 1px solid #eef0f2; margin-bottom: 12px; line-height: 1.5; }
+        
+        .member-card-buttons { display: flex; gap: 8px; }
+        .action-click-btn { padding: 8px 16px; font-size: 12.5px; font-weight: 700; border: none; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+        .btn-clipboard { background: #333; color: #fff; }
+        .btn-line-forward { background: #06C755; color: #fff; }
+        .action-click-btn:hover { opacity: 0.85; }
+
+        @media (max-width: 768px) {
+            .member-match-card { flex-direction: column; align-items: center; text-align: center; }
+            .member-text-copy-area { text-align: left; }
+            .member-card-buttons { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/bni-logo.png" alt="BNI Logo">
+                <span class="chapter-name">だんじりチャプター</span>
+            </a>
+        </div>
+    </header>
+
+    <section class="tool-hero">
+        <div class="tool-container">
+            <h1 class="tool-main-copy">紹介を、テクノロジーで加速させる。</h1>
+            <p class="tool-sub-copy">目の前の方のリアルな事業課題・ニーズを解決できるチャプターの仲間を即座にピックアップし、紹介文を自動生成します。</p>
+            
+            <div class="ai-card-widget" id="widget-box-root">
+                <!-- 初期ゲート表示 -->
+                <div id="panel-gate-view">
+                    <h2 class="ai-widget-title"><i class="fas fa-robot"></i> お悩み解決AIコンシェルジュ</h2>
+                    <div class="ai-input-group">
+                        <input type="text" id="free-keyword-input" class="ai-free-field" placeholder="例：飲食店、ホームページ、節税、リフォームなど...">
+                        <button class="btn-trigger-search" onclick="executeFreeQuery()"><i class="fas fa-magic"></i> メンバーを抽出する</button>
+                    </div>
+                    <div class="widget-divider">または</div>
+                    <button class="btn-toggle-steps" onclick="activateQuestionFlow()">5つの事業者質問から選定する <i class="fas fa-chevron-right"></i></button>
+                </div>
+
+                <!-- 質問進行パネル（完全に独立、絶対バグの起きない構文） -->
+                <div id="panel-steps-view" class="step-slide-panel">
+                    <h3 class="step-question-text" id="ui-display-q-title">Q1. 質問</h3>
+                    <p class="step-explain-text" id="ui-display-q-desc">説明文</p>
+                    <div class="steps-options-grid" id="ui-display-q-grid"></div>
+                    <div class="step-progress-track"><div class="step-progress-fill" id="ui-display-progress-fill"></div></div>
+                </div>
+            </div>
+
+            <!-- 結果表示エリア -->
+            <div class="output-result-container" id="panel-output-view">
+                <div class="result-intro-banner">
+                    <h3 class="result-headline-title"><i class="fas fa-lightbulb"></i> マッチングした解決パートナー</h3>
+                    <p style="font-size:13px; color:#666; margin-bottom:15px; font-weight:700;" id="ui-display-result-summary"></p>
+                    <div id="ui-display-cards-target"></div>
+                    <div style="text-align: center; margin-top: 25px;">
+                        <button class="btn-toggle-steps" style="border-color:#666; color:#333;" onclick="restoreWidgetGate()"><i class="fas fa-undo"></i> 別の条件で探す</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 完全固定メンバー22名データベース -->
+    <script>
+        const chapterDatabase = [
+            { name: "井上 理衣", company: "株式会社TERASS", badge: "", category: "住宅関連", tag: "売主のパートナー", keywords: ["家", "住宅", "不動産", "売却", "マンション", "査定", "土地", "住み替え"], img: "images/IMG_8024.JPG", intro: "不動産の売却や住み替えでお悩みの方がいれば、売主の確かなパートナーとして親身に伴走してくれる株式会社TERASSの井上理衣さんをご紹介します！" },
+            { name: "田北 亨子", company: "RECICLAJE 試験場前店", badge: "", category: "住宅関連", tag: "就労支援（家具家電）", keywords: ["家具", "家電", "リサイクル", "不用品", "片付け", "処分", "粗大ゴミ", "オフィス片付け", "厨房機器"], img: "images/IMG_8035.JPG", intro: "事務所の移転や店舗の片付け、家具・家電の不用品処分やリサイクル回収なら、RECICLAJEの田北亨子さんをご紹介します！" },
+            { name: "山卯 誓哉", company: "リフォーム事業部", badge: "", category: "住宅関連", tag: "リフォーム", keywords: ["リフォーム", "内装", "外装", "大工", "建築", "修繕", "改装", "改修", "店舗改装"], img: "images/yamau.png", intro: "オフィスの内装リフォームからご自宅の修繕まで、ハイクオリティで丁寧な大工・建築施工をしてくれるリフォーム事業部の山卯誓哉さんをお繋ぎします！" },
+            { name: "上塩入 大樹", company: "上塩入法律事務所", badge: "バイスプレジデント", category: "経営サポート", tag: "弁護士", keywords: ["弁護士", "法律", "契約書", "トラブル", "クレーム", "法務", "売掛金回収", "相談"], img: "images/IMG_8023.jpg", intro: "トラブルの事前防衛や契約書のリーガルチェックなど、ビジネスの法的な守りを固めたい時は、バイスプレジデントで弁護士の上塩入大樹さんにお任せください！" },
+            { name: "二階堂 文哉", company: "生命保険プランニング", badge: "", category: "経営サポート", tag: "生命保険（個人）", keywords: ["保険", "生命保険", "ライフプラン", "医療保険", "がん保険", "個人保険"], img: "images/IMG_8031.JPG", intro: "ご自身やご家族の万が一の備え、将来に向けた安心のライフプランや医療保険の設計なら、生命保険（個人）の二階堂文哉さんがおすすめです！" },
+            { name: "中野 亘", company: "中野亘税理士事務所", badge: "", category: "経営サポート", tag: "税理士", keywords: ["税金", "税理士", "確定申告", "節税", "決算", "会計", "試算表", "財務"], img: "images/IMG_8028.JPG", intro: "税務や確定申告、会社の節税対策でお悩みなら、経営に寄り添った的確な数字のアドバイスをくれる税理士の中野亘さんをお繋ぎします！" },
+            { name: "光山 隆士", company: "光山隆士司法書士事務所", badge: "", category: "経営サポート", tag: "司法書士", keywords: ["登記", "会社設立", "法人登記", "相続", "遺言", "不動産登記"], img: "images/IMG_8037.JPG", intro: "会社の設立登記や不動産の権利登記、家族の相続手続きなどを迅速かつ正確に進めてくれる司法書士の光山隆士さんです！" },
+            { name: "後藤 智子", company: "箕面モバイル.com", badge: "プレジデント", category: "経費削減", tag: "携帯料金見直し", keywords: ["携帯", "スマホ", "通信費", "格安sim", "コスト削減", "固定費見直し", "通信料金"], img: "images/IMG_9003.JPG", intro: "毎月の社用携帯やご家族のスマホ代など、固定費の通信コストを無駄なく劇的に削減してくれる、通信プラン見直しのプロ後藤智子さんです！" },
+            { name: "中野 亮", company: "株式会社ミセスロザリー", badge: "書記兼会計", category: "経費削減", tag: "就労支援", keywords: ["就労支援", "人材不足", "雇用", "内職委託", "軽作業委託", "福祉"], img: "images/IMG_8036.JPG", intro: "就労支援を通じた社会貢献や、社内の単純作業・軽作業のアウトソーシング化をサポートしてくれる中野亮さんをご紹介します！" },
+            { name: "夫津木 雅也", company: "ファイナンシャルプランニング", badge: "", category: "経費削減", tag: "生命保険（法人）", keywords: ["法人保険", "財務強化", "決算対策", "退職金積立", "事業承継リスク", "節税"], img: "images/IMG_8027.JPG", intro: "法人の決算対策やリスク保全、役員退職金の効率的な準備など、財務に強い生命保険（法人）の夫津木雅也さんをご紹介できます！" },
+            { name: "大森 達哉", company: "社外人事部アドバイザー", badge: "", category: "経費削減", tag: "社外人事部", keywords: ["人事", "採用", "求人", "労務問題", "評価制度", "就業規則", "求人募集"], img: "images/IMG_8034.jpg", intro: "優秀な人材の採用や社内の評価制度設計、労務の課題解決を専門的にバックアップしてくれる社外人事部アドバイザーの大森達哉さんをお繋ぎします！" },
+            { name: "遠藤 大輔", company: "Enter Japan", badge: "", category: "事業成長サポート", tag: "売れるブランド設計", keywords: ["ブランディング", "自社の強み", "ロゴ制作", "広告戦略", "差別化", "マーケティング"], img: "images/IMG_9884.JPG", intro: "会社の隠れた強みを引き出し、他社と圧倒的な差別化を図るための「売れるブランド設計」をしてくれるEnter Japanの遠藤大輔さんです！" },
+            { name: "平岡 広章", company: "ラフスタイル", badge: "", category: "事業成長サポート", tag: "ホームページ制作", keywords: ["ホームページ", "hp", "webサイト制作", "ネット集客", "lp", "ランディングページ"], img: "images/IMG_9001.jpg", intro: "企業の魅力がしっかり伝わり、WEBからの集客や成果に徹底的にこだわるホームページ制作のプロ、ラフスタイルの平岡広章さんです！" },
+            { name: "瀧田 大貴", company: "合同会社RE VENT", badge: "", category: "事業成長サポート", tag: "SNS運用", keywords: ["sns", "インスタ", "instagram", "tiktok", "ショート動画", "認知拡大", "アカウント成長"], img: "images/IMG_9006.JPG", intro: "InstagramやTikTokを活用した集客や、会社のブランド認知度を広げるSNS運用のプロ、瀧田大貴さんです！" },
+            { name: "川﨑 景", company: "kawasaki tailor", badge: "", category: "クリエイティブ", tag: "オーダースーツ", keywords: ["スーツ", "オーダーメイド", "ジャケット", "第一印象", "服装", "身だしなみ"], img: "images/IMG_8039.JPG", intro: "ビジネスの第一印象で圧倒的な信頼感を与え、自分だけの魅力を最大限に引き出す勝負スーツを仕立ててくれる川﨑景さんです！" },
+            { name: "藤本 浩明", company: "映像クリエイター", badge: "", category: "クリエイティブ", tag: "CM映像制作", keywords: ["動画制作", "ｃｍ", "映像制作", "youtube動画", "プロモーション動画"], img: "images/IMG_9005.JPG", intro: "会社のプロモーションや採用活動で絶大な効果を発揮する、高クオリティなCM映像・動画制作を手掛ける藤本浩明さんをご紹介します！" },
+            { name: "土林 巧", company: "プロダクトデザイン", badge: "", category: "クリエイティブ", tag: "オリジナルグッズ制作", keywords: ["ノベルティ", "オリジナルグッズ", "記念品", "販促品", "名入れ", "コースター"], img: "images/IMG_9007.JPG", intro: "イベントの販促用ノベルティや、他にはないハイクオリティなオリジナルグッズ制作を形にしてくれる土林巧さんです！" },
+            { name: "大森 隆之介", company: "プロアスリート", badge: "", category: "クリエイティブ", tag: "キックボクサー", keywords: ["キックボクシング", "パーソナルトレーニング", "運動不足", "健康維持", "ダイエット", "ジム", "体動かしたい"], img: "images/IMG_8038.JPG", intro: "経営者の日々の健康維持や、ストレス解消・シェイプアップのためのキックボクシング指導をしてくれる大森隆之介さんです！" },
+            { name: "三島 宏幸", company: "en34", badge: "", category: "飲食店", tag: "日本ワインと大人の洋食", keywords: ["飲食店", "レストラン", "洋食", "ワイン", "ご飯", "ディナー", "食事", "居酒屋", "カフェ", "パスタ", "会食"], img: "images/misima.png", intro: "極上の日本ワインとこだわり抜かれた大人の洋食を、落ち着いた空間で堪能できる素晴らしいお店「en34」の三島宏幸さんをご紹介します！" },
+            { name: "前田 耕平", company: "JAZZ BERRY", badge: "", category: "飲食店", tag: "JAZZミュージックレストラン", keywords: ["ジャズ", "jazz", "生演奏", "バー", "bar", "音楽", "飲食店", "レストラン", "洋食", "ご飯", "ディナー", "食事", "居酒屋", "カフェ", "おしゃれ"], img: "images/maeda.png", intro: "素晴らしい生演奏と最高峰の音楽空間、そして極上のディナーを同時に楽しめるジャズミュージックレストラン「JAZZ BERRY」の前田耕平さんをぜひご紹介させてください！" },
+            { name: "藤原 健司", company: "Safari（サファリ）", badge: "", category: "飲食店", tag: "団体貸切（飲食店）", keywords: ["貸切", "団体", "パーティー", "宴会", "飲み会", "イベントスペース", "飲食店", "レストラン", "洋食", "ご飯", "ディナー", "食事", "居酒屋", "カフェ", "コンパ"], img: "images/fujiwara.png", intro: "大人数の宴会、歓送迎会、パーティー、イベント時にフロアを丸ごと贅沢に団体貸切できるダイニング「Safari」の藤原健司さんです！" },
+            { name: "潮 瑠斗", company: "株式会社INCREASE", badge: "", category: "生活基盤", tag: "会員制サウナ", keywords: ["サウナ", "リフレッシュ", "会員制", "プライベートサウナ", "疲労回復", "ととのう", "リラックス"], img: "images/IMG_9002.JPG", intro: "プライベートな完全個室空間で日々の疲れをリフレッシュし、最高のビジネスマインドを整える会員制サウナを運営する潮瑠斗さんです！" }
+        ];
+
+        // 一般的な事業者向けの5つの質問
+        const stepQuestions = [
+            { 
+                title: "Q1. 経営において一番解決したい問題はどれですか？", 
+                desc: "お相手がもっとも関心を持っているテーマを絞り込みます。", 
+                options: [
+                    { text: "売上・集客（認知拡大、WEB・SNS活用）", value: "growth", icon: "fas fa-chart-line" },
+                    { text: "法務・税務・インフラ（確定申告、契約、オフィス修繕）", value: "management-housing", icon: "fas fa-shield-alt" },
+                    { text: "コスト削減・社内体制（通信費、人材採用、雇用）", value: "reduction", icon: "fas fa-calculator" },
+                    { text: "経営者個人のサポート（健康、服装、会食・手配）", value: "creative-life", icon: "fas fa-utensils" }
+                ] 
+            },
+            { 
+                title: "Q2. 最優先で求めている『アプローチ方法』はどちらですか？", 
+                desc: "解決のための現実的な手段を選択します。", 
+                options: [
+                    { text: "オンライン上での新規集客やプロモーション", value: "digital", icon: "fas fa-laptop" },
+                    { text: "専門家によるアドバイスや規約・体制の構築", value: "advisor", icon: "fas fa-balance-scale" },
+                    { text: "衣服・建築環境・食事・店舗空間などのリアルな手配", value: "physical", icon: "fas fa-store" }
+                ] 
+            },
+            { 
+                title: "Q3. お悩みの「対象ターゲット」はどちらになりますか？", 
+                desc: "一般消費者向け店舗か、対法人かで分類します。", 
+                options: [
+                    { text: "一般消費者向けの店舗・サービス（BtoC）", value: "b2c", icon: "fas fa-user" },
+                    { text: "企業・法人向けのビジネス（BtoB）", value: "b2b", icon: "fas fa-users" }
+                ] 
+            },
+            { 
+                title: "Q4. コスト面の方向性はどちらに近いですか？", 
+                desc: "攻めか守りかの方向を考慮します。", 
+                options: [
+                    { text: "売上獲得や露出を狙う『攻めの投資』", value: "invest", icon: "fas fa-rocket" },
+                    { text: "無駄の削減やトラブル回避の『守りの防衛』", value: "defense", icon: "fas fa-lock" }
+                ] 
+            },
+            { 
+                title: "Q5. 今すぐ必要なプロフェッショナルのタイプは？", 
+                desc: "最終ゴールを確定させます。", 
+                options: [
+                    { text: "売上拡大、WEBマーケティングのプロ", value: "sales", icon: "fas fa-bullhorn" },
+                    { text: "固定費や社内リスクを整理してくれるプロ", value: "costcut", icon: "fas fa-shield-alt" },
+                    { text: "健康、服装、会食等で経営者を高めるプロ", value: "lifestyle", icon: "fas fa-gem" }
+                ] 
+            }
+        ];
+
+        let currentStepIdx = 0;
+        let collectedAnswers = [];
+
+        // ① 自由記述検索（飲食は完全ピンポイント抽出）
+        function executeFreeQuery() {
+            const inputField = document.getElementById('free-keyword-input');
+            const rawText = inputField.value.trim();
+            if (!rawText) { alert('お悩みキーワードを入力してください。'); return; }
+
+            const query = rawText.toLowerCase();
+            const foodKeywords = ["飲食店", "レストラン", "カフェ", "居酒屋", "飯", "食事", "ご飯", "ディナー", "会食", "飲み会", "宴会", "貸切", "団体"];
+            const jazzKeywords = ["ジャズ", "jazz", "生演奏"];
+
+            let resultList = [];
+
+            if (foodKeywords.some(f => query.includes(f)) && !jazzKeywords.some(j => query.includes(j))) {
+                resultList = chapterDatabase.filter(m => m.category === "飲食店");
+            } else {
+                resultList = chapterDatabase.filter(m => {
+                    return m.keywords.some(k => query.includes(k.toLowerCase()) || k.toLowerCase().includes(query)) || 
+                           m.tag.toLowerCase().includes(query) || 
+                           m.category.toLowerCase().includes(query) ||
+                           m.name.toLowerCase().includes(query) ||
+                           m.company.toLowerCase().includes(query);
+                });
+            }
+
+            displayMatchedResults(resultList, `「${rawText}」の解決に直結する専門分野を持ったメンバーを ${resultList.length} 名抽出しました。`);
+        }
+
+        // ② 質問フローの開始（確実に動くようにエレメント状態を保証）
+        function activateQuestionFlow() {
+            currentStepIdx = 0;
+            collectedAnswers = [];
+            
+            const gateView = document.getElementById('panel-gate-view');
+            const stepsView = document.getElementById('panel-steps-view');
+            
+            if (gateView && stepsView) {
+                gateView.style.display = 'none';
+                stepsView.style.display = 'block';
+                renderCurrentQuestionStep();
+            } else {
+                console.error("UIエレメントが見つかりません。");
+            }
+        }
+
+        function renderCurrentQuestionStep() {
+            const stepData = stepQuestions[currentStepIdx];
+            document.getElementById('ui-display-q-title').innerText = stepData.title;
+            document.getElementById('ui-display-q-desc').innerText = stepData.desc;
+
+            const gridContainer = document.getElementById('ui-display-q-grid');
+            gridContainer.innerHTML = '';
+
+            stepData.options.forEach(opt => {
+                const choiceCard = document.createElement('div');
+                choiceCard.className = 'step-choice-card';
+                choiceCard.onclick = function() { registerStepSelection(opt.value); };
+                choiceCard.innerHTML = `<i class="${opt.icon}"></i><h4>${opt.text}</h4>`;
+                gridContainer.appendChild(choiceCard);
+            });
+
+            const fillWidth = ((currentStepIdx + 1) / stepQuestions.length) * 100;
+            document.getElementById('ui-display-progress-fill').style.width = fillWidth + '%';
+        }
+
+        function registerStepSelection(value) {
+            collectedAnswers.push(value);
+            currentStepIdx++;
+
+            if (currentStepIdx < stepQuestions.length) {
+                renderCurrentQuestionStep();
+            } else {
+                calculateBestMatches();
+            }
+        }
+
+        function calculateBestMatches() {
+            let weights = {};
+            chapterDatabase.forEach(m => weights[m.name] = 0);
+
+            const q1 = collectedAnswers[0];
+            const q2 = collectedAnswers[1];
+            const q3 = collectedAnswers[2];
+
+            chapterDatabase.forEach(m => {
+                if (q1 === "growth" && ["遠藤 大輔", "平岡 広章", "瀧田 大貴"].includes(m.name)) weights[m.name] += 5;
+                if (q1 === "management-housing" && ["上塩入 大樹", "二階堂 文哉", "中野 亘", "光山 隆士", "井上 理衣", "山卯 誓哉"].includes(m.name)) weights[m.name] += 5;
+                if (q1 === "reduction" && ["後藤 智子", "中野 亮", "夫津木 雅也", "大森 達哉", "田北 亨子"].includes(m.name)) weights[m.name] += 5;
+                if (q1 === "creative-life" && ["川﨑 景", "藤本 浩明", "土林 巧", "大森 隆之介", "三島 宏幸", "前田 耕平", "藤原 健司", "潮 瑠斗"].includes(m.name)) weights[m.name] += 5;
+
+                if (q2 === "digital" && ["平岡 広章", "瀧田 大貴", "藤本 浩明"].includes(m.name)) weights[m.name] += 3;
+                if (q2 === "advisor" && ["上塩入 大樹", "夫津木 雅也", "大森 達哉", "中野 亘", "光山 隆士", "二階堂 文哉"].includes(m.name)) weights[m.name] += 3;
+                if (q2 === "physical" && ["井上 理衣", "田北 亨子", "山卯 誓哉", "川﨑 景", "土林 巧", "大森 隆之介", "三島 宏幸", "前田 耕平", "藤原 健司", "潮 瑠斗", "後藤 智子", "中野 亮", "遠藤 大輔"].includes(m.name)) weights[m.name] += 3;
+
+                if (q3 === "b2b" && ["遠藤 大輔", "上塩入 大樹", "中野 亮", "大森 達哉", "土林 巧", "藤本 浩明", "夫津木 雅也", "中野 亘", "光山 隆士"].includes(m.name)) weights[m.name] += 2;
+                if (q3 === "b2c" && ["平岡 広章", "瀧田 大貴", "後藤 智子", "井上 理衣", "田北 亨子", "山卯 誓哉", "川﨑 景", "大森 隆之介", "三島 宏幸", "前田 耕平", "藤原 健司", "潮 瑠斗", "二階堂 文哉"].includes(m.name)) weights[m.name] += 2;
+            });
+
+            let sorted = [...chapterDatabase].sort((a, b) => weights[b.name] - weights[a.name]);
+            let finalSelection = sorted.slice(0, 3);
+
+            displayMatchedResults(finalSelection, "紹介ニーズ分析に基づき、お悩みを解決できる最適なメンバーを3名抽出しました。");
+        }
+
+        function displayMatchedResults(list, summaryText) {
+            document.getElementById('widget-box-root').style.display = 'none';
+            document.getElementById('panel-output-view').style.display = 'block';
+            document.getElementById('ui-display-result-summary').innerText = summaryText;
+
+            const cardsContainer = document.getElementById('ui-display-cards-target');
+            cardsContainer.innerHTML = '';
+
+            if (list.length === 0) {
+                list = chapterDatabase.filter(m => ["遠藤 大輔", "上塩入 大樹", "後藤 智子"].includes(m.name));
+            }
+
+            list.forEach(m => {
+                const uniqueId = "copy-id-" + m.name.replace(/\s+/g, "");
+                const matchedCard = document.createElement('div');
+                matchedCard.className = 'member-match-card';
+                matchedCard.innerHTML = `
+                    <img src="${m.img}" class="member-photo" onerror="this.src='images/bni-logo.png';">
+                    <div class="member-meta-info">
+                        <span class="member-card-tag">${m.category} | ${m.tag}</span>
+                        <h4 class="member-card-name">${m.name}</h4>
+                        ${m.company ? `<p class="member-card-comp">${m.company}</p>` : ''}
+                        <div class="member-text-copy-area"><span id="${uniqueId}">${m.intro}</span></div>
+                        <div class="member-card-buttons">
+                            <button class="action-click-btn btn-clipboard" onclick="copyIntroductions('${uniqueId}')"><i class="fas fa-copy"></i> 紹介文をコピー</button>
+                            <button class="action-click-btn btn-line-forward" onclick="forwardLineLink('${m.intro}')"><i class="fab fa-line"></i> LINEで送る</button>
+                        </div>
+                    </div>
+                `;
+                cardsContainer.appendChild(matchedCard);
+            });
+        }
+
+        function copyIntroductions(id) {
+            const txt = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(txt).then(() => { alert('紹介文をコピーしました！'); });
+        }
+
+        function forwardLineLink(txt) {
+            window.open("https://line.me/R/msg/text/?" + encodeURIComponent(txt), '_blank');
+        }
+
+        function restoreWidgetGate() {
+            document.getElementById('panel-output-view').style.display = 'none';
+            document.getElementById('panel-steps-view').style.display = 'none';
+            document.getElementById('panel-gate-view').style.display = 'block';
+            document.getElementById('widget-box-root').style.display = 'block';
+            document.getElementById('free-keyword-input').value = '';
+        }
+    </script>
+</body>
+</html>

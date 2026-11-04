@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チャプター内のコンタクトサークル</title>
+    <style>
+        /* A4印刷用のリセットとページ設定 */
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #d1d5db;
+            font-family: "MS PGothic", "Hiragino Kaku Gothic ProN", sans-serif;
+            color: #000;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* A4サイズのコンテナ（縦に確実におさめる） */
+        .a4-page {
+            width: 210mm;
+            height: 297mm;
+            background-color: #fff;
+            padding: 12mm 15mm; /* 上下左右の余白 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+
+        @media print {
+            body { background-color: #fff; padding: 0; }
+            .a4-page { box-shadow: none; width: 210mm; height: 297mm; padding: 12mm 15mm; }
+        }
+
+        /* タイトル */
+        .main-title {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        /* 5つの楕円形図（重ならないように座標を再計算） */
+        .diagram-container {
+            position: relative;
+            width: 100%;
+            height: 160px; /* 図形エリアの高さをコンパクトに */
+            margin-bottom: 25px;
+        }
+        .ellipse {
+            position: absolute;
+            width: 130px; /* 少しスリムにして重なりを防ぐ */
+            height: 55px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 13px;
+            background-color: #fff;
+            line-height: 1.2;
+        }
+        /* 中央を基準に配置 */
+        .node-1 { top: 0; left: 50%; transform: translateX(-50%); }
+        .node-2 { top: 50px; left: calc(50% - 95px); transform: translateX(-50%); }
+        .node-3 { top: 50px; left: calc(50% + 95px); transform: translateX(-50%); }
+        .node-4 { top: 105px; left: calc(50% - 75px); transform: translateX(-50%); }
+        .node-5 { top: 105px; left: calc(50% + 75px); transform: translateX(-50%); }
+
+        /* 中段のテキスト群 */
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .description {
+            font-size: 11px;
+            margin-bottom: 20px;
+        }
+        .center-text-block {
+            text-align: center;
+            font-size: 10.5px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .left-text-block {
+            font-size: 10.5px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        /* テーブル設定（行が膨らまないように調整） */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 4px 6px; /* 縦の余白を削って行の高さを圧縮 */
+            font-size: 10.5px; /* 文字サイズを微調整 */
+            line-height: 1.3;
+            vertical-align: middle;
+            word-wrap: break-word; /* 長い単語の折り返し */
+        }
+        th {
+            text-align: center;
+            font-weight: bold;
+            font-size: 12px;
+            padding: 8px 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="a4-page">
+    <div class="main-title">チャプター内のコンタクトサークル</div>
+
+    <div class="diagram-container">
+        <div class="ellipse node-1">住宅関連</div>
+        <div class="ellipse node-2">経営サポート</div>
+        <div class="ellipse node-3">経費削減</div>
+        <div class="ellipse node-4">事業成長<br>サポート</div>
+        <div class="ellipse node-5">生活基盤<br>サポート</div>
+    </div>
+
+    <div class="section-title">コンタクトサークル</div>
+    <div class="description">コンタクトサークルの業種は、クライアントを共有しますが、競合はしません。</div>
+
+    <div class="center-text-block">
+        理想は1つチャプター内に、5つのコンタクトサークルが存在し、それぞれに5人以上のメンバーが属している状態です<br>
+        (チャプター全体で25〜30人)。この場合、メンバーはリファーラルの50%を自分の属しているコンタクトサークルから、<br>
+        残りの50%をチャプター内の他のメンバーから獲得します。
+    </div>
+
+    <div class="left-text-block">
+        以下は各コンタクトサークルに属する事業カテゴリーの一例です。事業分野によっては、複数のコンタクトサークルに<br>
+        属することもあります。カテゴリーはここに掲載されている以外にもさまざまなものがあります。
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>金融・経営</th>
+                <th>不動産・建築</th>
+                <th>健康・医療</th>
+                <th>マーケティング＆イベント</th>
+                <th>ビジネス・サービス</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>税理士</td>
+                <td>不動産仲介（売買）</td>
+                <td>生態師・カイロプラクター</td>
+                <td>イベント企画</td>
+                <td>オフィス家具</td>
+            </tr>
+            <tr>
+                <td>公認会計士</td>
+                <td>不動産仲介（賃貸）</td>
+                <td>ライフ・コーチ</td>
+                <td>旅行業</td>
+                <td>PCネットワーク</td>
+            </tr>
+            <tr>
+                <td>銀行・信金</td>
+                <td>土地家屋調査士</td>
+                <td>マッサージ</td>
+                <td>ケータリング</td>
+                <td>事務用品</td>
+            </tr>
+            <tr>
+                <td>生命保険</td>
+                <td>不動産鑑定士</td>
+                <td>化粧品販売</td>
+                <td>印刷</td>
+                <td>電話システム</td>
+            </tr>
+            <tr>
+                <td>FP・IFA</td>
+                <td>不動産管理</td>
+                <td>パーソナル・トレーナー</td>
+                <td>写真</td>
+                <td>携帯電話</td>
+            </tr>
+            <tr>
+                <td>弁護士（相続）</td>
+                <td>運送業・引越し業</td>
+                <td>眼鏡/コンタクトレンズ</td>
+                <td>販促物</td>
+                <td>電話サービス・プロバイダー</td>
+            </tr>
+            <tr>
+                <td>損害保険</td>
+                <td>造園業</td>
+                <td>宝飾品</td>
+                <td>花屋</td>
+                <td>オフィス機器</td>
+            </tr>
+            <tr>
+                <td>配信サービス</td>
+                <td>塗装業</td>
+                <td>イメージ・コンサルタント</td>
+                <td>ダイレクト・メール</td>
+                <td>人材派遣</td>
+            </tr>
+            <tr>
+                <td>証券会社</td>
+                <td>内装工事</td>
+                <td>岩盤浴</td>
+                <td>ウェブデザイン</td>
+                <td>企業法務</td>
+            </tr>
+            <tr>
+                <td>クレジットカード決済</td>
+                <td>外装工事</td>
+                <td>獣医</td>
+                <td>広告代理</td>
+                <td>PC＆周辺機器</td>
+            </tr>
+            <tr>
+                <td>慈善団体</td>
+                <td>水道工事</td>
+                <td>一般歯科・小児科</td>
+                <td>グラフィック・デザイン</td>
+                <td>PC修理</td>
+            </tr>
+            <tr>
+                <td>事業保険</td>
+                <td>電気工事</td>
+                <td>矯正歯科</td>
+                <td>PR</td>
+                <td>秘書サービス</td>
+            </tr>
+            <tr>
+                <td>営業研修</td>
+                <td>セキュリティー・システム</td>
+                <td>美容師</td>
+                <td>貸衣装</td>
+                <td>弁護士</td>
+            </tr>
+            <tr>
+                <td>経営コンサルタント</td>
+                <td>フローリング工事</td>
+                <td>心理・精神療法士</td>
+                <td>贈答品</td>
+                <td>行政書士</td>
+            </tr>
+            <tr>
+                <td>中小企業診断士</td>
+                <td>便利屋・なんでも屋</td>
+                <td>心理カウンセラー</td>
+                <td>ウエディング・プランナー</td>
+                <td>社会保険労務士</td>
+            </tr>
+            <tr>
+                <td>エグゼクティブ・コーチ</td>
+                <td>建築設計</td>
+                <td>介護</td>
+                <td></td>
+                <td>人事コンサルタント</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>インテリア・デザイナー</td>
+                <td>ウォーターサーバー</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>工務店</td>
+                <td>リフレクソロジー</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>葬祭業</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

@@ -3,536 +3,1604 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BNI だんじりチャプター公式サイト。大阪東エリアでオンライン開催中。ビジネスが加速する出会いを、だんじりから。毎週水曜10:30〜Zoom定例会。22名の信頼できるビジネスパートナーがあなたを待っています。">
-    <meta name="keywords" content="BNI,だんじり,大阪,ビジネス交流会,リファーラル,紹介,ネットワーキング,オンライン,Zoom">
-    
-    <!-- OGP -->
-    <meta property="og:title" content="BNI だんじりチャプター | ビジネスが加速する出会いを">
-    <meta property="og:description" content="毎週水曜10:30〜Zoom開催。22名の信頼できるビジネスパートナーと出会えるオンライン交流会。">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://enterjapan.jp/bni-danjiri/images/bni-logo.png">
+    <meta name="description" content="BNI だんじりチャプター。利他の心でビジネスを加速！毎週水曜10:15〜Zoom開催。23名のメンバー、年間200件の紹介、7,236万円の売上貢献。信頼でつながるビジネスネットワーキング。">
+    <meta name="keywords" content="BNI,だんじり,大阪,ビジネス交流会,リファーラル,紹介営業,オンライン,Zoom,ネットワーキング">
     
     <title>BNI だんじりチャプター | ビジネスが加速する出会いを</title>
     
-    <!-- Google Fonts -->
+    <link rel="icon" href="images/0000111222333444.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/0000111222333444.png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
     
-    <!-- 構造化データ (Schema.org) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "BNI だんじりチャプター",
-      "description": "大阪東エリアで活動するBNIチャプター。毎週水曜日10:30〜Zoomでオンライン定例会を開催。",
-      "url": "https://enterjapan.jp/bni-danjiri/",
-      "logo": "https://enterjapan.jp/bni-danjiri/images/bni-logo.png",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "見学申込",
-        "availableLanguage": "Japanese"
-      },
-      "areaServed": {
-        "@type": "Place",
-        "name": "大阪東エリア"
-      }
-    }
-    </script>
+    <style>
+        .visitor-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #a01118 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .visitor-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path fill="rgba(255,255,255,0.05)" d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z"/></svg>');
+            background-size: cover;
+            opacity: 0.5;
+        }
+        
+        .visitor-hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .visitor-hero h1 {
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 24px;
+            line-height: 1.4;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .visitor-hero .hero-tagline {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--accent-color);
+        }
+        
+        .visitor-hero p {
+            font-size: 18px;
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+        
+        .visitor-section {
+            padding: 80px 0;
+        }
+        
+        .visitor-section.alt {
+            background-color: var(--light-bg);
+        }
+        
+        .visitor-section.dark {
+            background: linear-gradient(135deg, var(--secondary-color), #3a3a3a);
+            color: #fff;
+        }
+        
+        .imagine-box {
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            padding: 64px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 2px solid var(--primary-color);
+            margin-top: 48px;
+        }
+        
+        .imagine-box h3 {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        
+        .imagine-text {
+            font-size: 20px;
+            line-height: 1.9;
+            margin-bottom: 32px;
+            text-align: center;
+            color: var(--text-color);
+        }
+        
+        .imagine-benefits {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+        
+        .imagine-benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .imagine-benefit-item i {
+            font-size: 28px;
+            color: var(--primary-color);
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+        
+        .imagine-benefit-text {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-color);
+        }
+        
+        .promise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+        
+        .promise-card {
+            background-color: #fff;
+            padding: 48px 32px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .promise-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .promise-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), #a01118);
+            color: #fff;
+            border-radius: 50%;
+            font-size: 28px;
+            font-weight: 900;
+            line-height: 60px;
+            margin-bottom: 24px;
+        }
+        
+        .promise-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--secondary-color);
+        }
+        
+        .promise-card p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #666;
+        }
+        
+        .value-experience-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+        
+        .value-experience-card {
+            background-color: #fff;
+            padding: 40px 32px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .value-experience-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .value-experience-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), #a01118);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+        
+        .value-experience-icon i {
+            font-size: 36px;
+            color: #fff;
+        }
+        
+        .value-experience-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--secondary-color);
+        }
+        
+        .value-experience-card p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #666;
+        }
+        
+        .benefits-5-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+        
+        .benefit-5-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: var(--radius-md);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+        
+        .benefit-5-card:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateX(8px);
+        }
+        
+        .benefit-5-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .benefit-5-card h3 i {
+            font-size: 28px;
+        }
+        
+        .benefit-5-card p {
+            font-size: 16px;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+        
+        .benefit-alpha {
+            grid-column: 1 / -1;
+            background-color: rgba(245, 166, 35, 0.2);
+            border: 2px solid var(--accent-color);
+        }
+        
+        .givers-gain-box {
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            padding: 64px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            margin-top: 48px;
+            border-left: 8px solid var(--primary-color);
+        }
+        
+        .givers-gain-box h3 {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-bottom: 24px;
+        }
+        
+        .givers-gain-box h4 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 32px;
+        }
+        
+        .givers-gain-box p {
+            font-size: 18px;
+            line-height: 1.9;
+            margin-bottom: 24px;
+            color: var(--text-color);
+        }
+        
+        .givers-gain-box .highlight-text {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            padding: 24px;
+            background-color: rgba(227, 28, 36, 0.05);
+            border-radius: var(--radius-sm);
+            margin-top: 32px;
+            text-align: center;
+        }
+        
+        .online-value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+        
+        .online-value-card {
+            background-color: #fff;
+            padding: 32px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .online-value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .online-value-card i {
+            font-size: 48px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .online-value-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--secondary-color);
+        }
+        
+        .online-value-card p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #666;
+        }
+        
+        .target-list {
+            max-width: 800px;
+            margin: 48px auto 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        
+        .target-item {
+            background-color: #fff;
+            padding: 20px 24px;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: var(--transition);
+        }
+        
+        .target-item:hover {
+            background-color: var(--light-bg);
+            transform: translateX(8px);
+        }
+        
+        .target-item i {
+            font-size: 24px;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+        
+        .target-item span {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+        
+        .flow-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+        
+        .flow-card {
+            background-color: #fff;
+            padding: 32px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .flow-card::after {
+            content: '→';
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 32px;
+            color: var(--primary-color);
+            font-weight: 900;
+        }
+        
+        .flow-card:last-child::after {
+            display: none;
+        }
+        
+        .flow-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .flow-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), #a01118);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 900;
+            margin: 0 auto 24px;
+        }
+        
+        .flow-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--secondary-color);
+        }
+        
+        .flow-card p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #666;
+        }
+        
+        .faq-section {
+            max-width: 800px;
+            margin: 48px auto 0;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary-color), #a01118);
+            color: #fff;
+            padding: 64px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            margin-top: 48px;
+        }
+        
+        .cta-box h3 {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 24px;
+        }
+        
+        .cta-box p {
+            font-size: 18px;
+            margin-bottom: 32px;
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+        
+        /* ▼▼ 追加：タイマーバナー用のスタイル ▼▼ */
+        .timer-banner {
+            background: linear-gradient(135deg, #ffffff, #f0f0f0);
+            border-top: 1px solid #eaeaea;
+            border-bottom: 1px solid #eaeaea;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .timer-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 36px;
+            background-color: #fff;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-top: 16px;
+        }
+        .timer-btn:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(208, 0, 0, 0.2);
+        }
+        /* ▲▲ 追加ここまで ▲▲ */
+
+        @media (max-width: 1024px) {
+            .promise-grid,
+            .value-experience-grid,
+            .online-value-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .flow-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .flow-card::after {
+                display: none;
+            }
+            
+            .benefits-5-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .visitor-hero h1 {
+                font-size: 24px;
+                line-height: 1.5;
+            }
+            
+            .visitor-hero .hero-tagline {
+                font-size: 18px;
+            }
+            
+            .promise-grid,
+            .value-experience-grid,
+            .flow-grid,
+            .online-value-grid,
+            .imagine-benefits,
+            .target-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .imagine-box,
+            .givers-gain-box {
+                padding: 32px 24px;
+            }
+            
+            .imagine-box h3,
+            .givers-gain-box h3,
+            .givers-gain-box h4 {
+                font-size: 20px;
+                line-height: 1.6;
+            }
+            
+            .imagine-text {
+                font-size: 16px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .section-subtitle {
+                font-size: 15px;
+            }
+            
+            .cta-box h3 {
+                font-size: 32px !important;
+            }
+            
+            .cta-box h3 span:first-child {
+                font-size: 32px !important;
+            }
+            
+            .cta-box h3 span:last-child {
+                font-size: 26px !important;
+            }
+            
+            .cta-box p {
+                font-size: 16px;
+            }
+            
+            .value-experience-card h3,
+            .benefit-5-card h3,
+            .promise-card h3 {
+                font-size: 18px;
+                line-height: 1.5;
+            }
+            
+            /* ヒーローセクションのボタンをモバイルで縦並び */
+            .visitor-hero-content > div:last-of-type {
+                flex-direction: column !important;
+                align-items: stretch !important;
+            }
+            
+            .visitor-hero-content > div:last-of-type a {
+                width: 100% !important;
+            }
+            
+            /* ヒーロー実績のモバイル最適化 */
+            .hero-stats-grid {
+                grid-template-columns: 1fr !important;
+                gap: 24px !important;
+                margin: 32px auto 24px !important;
+                padding: 0 16px !important;
+            }
+            
+            .hero-stat-number {
+                font-size: 32px !important;
+                line-height: 1.3 !important;
+            }
+            
+            .hero-stat-label {
+                font-size: 14px !important;
+                line-height: 1.4 !important;
+            }
+            
+            .visitor-hero p {
+                font-size: 16px !important;
+                padding: 0 16px;
+            }
+            
+            .sp-only {
+                display: inline;
+            }
+        }
+        
+        .sp-only {
+            display: none;
+        }
+        
+        /* ヒーロー実績カードのホバーエフェクト */
+        .hero-stat-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.4) !important;
+            border-color: rgba(255,255,255,0.4) !important;
+        }
+        
+        /* 最終CTAボタンアニメーション */
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 8px 30px rgba(245, 166, 35, 0.5);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 12px 40px rgba(245, 166, 35, 0.8);
+                transform: scale(1.02);
+            }
+        }
+        
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+            50%, 100% {
+                left: 100%;
+            }
+        }
+        
+        .final-cta-btn:hover {
+            transform: scale(1.05) !important;
+            box-shadow: 0 15px 50px rgba(245, 166, 35, 0.7) !important;
+        }
+        
+        /* BNI統計カードの追加アニメーション */
+        .bni-stat-card {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .bni-stat-card:nth-child(1) { animation-delay: 0.1s; }
+        .bni-stat-card:nth-child(2) { animation-delay: 0.2s; }
+        .bni-stat-card:nth-child(3) { animation-delay: 0.3s; }
+        .bni-stat-card:nth-child(4) { animation-delay: 0.4s; }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* メインコピーのアニメーション */
+        @keyframes titleGlow {
+            0%, 100% {
+                text-shadow: 
+                    0 0 20px rgba(245, 166, 35, 0.6),
+                    0 0 40px rgba(245, 166, 35, 0.4),
+                    0 4px 20px rgba(0, 0, 0, 0.3);
+            }
+            50% {
+                text-shadow: 
+                    0 0 30px rgba(245, 166, 35, 0.9),
+                    0 0 60px rgba(245, 166, 35, 0.6),
+                    0 0 80px rgba(245, 166, 35, 0.3),
+                    0 4px 20px rgba(0, 0, 0, 0.3);
+            }
+        }
+        
+        .hero-main-copy {
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .hero-main-copy {
+                font-size: 44px !important;
+            }
+            
+            .hero-main-copy span:last-child {
+                font-size: 34px !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-stat-card {
+                padding: 24px 16px !important;
+            }
+            
+            .hero-main-copy {
+                font-size: 32px !important;
+                letter-spacing: 1px !important;
+                line-height: 1.4 !important;
+            }
+            
+            .hero-main-copy span:last-child {
+                font-size: 26px !important;
+                margin-top: 12px !important;
+            }
+            
+            .hero-brand-name {
+                font-size: 18px !important;
+                margin-bottom: 20px !important;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- ヘッダー -->
     <header class="header">
         <nav class="nav container">
-            <div class="nav-logo">
+            <a href="/" class="nav-logo" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px;">
                 <img src="images/bni-logo.png" alt="BNI Logo" class="logo-img">
                 <span class="chapter-name">だんじりチャプター</span>
-            </div>
+            </a>
             <button class="nav-toggle" id="navToggle" aria-label="メニュー">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#about" class="nav-link">チャプターとは</a></li>
-                <li><a href="#value" class="nav-link">得られる価値</a></li>
+                <li><a href="index.html" class="nav-link">トップ</a></li>
                 <li><a href="members.html" class="nav-link">メンバー紹介</a></li>
+                <li><a href="about-bni.html" class="nav-link">BNIとは</a></li>
                 <li><a href="activity.html" class="nav-link">活動報告</a></li>
-                <li><a href="visitor.html" class="nav-link">ビジター見学</a></li>
                 <li><a href="contact.html" class="nav-link btn-primary-nav">見学申込</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- ヒーローセクション -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content container">
-            <h1 class="hero-title">
-                ビジネスが加速する出会いを、<br>
-                <span class="highlight">だんじり</span>から。
-            </h1>
-            <p class="hero-subtitle">
-                毎週水曜 10:30〜 Zoomで開催する、<br>
-                信頼でつながるビジネスネットワーキング
-            </p>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">22<span>名</span></div>
-                    <div class="stat-label">メンバー数</div>
+    <section class="visitor-hero">
+        <div class="container">
+            <div class="visitor-hero-content">
+                <h1 class="hero-main-copy" style="
+                    font-size: 56px;
+                    font-weight: 900;
+                    line-height: 1.3;
+                    margin-bottom: 24px;
+                    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+                    letter-spacing: 2px;
+                ">
+                    <span style="
+                        display: block;
+                        color: #fff;
+                        text-shadow: 
+                            0 0 20px rgba(245, 166, 35, 0.6),
+                            0 0 40px rgba(245, 166, 35, 0.4),
+                            0 4px 20px rgba(0, 0, 0, 0.3);
+                        animation: titleGlow 3s ease-in-out infinite;
+                    ">ビジネスが飛躍する。</span>
+                    <span style="
+                        display: block;
+                        margin-top: 16px;
+                        font-size: 42px;
+                        font-weight: 700;
+                        color: #fff;
+                        text-shadow: 
+                            0 0 15px rgba(245, 166, 35, 0.5),
+                            0 0 30px rgba(245, 166, 35, 0.3),
+                            0 4px 20px rgba(0, 0, 0, 0.3);
+                    ">その出会いを ここから</span>
+                </h1>
+                <p class="hero-brand-name" style="
+                    font-size: 22px;
+                    font-weight: 700;
+                    color: var(--accent-color);
+                    margin-bottom: 24px;
+                    letter-spacing: 1px;
+                    text-shadow: 0 2px 10px rgba(245, 166, 35, 0.3);
+                ">BNI だんじりチャプター</p>
+                <p style="font-size: 14px; margin-bottom: 16px; opacity: 0.85; letter-spacing: 0.5px;">2024年7月1日発足</p>
+                <p style="font-size: 18px; margin-bottom: 32px; line-height: 1.8; opacity: 0.95;">
+                    毎週水曜 10:15〜 Zoomで開催する、<br class="sp-only">信頼でつながるビジネスネットワーキング
+                </p>
+                
+                <div class="hero-stats-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 48px auto 32px; max-width: 900px;">
+                    <div class="hero-stat-card" style="
+                        background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 100%);
+                        backdrop-filter: blur(10px);
+                        border: 2px solid rgba(255,255,255,0.25);
+                        border-radius: 20px;
+                        padding: 28px 20px;
+                        text-align: center;
+                        transition: all 0.4s ease;
+                        box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+                    ">
+                        <div style="
+                            width: 50px;
+                            height: 50px;
+                            background: linear-gradient(135deg, var(--accent-color), #fff);
+                            border-radius: 50%;
+                            margin: 0 auto 16px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            box-shadow: 0 4px 15px rgba(245, 166, 35, 0.4);
+                        ">
+                            <i class="fas fa-users" style="font-size: 22px; color: var(--primary-color);"></i>
+                        </div>
+                        <div class="hero-stat-number" style="font-size: 44px; font-weight: 900; color: var(--accent-color); line-height: 1; margin-bottom: 12px; text-shadow: 0 2px 10px rgba(245, 166, 35, 0.3);">23<span style="font-size: 28px;">名</span></div>
+                        <div class="hero-stat-label" style="font-size: 15px; opacity: 0.95; font-weight: 600; letter-spacing: 0.5px;">メンバー数</div>
+                        <div style="font-size: 11px; opacity: 0.75; margin-top: 6px;">※2025年12月18日現在</div>
+                    </div>
+                    <div class="hero-stat-card" style="
+                        background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 100%);
+                        backdrop-filter: blur(10px);
+                        border: 2px solid rgba(255,255,255,0.25);
+                        border-radius: 20px;
+                        padding: 28px 20px;
+                        text-align: center;
+                        transition: all 0.4s ease;
+                        box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+                    ">
+                        <div style="
+                            width: 50px;
+                            height: 50px;
+                            background: linear-gradient(135deg, var(--accent-color), #fff);
+                            border-radius: 50%;
+                            margin: 0 auto 16px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            box-shadow: 0 4px 15px rgba(245, 166, 35, 0.4);
+                        ">
+                            <i class="fas fa-handshake" style="font-size: 22px; color: var(--primary-color);"></i>
+                        </div>
+                        <div class="hero-stat-number" style="font-size: 44px; font-weight: 900; color: var(--accent-color); line-height: 1.2; margin-bottom: 12px; text-shadow: 0 2px 10px rgba(245, 166, 35, 0.3);">約200<span style="font-size: 24px;">件/年</span></div>
+                        <div class="hero-stat-label" style="font-size: 15px; opacity: 0.95; font-weight: 600; letter-spacing: 0.5px;">紹介実績（総合計）</div>
+                    </div>
+                    <div class="hero-stat-card" style="
+                        background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 100%);
+                        backdrop-filter: blur(10px);
+                        border: 2px solid rgba(255,255,255,0.25);
+                        border-radius: 20px;
+                        padding: 28px 20px;
+                        text-align: center;
+                        transition: all 0.4s ease;
+                        box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+                    ">
+                        <div style="
+                            width: 50px;
+                            height: 50px;
+                            background: linear-gradient(135deg, var(--accent-color), #fff);
+                            border-radius: 50%;
+                            margin: 0 auto 16px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            box-shadow: 0 4px 15px rgba(245, 166, 35, 0.4);
+                        ">
+                            <i class="fas fa-yen-sign" style="font-size: 22px; color: var(--primary-color);"></i>
+                        </div>
+                        <div class="hero-stat-number" style="font-size: 44px; font-weight: 900; color: var(--accent-color); line-height: 1.2; margin-bottom: 12px; text-shadow: 0 2px 10px rgba(245, 166, 35, 0.3);">7,236<span style="font-size: 28px;">万円</span></div>
+                        <div class="hero-stat-label" style="font-size: 15px; opacity: 0.95; font-weight: 600; letter-spacing: 0.5px;">総売上貢献額</div>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">約200<span>件/年</span></div>
-                    <div class="stat-label">紹介実績</div>
+                
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+                    <a href="contact.html" class="btn btn-secondary btn-large" style="box-shadow: 0 6px 20px rgba(0,0,0,0.3);">
+                        <i class="fas fa-calendar-check"></i> 見学を申し込む
+                    </a>
+                    <a href="members.html" class="btn btn-outline-light btn-large" style="border: 2px solid #fff; color: #fff; background: rgba(255,255,255,0.1);">
+                        <i class="fas fa-users"></i> メンバー紹介
+                    </a>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">1.08<span>億円/年</span></div>
-                    <div class="stat-label">売上貢献</div>
-                </div>
-            </div>
-            <div class="hero-cta">
-                <a href="contact.html" class="btn btn-primary btn-large">
-                    <i class="fas fa-calendar-check"></i> 見学を申し込む
-                </a>
-                <a href="members.html" class="btn btn-secondary btn-large">
-                    <i class="fas fa-users"></i> メンバー紹介
-                </a>
             </div>
         </div>
     </section>
-
-    <!-- BNI実績 -->
-    <section class="bni-stats">
-        <div class="container">
-            <h2 class="section-title center">BNI Japanの実績</h2>
-            <p class="section-subtitle center">世界最大級のビジネスリファーラル組織</p>
-            <div class="stats-grid">
-                <div class="stats-card">
-                    <i class="fas fa-users"></i>
-                    <div class="stats-number">380</div>
-                    <div class="stats-label">チャプター数</div>
+    
+    <section class="bni-japan-stats" style="
+        background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%);
+        padding: 80px 0;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+    ">
+        <div style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(227, 28, 36, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(245, 166, 35, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        "></div>
+        
+        <div class="container" style="position: relative; z-index: 10;">
+            <h3 style="
+                text-align: center;
+                font-size: 28px;
+                font-weight: 900;
+                margin-bottom: 16px;
+                background: linear-gradient(135deg, var(--accent-color) 0%, #fff 50%, var(--accent-color) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                letter-spacing: 2px;
+            ">BNI Japanの実績</h3>
+            <p style="
+                text-align: center;
+                font-size: 15px;
+                margin-bottom: 48px;
+                opacity: 0.8;
+            ">世界最大級のビジネスリファーラル組織</p>
+            
+            <div style="
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 32px;
+                max-width: 1100px;
+                margin: 0 auto;
+            ">
+                <div class="bni-stat-card" style="
+                    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+                    backdrop-filter: blur(10px);
+                    border: 1px solid rgba(255,255,255,0.1);
+                    border-radius: 16px;
+                    padding: 32px 24px;
+                    text-align: center;
+                    transition: all 0.3s ease;
+                    cursor: default;
+                    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+                ">
+                    <div style="
+                        width: 60px;
+                        height: 60px;
+                        background: linear-gradient(135deg, var(--primary-color), #ff4757);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 auto 20px;
+                        box-shadow: 0 4px 20px rgba(227, 28, 36, 0.4);
+                    ">
+                        <i class="fas fa-users" style="font-size: 28px; color: #fff;"></i>
+                    </div>
+                    <div style="
+                        font-size: 42px;
+                        font-weight: 900;
+                        background: linear-gradient(135deg, var(--accent-color) 0%, #fff 100%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        line-height: 1;
+                        margin-bottom: 12px;
+                    ">380</div>
+                    <div style="font-size: 14px; opacity: 0.7; font-weight: 500;">チャプター数</div>
                 </div>
-                <div class="stats-card">
-                    <i class="fas fa-user-tie"></i>
-                    <div class="stats-number">12,390<span>名</span></div>
-                    <div class="stats-label">メンバー数</div>
+                
+                <div class="bni-stat-card" style="
+                    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+                    backdrop-filter: blur(10px);
+                    border: 1px solid rgba(255,255,255,0.1);
+                    border-radius: 16px;
+                    padding: 32px 24px;
+                    text-align: center;
+                    transition: all 0.3s ease;
+                    cursor: default;
+                    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+                ">
+                    <div style="
+                        width: 60px;
+                        height: 60px;
+                        background: linear-gradient(135deg, #2ecc71, #27ae60);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 auto 20px;
+                        box-shadow: 0 4px 20px rgba(46, 204, 113, 0.4);
+                    ">
+                        <i class="fas fa-user-tie" style="font-size: 28px; color: #fff;"></i>
+                    </div>
+                    <div style="
+                        font-size: 42px;
+                        font-weight: 900;
+                        background: linear-gradient(135deg, #2ecc71 0%, #fff 100%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        line-height: 1;
+                        margin-bottom: 12px;
+                    ">12,390<span style="font-size: 24px;">名</span></div>
+                    <div style="font-size: 14px; opacity: 0.7; font-weight: 500;">メンバー数</div>
                 </div>
-                <div class="stats-card">
-                    <i class="fas fa-handshake"></i>
-                    <div class="stats-number">117,774<span>件</span></div>
-                    <div class="stats-label">年間紹介数</div>
+                
+                <div class="bni-stat-card" style="
+                    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+                    backdrop-filter: blur(10px);
+                    border: 1px solid rgba(255,255,255,0.1);
+                    border-radius: 16px;
+                    padding: 32px 24px;
+                    text-align: center;
+                    transition: all 0.3s ease;
+                    cursor: default;
+                    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+                ">
+                    <div style="
+                        width: 60px;
+                        height: 60px;
+                        background: linear-gradient(135deg, #3498db, #2980b9);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 auto 20px;
+                        box-shadow: 0 4px 20px rgba(52, 152, 219, 0.4);
+                    ">
+                        <i class="fas fa-handshake" style="font-size: 28px; color: #fff;"></i>
+                    </div>
+                    <div style="
+                        font-size: 42px;
+                        font-weight: 900;
+                        background: linear-gradient(135deg, #3498db 0%, #fff 100%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        line-height: 1;
+                        margin-bottom: 12px;
+                    ">117,774<span style="font-size: 20px;">件</span></div>
+                    <div style="font-size: 14px; opacity: 0.7; font-weight: 500;">年間紹介数</div>
                 </div>
-                <div class="stats-card">
-                    <i class="fas fa-yen-sign"></i>
-                    <div class="stats-number">612<span>億円</span></div>
-                    <div class="stats-label">年間売上貢献</div>
+                
+                <div class="bni-stat-card" style="
+                    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+                    backdrop-filter: blur(10px);
+                    border: 1px solid rgba(255,255,255,0.1);
+                    border-radius: 16px;
+                    padding: 32px 24px;
+                    text-align: center;
+                    transition: all 0.3s ease;
+                    cursor: default;
+                    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+                ">
+                    <div style="
+                        width: 60px;
+                        height: 60px;
+                        background: linear-gradient(135deg, var(--accent-color), #f39c12);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 auto 20px;
+                        box-shadow: 0 4px 20px rgba(245, 166, 35, 0.4);
+                    ">
+                        <i class="fas fa-yen-sign" style="font-size: 28px; color: #fff;"></i>
+                    </div>
+                    <div style="
+                        font-size: 42px;
+                        font-weight: 900;
+                        background: linear-gradient(135deg, var(--accent-color) 0%, #fff 100%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        line-height: 1;
+                        margin-bottom: 12px;
+                    ">612<span style="font-size: 24px;">億円</span></div>
+                    <div style="font-size: 14px; opacity: 0.7; font-weight: 500;">年間売上貢献</div>
                 </div>
             </div>
         </div>
+        
+        <style>
+            .bni-stat-card:hover {
+                transform: translateY(-8px) scale(1.02);
+                box-shadow: 0 16px 48px rgba(0,0,0,0.5) !important;
+                border-color: rgba(255,255,255,0.2) !important;
+            }
+            
+            @media (max-width: 1024px) {
+                .bni-japan-stats > div > div:last-child {
+                    grid-template-columns: repeat(2, 1fr) !important;
+                    gap: 24px !important;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .bni-japan-stats > div > div:last-child {
+                    grid-template-columns: 1fr !important;
+                }
+                
+                .bni-stat-card > div:nth-child(2) {
+                    font-size: 36px !important;
+                }
+            }
+        </style>
     </section>
 
-    <!-- だんじりチャプターとは -->
-    <section id="about" class="about">
+    <section class="visitor-section">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <h2 class="section-title">だんじりチャプターとは</h2>
-                    <p class="about-description">
-                        BNI だんじりチャプターは、大阪東エリアで活動するビジネスリファーラル組織です。
-                        <strong>毎週水曜日 10:30〜12:00</strong>、Zoomでオンライン定例会を開催しています。
-                    </p>
-                    <p class="about-description">
-                        「<strong>Givers Gain®（与える者は与えられる）</strong>」の理念のもと、
-                        メンバー同士が信頼関係を築き、質の高いビジネス紹介を交換し合っています。
-                    </p>
-                    <div class="about-features">
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h3>毎週の定例会</h3>
-                                <p>水曜 10:30〜12:00 Zoom開催</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h3>1業種1名制</h3>
-                                <p>競合なしで安心して紹介できる</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h3>グローバルネットワーク</h3>
-                                <p>世界中のBNIメンバーと繋がれる</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <div class="chapter-info-card">
-                        <h3><i class="fas fa-info-circle"></i> チャプター情報</h3>
-                        <ul class="info-list">
-                            <li><i class="fas fa-user-friends"></i> <strong>メンバー数:</strong> 22名</li>
-                            <li><i class="fas fa-calendar-alt"></i> <strong>開催日時:</strong> 毎週水曜 10:30〜12:00</li>
-                            <li><i class="fas fa-video"></i> <strong>開催方法:</strong> Zoom (オンライン)</li>
-                            <li><i class="fas fa-map-marker-alt"></i> <strong>拠点:</strong> 大阪東エリア</li>
-                            <li><i class="fas fa-handshake"></i> <strong>年間紹介数:</strong> 約200件</li>
-                            <li><i class="fas fa-chart-line"></i> <strong>年間売上貢献:</strong> 約1.08億円</li>
-                        </ul>
-                        <a href="visitor.html" class="btn btn-primary btn-block">見学の流れを見る</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 得られる5つの価値 -->
-    <section id="value" class="value">
-        <div class="container">
-            <h2 class="section-title center">だんじりで得られる5つの価値</h2>
-            <p class="section-subtitle center">ビジネスを成長させる確かな価値</p>
-            <div class="value-grid">
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3>質の高い紹介</h3>
-                    <p>信頼関係に基づいた、成約率の高いビジネス紹介が毎週届きます。</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h3>強固なネットワーク</h3>
-                    <p>22名の専門家と深い信頼関係を構築。いつでも相談できる仲間ができます。</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">
+            <h2 class="section-title center">想像してみてください</h2>
+            <div class="imagine-box">
+                <h3>もし、精鋭営業マンが数十人も出来たら——</h3>
+                <p class="imagine-text">
+                    優秀なビジネスパートナーが毎週、あなたのビジネスを真剣に考え、お客様を紹介してくれる環境を構築できます。
+                </p>
+                <div class="imagine-benefits">
+                    <div class="imagine-benefit-item">
                         <i class="fas fa-chart-line"></i>
+                        <span class="imagine-benefit-text"><strong>新規顧客開拓のコストが激減</strong><br>広告費をかけずに、信頼ベースの紹介でお客様が増える</span>
                     </div>
-                    <h3>売上の向上</h3>
-                    <p>紹介による新規顧客獲得で、安定した売上成長を実現できます。</p>
+                    <div class="imagine-benefit-item">
+                        <i class="fas fa-handshake"></i>
+                        <span class="imagine-benefit-text"><strong>信頼ベースの紹介で成約率が向上</strong><br>「知り合いからの紹介」だから、成約率が飛躍的に高い</span>
+                    </div>
+                    <div class="imagine-benefit-item">
+                        <i class="fas fa-comments"></i>
+                        <span class="imagine-benefit-text"><strong>ビジネスの悩みを相談できる仲間</strong><br>経営の悩みを共有し、アドバイスし合える環境</span>
+                    </div>
+                    <div class="imagine-benefit-item">
+                        <i class="fas fa-heart"></i>
+                        <span class="imagine-benefit-text"><strong>孤独な経営から解放される</strong><br>愛情を持って協力し合える、信頼の仲間ができる</span>
+                    </div>
                 </div>
-                <div class="value-card">
-                    <div class="value-icon">
+                <p class="imagine-text" style="margin-top: 32px; font-size: 24px; font-weight: 700; color: var(--primary-color);">
+                    それが、<br class="sp-only">BNI だんじりチャプターです。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="visitor-section alt">
+        <div class="container">
+            <h2 class="section-title center">だんじりチャプターの3つの約束</h2>
+            <p class="section-subtitle center">礼儀と礼節を重んじる、<br class="sp-only">日本文化に根ざしたコミュニティ</p>
+            
+            <div class="promise-grid">
+                <div class="promise-card">
+                    <div class="promise-number">01</div>
+                    <h3>誰一人、孤独にさせない</h3>
+                    <p>経営の悩みを一人で抱える必要はありません。数十人の仲間が、愛情を持ってあなたをサポートします。</p>
+                </div>
+                <div class="promise-card">
+                    <div class="promise-number">02</div>
+                    <h3>誰一人、競争させない</h3>
+                    <p>1業種1名制だから、競合ゼロ。安心して、お互いのビジネスを紹介し合えます。</p>
+                </div>
+                <div class="promise-card">
+                    <div class="promise-number">03</div>
+                    <h3>誰一人、見捨てない</h3>
+                    <p>礼儀と礼節を重んじる日本文化。おもてなしの精神で、全員を大切にします。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="visitor-section">
+        <div class="container">
+            <h2 class="section-title center">見学90分で体験できる3つの価値</h2>
+            <p class="section-subtitle center">見学は、単なる「説明会」ではありません。<br>あなたのビジネスにとって、<br class="sp-only">具体的な価値を持ち帰れる90分です。</p>
+            
+            <div class="value-experience-grid">
+                <div class="value-experience-card">
+                    <div class="value-experience-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>数十業種の専門家からの<br>無料アドバイス</h3>
+                    <p>税理士、弁護士、社労士、マーケター、デザイナー——多様な専門家が、あなたのビジネスを一緒に考えます。</p>
+                </div>
+                <div class="value-experience-card">
+                    <div class="value-experience-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>紹介先候補の<br>リアルタイム発見</h3>
+                    <p>「あ、この人にお客様を紹介できそう！」見学中に、すぐにビジネスチャンスが見つかります。</p>
+                </div>
+                <div class="value-experience-card">
+                    <div class="value-experience-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3>ビジネススキル向上</h3>
-                    <p>毎週のプレゼンや教育プログラムで、営業・マーケティングスキルが磨かれます。</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>信頼の構築</h3>
-                    <p>1業種1名制で競合なし。安心してビジネスを紹介し合える環境です。</p>
+                    <h3>リファーラル営業の<br>実践ノウハウ</h3>
+                    <p>BNI独自の体系的なリファーラルマーケティングを、その場で学べます。（通常は有料研修級）</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- オンライン参加の7つの価値 -->
-    <section class="online-value">
+    <section class="visitor-section dark">
         <div class="container">
-            <h2 class="section-title center white">オンライン参加の7つの価値</h2>
-            <p class="section-subtitle center white">Zoomだからこそ実現できるメリット</p>
-            <div class="online-grid">
-                <div class="online-card">
-                    <i class="fas fa-globe"></i>
-                    <h3>全国どこからでも参加OK</h3>
-                    <p>大阪以外からも参加可能。場所を選ばずビジネスを拡大できます。</p>
+            <h2 class="section-title center white">BNI 5つのベネフィット <br class="sp-only">× だんじりの強み</h2>
+            <p class="section-subtitle center white">世界最大級のリファーラル組織が提供する、確かな価値</p>
+            
+            <div class="benefits-5-grid">
+                <div class="benefit-5-card">
+                    <h3><i class="fas fa-users"></i> 数十人のマーケティングチーム</h3>
+                    <p>通常、数十人の営業マンを雇うコストは？BNIなら、全員が全員の営業マンになります。互いのビジネスを理解し、積極的に紹介し合う文化があります。</p>
                 </div>
-                <div class="online-card">
+                <div class="benefit-5-card">
+                    <h3><i class="fas fa-shield-alt"></i> 独占市場（競合ゼロ）</h3>
+                    <p>1業種1名制だから、安心して紹介できる。競合を気にせず、適正価格でビジネスができます。あなたがその分野の唯一の専門家です。</p>
+                </div>
+                <div class="benefit-5-card">
+                    <h3><i class="fas fa-chart-line"></i> 継続的な新規顧客開拓</h3>
+                    <p>紹介の55%が収益化（BNI調査）。継続的に質の高い見込み客が紹介され、売上が安定的に向上します。</p>
+                </div>
+                <div class="benefit-5-card">
+                    <h3><i class="fas fa-chalkboard-teacher"></i> 毎週のビジネス教育</h3>
+                    <p>有料研修級の学びが無料。リファーラルマーケティング、リーダーシップ、営業スキルが毎週向上します。</p>
+                </div>
+                <div class="benefit-5-card">
+                    <h3><i class="fas fa-hands-helping"></i> 信頼の仲間</h3>
+                    <p>孤独な経営からの解放。愛情を持って協力し合える仲間がいます。ビジネスの悩みを共有し、共に成長できる環境です。</p>
+                </div>
+                <div class="benefit-5-card benefit-alpha">
+                    <h3><i class="fas fa-globe"></i> 全国・世界へのネットワーク</h3>
+                    <p>BNIは世界77ヶ国、30万人以上のメンバー。グローバルなビジネスチャンスも広がります。他チャプターとの連携で、ビジネスの可能性は無限大です。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="visitor-section">
+        <div class="container">
+            <h2 class="section-title center">Givers Gain<sup>®</sup> × だんじりの精神</h2>
+            <p class="section-subtitle center">利他の心でビジネスを加速</p>
+            
+            <div class="givers-gain-box">
+                <h3>Givers Gain<sup>®</sup></h3>
+                <h4>「与える者は与えられる」</h4>
+                <p>
+                    BNIの根幹にある哲学「Givers Gain<sup>®</sup>」。<br>
+                    これは、「与える者は与えられる」という、日本の「利他の精神」そのものです。
+                </p>
+                <p>
+                    だんじりチャプターでは、礼儀と礼節を重んじる日本文化の中で、この哲学を体現しています。
+                </p>
+                <p>
+                    まず相手のビジネスを考え、紹介を提供する。<br>
+                    その結果、信頼が生まれ、紹介が返ってくる。
+                </p>
+                <div class="highlight-text">
+                    この「信頼の連鎖」こそが、<br>
+                    年間数百件の紹介と、数億円の売上貢献を生み出す原動力なのです。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="visitor-section alt">
+        <div class="container">
+            <h2 class="section-title center">オンラインだからこその6つの価値</h2>
+            <p class="section-subtitle center">Zoomだから実現できる、<br class="sp-only">新しいビジネスネットワーキング</p>
+            
+            <div class="online-value-grid">
+                <div class="online-value-card">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>全国どこからでも参加OK</h3>
+                    <p>距離の制約なし。志でつながる仲間と出会えます。</p>
+                </div>
+                <div class="online-value-card">
                     <i class="fas fa-clock"></i>
                     <h3>移動時間ゼロ</h3>
-                    <p>通勤・移動不要で時間を有効活用。朝の貴重な時間を節約できます。</p>
+                    <p>朝の貴重な時間を有効活用。1日を最高にスタート。</p>
                 </div>
-                <div class="online-card">
-                    <i class="fas fa-baby"></i>
-                    <h3>子育て・介護中でも参加可能</h3>
-                    <p>自宅から参加できるので、家庭の事情に柔軟に対応できます。</p>
+                <div class="online-value-card">
+                    <i class="fas fa-home"></i>
+                    <h3>家族との時間を削らない</h3>
+                    <p>自宅から参加できるので、家庭との両立が可能。</p>
                 </div>
-                <div class="online-card">
+                <div class="online-value-card">
                     <i class="fas fa-yen-sign"></i>
-                    <h3>交通費・宿泊費不要</h3>
-                    <p>オンラインなので経費削減。コストを抑えてネットワーキングできます。</p>
+                    <h3>経費削減</h3>
+                    <p>交通費・宿泊費不要。コストを抑えてネットワーキング。</p>
                 </div>
-                <div class="online-card">
-                    <i class="fas fa-video"></i>
-                    <h3>録画で復習可能</h3>
-                    <p>欠席時も録画で内容を確認。学びを逃しません。</p>
+                <div class="online-value-card">
+                    <i class="fas fa-user-check"></i>
+                    <h3>ビジター見学は3回まで</h3>
+                    <p>じっくり検討できる。初参加のハードルが低く、気軽に体験できます。</p>
                 </div>
-                <div class="online-card">
-                    <i class="fas fa-users"></i>
-                    <h3>気軽にビジター参加</h3>
-                    <p>オンラインだから初参加のハードルが低い。まずは気軽に見学できます。</p>
-                </div>
-                <div class="online-card">
-                    <i class="fas fa-laptop"></i>
-                    <h3>資料共有が簡単</h3>
-                    <p>画面共有で資料やプレゼンを効果的に伝えられます。</p>
+                <div class="online-value-card">
+                    <i class="fas fa-desktop"></i>
+                    <h3>画面共有で資料提示が簡単</h3>
+                    <p>プレゼンや提案が効果的に伝わります。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Givers Gain®ストーリー -->
-    <section class="givers-gain">
+    <section class="visitor-section">
         <div class="container">
-            <div class="givers-content">
-                <div class="givers-text">
-                    <h2 class="section-title">Givers Gain<sup>®</sup></h2>
-                    <h3 class="givers-subtitle">与える者は与えられる</h3>
-                    <p class="givers-description">
-                        BNIの根幹にある哲学「<strong>Givers Gain®</strong>」。
-                    </p>
-                    <p class="givers-description">
-                        これは、「まず相手に価値を与えることで、自分も価値を受け取れる」という考え方です。
-                    </p>
-                    <p class="givers-description">
-                        だんじりチャプターでは、この理念のもと、メンバー全員が
-                        <strong>「誰かの役に立ちたい」</strong>という想いで紹介を行っています。
-                    </p>
-                    <p class="givers-description">
-                        その結果、信頼が信頼を呼び、年間約200件の質の高い紹介が生まれ、
-                        <strong>約1.08億円の売上貢献</strong>を実現しています。
-                    </p>
-                    <blockquote class="givers-quote">
-                        <i class="fas fa-quote-left"></i>
-                        <p>「紹介は、最高の信頼の証です。私たちは、その信頼に応え続けます。」</p>
-                        <cite>— BNI だんじりチャプター メンバー一同</cite>
-                    </blockquote>
+            <h2 class="section-title center">こんな経営者におすすめ</h2>
+            <p class="section-subtitle center">1つでも当てはまる方は、ぜひ見学にお越しください</p>
+            
+            <div class="target-list">
+                <div class="target-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>新規顧客開拓の限界を感じている</span>
                 </div>
-                <div class="givers-visual">
-                    <div class="givers-circle">
-                        <div class="circle-item">与える</div>
-                        <div class="circle-arrow">→</div>
-                        <div class="circle-item">信頼</div>
-                        <div class="circle-arrow">→</div>
-                        <div class="circle-item">紹介</div>
-                        <div class="circle-arrow">→</div>
-                        <div class="circle-item">成長</div>
-                    </div>
+                <div class="target-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>紹介営業のやり方がわからない</span>
+                </div>
+                <div class="target-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>信頼できるビジネスパートナーが欲しい</span>
+                </div>
+                <div class="target-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>孤独な経営に限界を感じている</span>
+                </div>
+                <div class="target-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>オンラインで効率的に成長したい</span>
+                </div>
+                <div class="target-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>ビジネスの悩みを相談できる仲間が欲しい</span>
+                </div>
+                <div class="target-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>1人では達成できない目標がある</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- カテゴリー別メンバー紹介 -->
-    <section id="members" class="members">
+    <section class="visitor-section alt">
         <div class="container">
-            <h2 class="section-title center">カテゴリー別メンバー紹介</h2>
-            <p class="section-subtitle center">22名の信頼できる専門家たち</p>
-            <div class="category-grid">
-                <a href="members.html#real-estate" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3>不動産</h3>
-                    <div class="category-count">2名</div>
-                    <p>不動産賃貸・売買</p>
-                </a>
-                <a href="members.html#insurance" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>保険（生命・法人・個人・損害）</h3>
-                    <div class="category-count">4名</div>
-                    <p>生命保険、損害保険</p>
-                </a>
-                <a href="members.html#professional" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-balance-scale"></i>
-                    </div>
-                    <h3>士業</h3>
-                    <div class="category-count">4名</div>
-                    <p>税理士、司法書士、社労士、弁護士</p>
-                </a>
-                <a href="members.html#creative" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>クリエイティブ・制作 / ファッション</h3>
-                    <div class="category-count">3名</div>
-                    <p>オーダースーツ、映像制作、グッズ制作</p>
-                </a>
-                <a href="members.html#it" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>IT・通信・デジタル導線</h3>
-                    <div class="category-count">3名</div>
-                    <p>HP制作、携帯料金見直し、SNS運用</p>
-                </a>
-                <a href="members.html#life" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <h3>ライフサポート / 健康</h3>
-                    <div class="category-count">3名</div>
-                    <p>会員制サウナ、就労支援、雑務代行</p>
-                </a>
-                <a href="members.html#sports" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-running"></i>
-                    </div>
-                    <h3>スポーツ・アスリート</h3>
-                    <div class="category-count">1名</div>
-                    <p>プロキックボクサー</p>
-                </a>
-                <a href="members.html#business" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>経営支援</h3>
-                    <div class="category-count">2名</div>
-                    <p>ブランディング、社外人事部</p>
-                </a>
-            </div>
-            <div class="members-cta">
-                <a href="members.html" class="btn btn-primary btn-large">
-                    <i class="fas fa-users"></i> 全メンバーを見る
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ビジター参加案内 -->
-    <section class="visitor-guide">
-        <div class="container">
-            <h2 class="section-title center">ビジター見学の流れ</h2>
-            <p class="section-subtitle center">初めての方でも安心してご参加いただけます</p>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
+            <h2 class="section-title center">見学の流れ</h2>
+            <p class="section-subtitle center">4つのステップで簡単に参加できます</p>
+            
+            <div class="flow-grid">
+                <div class="flow-card">
+                    <div class="flow-number">1</div>
                     <h3>見学申込</h3>
-                    <p>申込フォームから希望日をお知らせください。</p>
+                    <p>お申込フォームから希望日をお知らせください。担当者より48時間以内にご連絡いたします。</p>
                 </div>
-                <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
+                <div class="flow-card">
+                    <div class="flow-number">2</div>
                     <h3>事前案内</h3>
-                    <p>ZoomのURLと参加方法をメールでお送りします。</p>
+                    <p>ZoomのURLと参加方法、定例会の流れを記載した案内をメールでお送りします。</p>
                 </div>
-                <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
+                <div class="flow-card">
+                    <div class="flow-number">3</div>
                     <h3>定例会参加</h3>
-                    <p>水曜10:30〜 Zoomで定例会に参加します。</p>
+                    <p>毎週水曜 10:15〜12:30、Zoomで定例会に参加。リアルなBNIを体験できます。</p>
                 </div>
-                <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="step-card">
-                    <div class="step-number">4</div>
+                <div class="flow-card">
+                    <div class="flow-number">4</div>
                     <h3>個別相談</h3>
-                    <p>終了後、ご希望の方には個別相談も可能です。</p>
+                    <p>定例会終了後、ご希望の方には個別相談も可能です。不明点を解消できます。</p>
                 </div>
-            </div>
-            <div class="visitor-benefits">
-                <h3><i class="fas fa-gift"></i> ビジター見学のメリット</h3>
-                <ul>
-                    <li><i class="fas fa-check"></i> 定例会の雰囲気をリアルに体験できる</li>
-                    <li><i class="fas fa-check"></i> メンバーと直接会話できる</li>
-                    <li><i class="fas fa-check"></i> BNIの仕組みを詳しく知れる</li>
-                    <li><i class="fas fa-check"></i> オンラインだから気軽に参加できる</li>
-                </ul>
-            </div>
-            <div class="visitor-cta">
-                <a href="contact.html" class="btn btn-primary btn-large">
-                    <i class="fas fa-calendar-check"></i> 見学を申し込む
-                </a>
-                <a href="visitor.html" class="btn btn-secondary btn-large">
-                    <i class="fas fa-info-circle"></i> 詳しく見る
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="faq">
+    <section class="visitor-section">
         <div class="container">
             <h2 class="section-title center">よくある質問</h2>
-            <p class="section-subtitle center">ビジター見学・入会について</p>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>見学は無料ですか?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>はい、初回の見学は無料です。お気軽にご参加ください。</p>
+            <p class="section-subtitle center">ビジター見学について</p>
+            
+            <div class="faq-section">
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>見学は無料ですか?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>はい、初回の見学は無料です。お気軽にご参加ください。</p>
+                        </div>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>どんな業種でも参加できますか?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>はい。ただし、1業種1名制のため、すでにメンバーがいる業種の場合は、空きが出るまでお待ちいただく場合があります。</p>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>何回まで見学できますか?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>基本的に3回まで見学可能です。じっくりとご検討いただけます。</p>
+                        </div>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>定例会の時間はどのくらいですか?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>毎週水曜日 10:30〜12:00 の90分間です。</p>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>どんな業種でも参加できますか?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>はい。ただし、1業種1名制のため、すでにメンバーがいる業種の場合は、空きが出るまでお待ちいただく場合があります。</p>
+                        </div>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>入会費や年会費はありますか?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>はい、BNIの入会金・年会費が必要です。詳しくは見学時にご説明いたします。</p>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>顔出し必須ですか?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>はい、BNIは信頼関係を重視しているため、カメラONでのご参加をお願いしています。</p>
+                        </div>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>毎週参加しないといけませんか?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>BNIでは高い出席率が求められます。信頼関係構築のため、可能な限り毎週のご参加をお願いしています。</p>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>途中参加・途中退出は可能ですか?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>定例会は時間厳守が原則です。やむを得ない場合は事前にご連絡ください。</p>
+                        </div>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>オンライン参加に必要なものは?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>パソコンまたはスマートフォン、安定したインターネット環境、Zoomアプリ(無料)が必要です。</p>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>見学当日、何か話さないといけませんか?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>簡単な自己紹介(お名前・事業内容)をお願いする場合があります。1分程度です。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>見学後、必ず入会しないといけませんか?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>いいえ、見学後にじっくりご検討いただけます。無理な勧誘は一切ありません。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>自分の業種が既に埋まっている場合は?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>1業種1名制のため、空きが出るまでお待ちいただくか、他のチャプターをご案内いたします。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>定例会の時間はどのくらいですか?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>毎週水曜日 10:15〜12:30 の2時間15分間です。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>入会費や年会費はありますか?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>はい、BNIの入会金・年会費が必要です。詳しくは見学時にご説明いたします。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>毎週参加しないといけませんか?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>BNIでは高い出席率が求められます。信頼関係構築のため、可能な限り毎週のご参加をお願いしています。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>オンライン参加に必要なものは?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>パソコンまたはスマートフォン、安定したインターネット環境、Zoomアプリ(無料)が必要です。</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 最終CTA -->
-    <section class="final-cta">
+    <section class="visitor-section alt">
         <div class="container">
-            <div class="final-cta-content">
-                <h2>ビジネスを加速させる出会いが、<br>ここにあります。</h2>
-                <p>まずは気軽に見学から始めませんか?<br>22名の信頼できるビジネスパートナーがあなたを待っています。</p>
-                <a href="contact.html" class="btn btn-primary btn-xlarge">
-                    <i class="fas fa-calendar-check"></i> 今すぐ見学を申し込む
+            <div class="cta-box">
+                <h3 style="
+                    font-size: 56px;
+                    font-weight: 900;
+                    line-height: 1.3;
+                    margin-bottom: 32px;
+                    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+                    letter-spacing: 2px;
+                ">
+                    <span style="
+                        display: block;
+                        color: #fff;
+                        text-shadow: 
+                            0 0 20px rgba(245, 166, 35, 0.6),
+                            0 0 40px rgba(245, 166, 35, 0.4),
+                            0 4px 20px rgba(0, 0, 0, 0.3);
+                        animation: titleGlow 3s ease-in-out infinite;
+                    ">ビジネスが飛躍する。</span>
+                    <span style="
+                        display: block;
+                        margin-top: 16px;
+                        font-size: 42px;
+                        font-weight: 700;
+                        color: #fff;
+                        text-shadow: 
+                            0 0 15px rgba(245, 166, 35, 0.5),
+                            0 0 30px rgba(245, 166, 35, 0.3),
+                            0 4px 20px rgba(0, 0, 0, 0.3);
+                    ">その出会いを ここから</span>
+                </h3>
+                <p>
+                    まずは気軽に見学から始めませんか？<br class="sp-only">信頼できるビジネスパートナーが<br class="sp-only">あなたを待っています
+                </p>
+                <a href="contact.html" class="btn btn-secondary btn-xlarge final-cta-btn" style="
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(135deg, var(--accent-color) 0%, #f39c12 100%);
+                    border: none;
+                    box-shadow: 0 8px 30px rgba(245, 166, 35, 0.5);
+                    animation: pulse-glow 2s ease-in-out infinite;
+                ">
+                    <span style="position: relative; z-index: 2;">
+                        <i class="fas fa-calendar-check"></i> 今すぐ見学を申し込む
+                    </span>
+                    <span class="btn-shine" style="
+                        position: absolute;
+                        top: 0;
+                        left: -100%;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+                        animation: shine 3s ease-in-out infinite;
+                    "></span>
                 </a>
-                <p class="final-note">次回定例会: 毎週水曜 10:30〜12:00 (Zoom開催)</p>
+                <p style="margin-top: 24px; font-size: 16px; opacity: 0.9;">毎週水曜 10:15〜12:30 (Zoom開催)</p>
             </div>
         </div>
     </section>
 
-    <!-- フッター -->
+    <section class="timer-banner">
+        <div class="container">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--secondary-color); margin-bottom: 12px;">
+                <i class="fas fa-stopwatch" style="color: var(--primary-color);"></i> メンバー向け便利ツール
+            </h3>
+            <p style="font-size: 15px; color: #666; margin-bottom: 0;">
+                1to1や定例会でのプレゼン練習など、時間管理に便利なオリジナルタイマーをご用意しています。<br class="sp-only">ぜひご活用ください。
+            </p>
+            <a href="timer.html" class="timer-btn">
+                <i class="fas fa-external-link-alt"></i> BNIタイマーを利用する
+            </a>
+        </div>
+    </section>
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -554,7 +1622,7 @@
                     <h4>定例会情報</h4>
                     <ul class="footer-info">
                         <li><i class="fas fa-calendar-alt"></i> 毎週水曜日</li>
-                        <li><i class="fas fa-clock"></i> 10:30〜12:00</li>
+                        <li><i class="fas fa-clock"></i> 10:15〜12:30</li>
                         <li><i class="fas fa-video"></i> Zoom開催</li>
                         <li><i class="fas fa-map-marker-alt"></i> 大阪東エリア</li>
                     </ul>
@@ -572,7 +1640,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script src="js/main.js"></script>
 </body>
 </html>

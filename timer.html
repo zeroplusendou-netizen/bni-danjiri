@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BNIタイマー</title>
+    <link rel="icon" href="images/bni-logo.png" type="image/png" sizes="any">
+    
+    <style>
+        :root {
+            --bni-red: #CF142B;
+            --bni-navy: #003764;
+            --white: #ffffff;
+        }
+
+        body, html {
+            margin: 0; padding: 0; height: 100%; width: 100%;
+            background-color: var(--bni-red); color: var(--white);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            overflow: hidden; cursor: pointer;
+        }
+
+        #header-title {
+            position: absolute; top: 20px; left: 20px;
+            font-size: 1.2rem; font-weight: bold; opacity: 0.8; z-index: 10; pointer-events: none;
+        }
+
+        #timer-display {
+            font-size: 38vmin; font-weight: 900; font-variant-numeric: tabular-nums;
+            line-height: 1; z-index: 5; user-select: none; text-align: center; pointer-events: none;
+        }
+
+        #controls {
+            position: absolute; bottom: 30px; width: 100%;
+            display: flex; flex-direction: column; align-items: center; gap: 15px;
+            z-index: 1000; transition: opacity 0.4s; cursor: default;
+        }
+
+        .running #controls { opacity: 0; pointer-events: none; }
+        #controls:hover { opacity: 1 !important; pointer-events: auto !important; }
+
+        .btn-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding: 0 10px; }
+
+        button {
+            background: rgba(255, 255, 255, 0.2); border: 1.5px solid var(--white);
+            color: var(--white); padding: 10px 16px; font-size: 0.9rem;
+            font-weight: bold; border-radius: 50px; cursor: pointer; transition: all 0.2s;
+        }
+
+        button:hover { background: var(--white); color: var(--bni-red); }
+        .preset-btn { background: var(--bni-navy); border: none; }
+
+        input {
+            background: transparent; border-bottom: 2px solid var(--white);
+            border-top: none; border-left: none; border-right: none;
+            color: var(--white); font-size: 1.2rem; width: 45px; text-align: center; outline: none;
+        }
+
+        .time-up { color: #FFD700 !important; animation: pulse 0.5s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+        @media (max-height: 500px) {
+            #timer-display { font-size: 60vh; }
+            #controls { bottom: 10px; gap: 5px; }
+            button { padding: 6px 12px; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body id="bg-body">
+
+    <div id="header-title">BNIタイマー</div>
+
+    <div id="timer-display">00:00</div>
+
+    <div id="controls" onclick="event.stopPropagation();">
+        <div class="btn-group">
+            <button class="preset-btn" onclick="setTimer(0, 10)">10秒</button>
+            <button class="preset-btn" onclick="setTimer(0, 30)">30秒</button>
+            <button class="preset-btn" onclick="setTimer(1, 0)">1分</button>
+            <button class="preset-btn" onclick="setTimer(3, 0)">3分</button>
+            <button class="preset-btn" onclick="setTimer(5, 0)">5分</button>
+            <button class="preset-btn" onclick="setTimer(10, 0)">10分</button>
+        </div>
+        
+        <div class="btn-group" style="align-items: center;">
+            <input type="number" id="min-input" value="0" inputmode="numeric">分
+            <input type="number" id="sec-input" value="30" inputmode="numeric">秒
+            <button onclick="applyInput()">設定</button>
+            <button id="start-btn" onclick="toggleTimer()" style="background: var(--white); color: var(--bni-red); min-width: 100px;">スタート</button>
+            <button onclick="resetTimer()">リセット</button>
+            <label style="font-size: 0.8rem; margin-left: 10px; cursor: pointer; white-space: nowrap;">
+                <input type="checkbox" id="sound-toggle" checked> 🔔音
+            </label>
+        </div>
+    </div>
+
+    <audio id="alarm-sound" src="images/timer.mp3" preload="auto" loop></audio>
+
+    <script>
+        let timeLeft = 30;
+        let initialTime = 30;
+        let timerId = null;
+        let isRunning = false;
+        let audioUnlocked = false;
+
+        const display = document.getElementById('timer-display');
+        const startBtn = document.getElementById('start-btn');
+        const alarmSound = document.getElementById('alarm-sound');
+        const soundToggle = document.getElementById('sound-toggle');
+        const bgBody = document.getElementById('bg-body');
+
+        function updateDisplay() {
+            const absTime = Math.floor(Math.abs(timeLeft));
+            const m = Math.floor(absTime / 60);
+            const s = absTime % 60;
+            const sign = timeLeft < 0 ? "-" : "";
+            display.textContent = `${sign}${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+            
+            if (timeLeft <= 0) {
+                display.classList.add('time-up');
+            } else {
+                display.classList.remove('time-up');
+            }
+        }
+
+        function unlockAudio() {
+            if (audioUnlocked) return;
+            alarmSound.load();
+            alarmSound.play().then(() => {
+                alarmSound.pause();
+                alarmSound.currentTime = 0;
+                audioUnlocked = true;
+            }).catch(e => console.log("Audio unlock failed:", e));
+        }
+
+        bgBody.addEventListener('click', () => {
+            unlockAudio();
+            toggleTimer();
+        });
+
+        function toggleTimer() {
+            if (isRunning) {
+                clearInterval(timerId);
+                isRunning = false;
+                startBtn.textContent = "再開";
+                document.body.classList.remove('running');
+                alarmSound.pause();
+                alarmSound.currentTime = 0;
+            } else {
+                if (timeLeft <= 0) resetTimer();
+                isRunning = true;
+                startBtn.textContent = "一時停止";
+                document.body.classList.add('running');
+                
+                timerId = setInterval(() => {
+                    timeLeft--;
+                    updateDisplay();
+                    if (timeLeft === 0 && soundToggle.checked) {
+                        alarmSound.play().catch(e => console.log("Playback failed:", e));
+                    }
+                }, 1000);
+            }
+        }
+
+        function setTimer(m, s) {
+            resetTimer();
+            initialTime = (parseInt(m) * 60) + parseInt(s);
+            timeLeft = initialTime;
+            updateDisplay();
+        }
+
+        function applyInput() {
+            const m = document.getElementById('min-input').value || 0;
+            const s = document.getElementById('sec-input').value || 0;
+            setTimer(m, s);
+        }
+
+        function resetTimer() {
+            clearInterval(timerId);
+            isRunning = false;
+            timeLeft = initialTime;
+            updateDisplay();
+            startBtn.textContent = "スタート";
+            document.body.classList.remove('running');
+            alarmSound.pause();
+            alarmSound.currentTime = 0;
+        }
+
+        window.addEventListener('keydown', (e) => {
+            unlockAudio();
+            if (e.key === 'Enter') {
+                if (document.activeElement.tagName === 'INPUT') {
+                    applyInput();
+                    document.activeElement.blur();
+                } else {
+                    resetTimer();
+                    toggleTimer();
+                }
+            } else if (e.key === ' ') {
+                e.preventDefault();
+                toggleTimer();
+            }
+        });
+
+        updateDisplay();
+    </script>
+</body>
+</html>

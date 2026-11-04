@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BNIだんじりEXPO 2026開催！熱狂がビジネスを加速させる東大阪・冬の陣。2026年2月25日(水) 東大阪市文化創造館にて。">
+    <meta name="keywords" content="BNI,だんじり,EXPO,東大阪,ビジネス交流会,異業種交流,イベント">
+    
+    <title>BNI だんじりEXPO 2026 | 熱狂がビジネスを加速させる！</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        /* EXPO特設ページ用の追加スタイル */
+        :root {
+            --expo-gold: #f5a623;
+            --expo-red: #a01118;
+            --expo-dark: #0f0f0f;
+        }
+
+        .expo-hero {
+            background: linear-gradient(135deg, #000000 0%, #2a0505 100%);
+            padding: 140px 0 80px;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* 背景のアニメーション効果（熱狂感を演出） */
+        .expo-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at center, rgba(160, 17, 24, 0.3) 0%, transparent 70%);
+            animation: pulse-bg 4s infinite alternate;
+        }
+
+        @keyframes pulse-bg {
+            0% { transform: scale(1); opacity: 0.5; }
+            100% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .expo-logo-text {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+            font-size: 24px;
+            letter-spacing: 4px;
+            color: var(--expo-gold);
+            margin-bottom: 16px;
+            display: block;
+            text-shadow: 0 2px 10px rgba(245, 166, 35, 0.5);
+        }
+
+        .expo-title-main {
+            font-size: 64px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(to bottom, #fff 0%, #f0f0f0 50%, #ccc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 4px 0px rgba(160, 17, 24, 0.8));
+        }
+
+        .expo-subtitle {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--expo-gold);
+            margin-bottom: 40px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .expo-flyer-img {
+            max-width: 100%;
+            width: 600px;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 4px rgba(245, 166, 35, 0.3);
+            margin: 0 auto 40px;
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .expo-flyer-img:hover {
+            transform: scale(1.02);
+        }
+
+        .expo-date-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 24px 40px;
+            display: inline-block;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        .expo-date-text {
+            font-size: 32px;
+            font-weight: 900;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* コンセプトセクション */
+        .concept-section {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23f8f9fa" width="100" height="100"/><path fill="%23e9ecef" d="M0 0 L100 100 L0 100 Z"/></svg>');
+            background-size: cover;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .concept-card {
+            background: #fff;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            border-top: 6px solid var(--expo-red);
+        }
+
+        .concept-keyword {
+            font-size: 20px;
+            color: var(--expo-red);
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .concept-heading {
+            font-size: 40px;
+            font-weight: 900;
+            margin-bottom: 32px;
+            line-height: 1.4;
+        }
+
+        .concept-heading span {
+            background: linear-gradient(120deg, transparent 60%, rgba(245, 166, 35, 0.4) 60%);
+        }
+
+        /* プログラムハイライト */
+        .highlight-section {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 100px 0;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .highlight-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.08);
+            border-color: var(--expo-gold);
+        }
+
+        .highlight-icon {
+            font-size: 40px;
+            color: var(--expo-gold);
+            margin-bottom: 20px;
+        }
+
+        .highlight-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .highlight-desc {
+            font-size: 14px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* タイムテーブル */
+        .timeline-section {
+            padding: 100px 0;
+            background-color: #fff;
+        }
+
+        .timeline-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e0e0e0;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-time {
+            width: 100px;
+            flex-shrink: 0;
+            text-align: right;
+            padding-right: 40px;
+            font-weight: 700;
+            color: var(--expo-red);
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            padding-top: 4px;
+        }
+
+        .timeline-content {
+            flex-grow: 1;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 41px;
+            top: 6px;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 4px solid var(--expo-red);
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .timeline-content h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .timeline-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* アクセス */
+        .access-section {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .access-box {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .access-info {
+            flex: 1;
+        }
+
+        .access-map {
+            flex: 1;
+            height: 300px;
+            background: #eee;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .access-label {
+            display: inline-block;
+            background: var(--expo-dark);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        /* CTA */
+        .expo-cta-section {
+            background: linear-gradient(135deg, #a01118 0%, #d81b2b 100%);
+            padding: 100px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .expo-title-main { font-size: 36px; }
+            .expo-subtitle { font-size: 18px; }
+            .concept-card { padding: 30px 20px; }
+            .concept-heading { font-size: 24px; }
+            .highlight-grid { grid-template-columns: 1fr; }
+            
+            .timeline-container::before { left: 20px; }
+            .timeline-time { width: auto; position: absolute; top: -30px; left: 20px; text-align: left; }
+            .timeline-content { padding-left: 50px; }
+            .timeline-marker { left: 11px; }
+            
+            .access-box { flex-direction: column; }
+            .access-map { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav-logo" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px;">
+                <img src="images/bni-logo.png" alt="BNI Logo" class="logo-img">
+                <span class="chapter-name">だんじりチャプター</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">トップ</a></li>
+                <li><a href="members.html" class="nav-link">メンバー紹介</a></li>
+                <li><a href="about-bni.html" class="nav-link">BNIとは</a></li>
+                <li><a href="contact.html" class="nav-link btn-primary-nav">見学申込</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="expo-hero">
+        <div class="container">
+            <span class="expo-logo-text">HIGASHI-OSAKA BNI</span>
+            <h1 class="expo-title-main">だんじりEXPO 2026</h1>
+            <p class="expo-subtitle">〜 熱狂がビジネスを加速させる！東大阪・冬の陣 〜</p>
+            
+            <img src="images/flyer_expo2026.png" alt="だんじりEXPO 2026" class="expo-flyer-img">
+            
+            <div class="expo-date-box">
+                <div style="font-size: 14px; opacity: 0.8; margin-bottom: 8px;">DATE</div>
+                <div class="expo-date-text">2026.2.25 <span style="font-size: 20px;">(Wed)</span></div>
+                <div style="font-size: 18px; margin-top: 8px;">10:30 - 13:00</div>
+            </div>
+
+            <div>
+                <a href="#application" class="btn btn-secondary btn-xlarge final-cta-btn" style="
+                    background: linear-gradient(135deg, var(--expo-gold) 0%, #f39c12 100%);
+                    box-shadow: 0 0 20px rgba(245, 166, 35, 0.6);
+                    border: none;
+                ">
+                    <i class="fas fa-ticket-alt"></i> 今すぐ参加予約する
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="concept-section">
+        <div class="container">
+            <div class="concept-card">
+                <p class="concept-keyword">CONCEPT</p>
+                <h2 class="concept-heading">
+                    ただ座って聞くだけの<br>
+                    交流会は、もう終わりだ。<br>
+                    <span>「祭り × ビジネス」</span>の熱狂へ。
+                </h2>
+                <p style="font-size: 18px; line-height: 2; color: #555; text-align: left;">
+                    ビジネスにおいて、最も人を動かすものは何か。<br>
+                    それは論理だけでなく、<strong>「熱狂」</strong>です。<br><br>
+                    だんじりチャプターがお届けするのは、単なる名刺交換会ではありません。<br>
+                    全員で汗をかき、声を出し、勢いよくビジネスを前に進める「体験型EXPO」。<br><br>
+                    東大阪で「熱い仲間」を探している経営者の皆様。<br>
+                    この冬、あなたのビジネスを加速させる"祭り"に参加しませんか？
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="highlight-section">
+        <div class="container">
+            <h2 class="section-title center white">EXPERIENCE</h2>
+            <p class="section-subtitle center white" style="margin-bottom: 48px;">普通の交流会じゃない。<br>五感を刺激するプログラム。</p>
+            
+            <div class="highlight-grid">
+                <div class="highlight-card">
+                    <i class="fas fa-video highlight-icon"></i>
+                    <h3 class="highlight-title">ドローン・アイ 中継</h3>
+                    <p class="highlight-desc">
+                        オープニングから常識を覆す。土林メンバーによるドローンからのリアルタイム映像を会場スクリーンに投影。視点が上がれば、ビジネスの視座も上がる。
+                    </p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-fist-raised highlight-icon"></i>
+                    <h3 class="highlight-title">格闘家アイスブレイク</h3>
+                    <p class="highlight-desc">
+                        プロキックボクサー大森隆之介が会場のボルテージを一気に上げる！心と体のエンジンをかけ、初対面の緊張を吹き飛ばす一体感を演出。
+                    </p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-gem highlight-icon"></i>
+                    <h3 class="highlight-title">ビジネス・トレジャーハント</h3>
+                    <p class="highlight-desc">
+                        全員参加型の大名刺交換ゲーム。ただ配るだけじゃない、「宝（ビジネスチャンス）」を探し当てる仕掛けで、自然と会話が弾みます。
+                    </p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-microphone-alt highlight-icon"></i>
+                    <h3 class="highlight-title">やりまわしピッチ</h3>
+                    <p class="highlight-desc">
+                        だんじりの「やりまわし」のように、勢いと技術で魅せる自社PRタイム。短時間で核心を突くプレゼンは必見です。
+                    </p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-user-tie highlight-icon"></i>
+                    <h3 class="highlight-title">「男を上げる」スーツ展</h3>
+                    <p class="highlight-desc">
+                        川﨑メンバーによるオーダースーツキャラバン。ビジネスにおける「勝負服」の重要性を展示連動で体験できます。
+                    </p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-users-cog highlight-icon"></i>
+                    <h3 class="highlight-title">最強の布陣発表</h3>
+                    <p class="highlight-desc">
+                        「不動産投資チーム」「店舗開業支援チーム」など、パッケージ化されたビジネスチームを壇上で発表。単発の紹介を超えた提携の形を提案します。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline-section">
+        <div class="container">
+            <h2 class="section-title center">TIME SCHEDULE</h2>
+            <div class="timeline-container" style="margin-top: 60px;">
+                
+                <div class="timeline-item">
+                    <div class="timeline-time">10:30</div>
+                    <div class="timeline-content">
+                        <div class="timeline-marker"></div>
+                        <h3><i class="fas fa-door-open" style="color: var(--expo-gold);"></i> 開会・オープニング</h3>
+                        <p>ドローン中継による驚きの演出で幕開け。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">10:45</div>
+                    <div class="timeline-content">
+                        <div class="timeline-marker"></div>
+                        <h3><i class="fas fa-handshake" style="color: var(--expo-gold);"></i> アイスブレイク & メインイベント</h3>
+                        <p>プロ格闘家によるパフォーマンスと、会場全体を使った「ビジネス・トレジャーハント」。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">11:30</div>
+                    <div class="timeline-content">
+                        <div class="timeline-marker"></div>
+                        <h3><i class="fas fa-bullhorn" style="color: var(--expo-gold);"></i> ビジネスピッチ & チーム発表</h3>
+                        <p>自社PR「やりまわしピッチ」と、地域で勝つための「最強の布陣」提案。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">12:00</div>
+                    <div class="timeline-content">
+                        <div class="timeline-marker"></div>
+                        <h3><i class="fas fa-utensils" style="color: var(--expo-gold);"></i> ランチミーティング（車座トーク）</h3>
+                        <p>「楽しかった」で終わらせない。具体的なビジネスチャンスを語り合うランチタイム。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">13:00</div>
+                    <div class="timeline-content">
+                        <div class="timeline-marker"></div>
+                        <h3>閉会・自由交流</h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="access-section">
+        <div class="container">
+            <h2 class="section-title center">ACCESS</h2>
+            <div class="access-box">
+                <div class="access-info">
+                    <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 24px;">東大阪市文化創造館</h3>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <span class="access-label">住所</span>
+                        <p>〒577-0034 大阪府東大阪市御厨南二丁目３番４号</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <span class="access-label">最寄駅</span>
+                        <p>近鉄奈良線<strong>「八戸ノ里駅」</strong>北側 徒歩約5分</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <span class="access-label">参加費</span>
+                        <p>無料（ランチ代等の実費のみ当日徴収となる場合がございます）</p>
+                        <p style="font-size: 13px; color: #666;">※詳細はお申し込み後にご案内いたします</p>
+                    </div>
+                </div>
+                <div class="access-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.678759560411!2d135.59081297629604!3d34.66280458525046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6001272763327099%3A0xe76478950c406085!2z5p2x5aSn6Ziq5biC5paH5YyW5Ym16YCg6aSo!5e0!3m2!1sja!2sjp!4v1709600000000!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="application" class="expo-cta-section">
+        <div class="container">
+            <h2 style="font-size: 36px; font-weight: 900; margin-bottom: 24px;">熱狂の渦へ、飛び込め。</h2>
+            <p style="font-size: 18px; margin-bottom: 40px; opacity: 0.9;">
+                定員に限りがございます。お早めにお申し込みください。
+            </p>
+            
+            <a href="contact.html" class="btn btn-secondary btn-xlarge" style="
+                background: #fff;
+                color: var(--expo-red);
+                padding: 20px 60px;
+                font-size: 20px;
+            ">
+                <i class="fas fa-paper-plane"></i> 参加申し込みフォームへ
+            </a>
+            <p style="margin-top: 24px; font-size: 14px; opacity: 0.7;">
+                ※「お問い合わせ内容」に「EXPO参加希望」とご記入ください
+            </p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 32px;">
+                <p>&copy; 2026 BNI だんじりチャプター. All Rights Reserved.</p>
+                <p class="footer-disclaimer">BNI®およびGivers Gain®は、BNI Global, LLCの登録商標です。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

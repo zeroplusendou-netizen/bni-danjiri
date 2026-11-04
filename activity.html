@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     
+    <link rel="icon" href="images/0000111222333444.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/0000111222333444.png">
+    
     <style>
         .activity-hero {
             background: linear-gradient(135deg, var(--primary-color) 0%, #a01118 100%);
@@ -41,14 +44,8 @@
             background-color: var(--light-bg);
         }
         
-        .activity-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 32px;
-            margin-top: 48px;
-        }
-        
-        .activity-card {
+        /* 写真ギャラリー用カード */
+        .activity-photo-card {
             background-color: #fff;
             border-radius: var(--radius-md);
             overflow: hidden;
@@ -56,67 +53,100 @@
             transition: var(--transition);
         }
         
-        .activity-card:hover {
+        .activity-photo-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
         }
+
+        .activity-photos-grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 24px; 
+            margin-top: 48px;
+        }
         
-        .activity-image {
+        /* --- Noteブログフィード用スタイル --- */
+        .note-feed-section {
+            padding: 80px 0;
+            background-color: #fcfcfc;
+            border-bottom: 1px solid #eee;
+        }
+
+        .note-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .note-article-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .note-article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .note-thumbnail {
             width: 100%;
-            height: 220px;
-            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+            height: 200px;
+            object-fit: cover;
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .note-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .note-date {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .note-title {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 12px;
+            color: var(--secondary-color);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .note-read-more {
+            margin-top: auto;
+            color: #41c9b3; /* noteグリーン */
+            font-weight: 700;
+            font-size: 14px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 64px;
-            color: #ccc;
+            gap: 6px;
         }
-        
-        .activity-content {
-            padding: 24px;
+
+        .note-footer-link {
+            text-align: center;
+            margin-top: 40px;
         }
-        
-        .activity-date {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-        
-        .activity-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 12px;
-            line-height: 1.4;
-        }
-        
-        .activity-description {
-            font-size: 15px;
-            line-height: 1.7;
-            color: #666;
-            margin-bottom: 16px;
-        }
-        
-        .activity-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        
-        .activity-tag {
-            padding: 4px 12px;
-            background-color: var(--light-bg);
-            color: var(--primary-color);
-            font-size: 12px;
-            font-weight: 700;
-            border-radius: 4px;
-        }
-        
+
+        /* --- 既存スタイル --- */
         .success-stories {
             background: linear-gradient(135deg, var(--secondary-color), #3a3a3a);
             color: #fff;
@@ -256,37 +286,35 @@
             }
             
             .activity-grid,
-            .testimonial-grid {
+            .testimonial-grid,
+            .note-grid {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- ヘッダー -->
     <header class="header">
         <nav class="nav container">
-            <div class="nav-logo">
+            <a href="/" class="nav-logo" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px;">
                 <img src="images/bni-logo.png" alt="BNI Logo" class="logo-img">
                 <span class="chapter-name">だんじりチャプター</span>
-            </div>
+            </a>
             <button class="nav-toggle" id="navToggle" aria-label="メニュー">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">トップページ</a></li>
-                <li><a href="index.html#about" class="nav-link">チャプターとは</a></li>
+                <li><a href="index.html" class="nav-link">トップ</a></li>
                 <li><a href="members.html" class="nav-link">メンバー紹介</a></li>
+                <li><a href="about-bni.html" class="nav-link">BNIとは</a></li>
                 <li><a href="activity.html" class="nav-link">活動報告</a></li>
-                <li><a href="visitor.html" class="nav-link">ビジター見学</a></li>
                 <li><a href="contact.html" class="nav-link btn-primary-nav">見学申込</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- ヒーロー -->
     <section class="activity-hero">
         <div class="container">
             <h1>活動報告</h1>
@@ -294,197 +322,85 @@
         </div>
     </section>
 
-    <!-- 最新の活動報告 -->
+    <section class="note-feed-section">
+        <div class="container">
+            <h2 class="section-title center">最新の活動報告（ブログ）</h2>
+            <p class="section-subtitle center">noteで更新中の最新記事をお届けします</p>
+            
+            <div id="note-feed-grid" class="note-grid">
+                <div style="grid-column: 1/-1; text-align: center; color: #888; padding: 40px;">
+                    <i class="fas fa-spinner fa-spin"></i> 記事を読み込み中...
+                </div>
+            </div>
+
+            <div class="note-footer-link">
+                <a href="https://note.com/bni_danjiri/all" target="_blank" class="btn btn-secondary btn-large" style="background: #41c9b3; border: none; box-shadow: 0 4px 12px rgba(65, 201, 179, 0.4);">
+                    <i class="fas fa-book-open"></i> すべての記事を見る
+                </a>
+            </div>
+        </div>
+    </section>
+
     <section class="activity-section">
         <div class="container">
-            <h2 class="section-title center">最新の活動報告</h2>
-            <p class="section-subtitle center">定例会の様子をお届けします</p>
+            <h2 class="section-title center">イベント報告</h2>
+            <p class="section-subtitle center">懇親会やランチ会の様子をお届けします</p>
             
-            <div class="activity-grid">
-                <div class="activity-card">
-                    <div class="activity-image">
-                        <i class="fas fa-calendar-week"></i>
-                    </div>
-                    <div class="activity-content">
-                        <span class="activity-date">2024年11月27日</span>
-                        <h3 class="activity-title">第52回 定例会開催レポート</h3>
-                        <p class="activity-description">
-                            本日も22名のメンバーが集結!オンラインながら熱量の高い定例会となりました。今週は8件の紹介が生まれ、メンバー同士の信頼関係がさらに深まりました。
-                        </p>
-                        <div class="activity-tags">
-                            <span class="activity-tag">#定例会</span>
-                            <span class="activity-tag">#紹介8件</span>
-                            <span class="activity-tag">#Zoom</span>
-                        </div>
+            <div class="activity-photos-grid">
+                <div class="activity-photo-card">
+                    <img src="images/IMG_0015.JPG" alt="2025年12月19日 ランチ会" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+                    <div style="padding: 12px; background: #fff; text-align: center; font-weight: 700;">
+                        2025年12月19日 ランチ会
                     </div>
                 </div>
-
-                <div class="activity-card">
-                    <div class="activity-image">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <div class="activity-content">
-                        <span class="activity-date">2024年11月20日</span>
-                        <h3 class="activity-title">メンバー間コラボで大型案件成約!</h3>
-                        <p class="activity-description">
-                            税理士×不動産×ブランディングの3名がコラボし、クライアントの事業拡大を支援。BNIならではのチーム力が発揮されました!
-                        </p>
-                        <div class="activity-tags">
-                            <span class="activity-tag">#成功事例</span>
-                            <span class="activity-tag">#コラボ</span>
-                            <span class="activity-tag">#大型案件</span>
-                        </div>
-                    </div>
+                <div class="activity-photo-card">
+                    <img src="images/activity-photo-1.jpg" alt="BNI だんじりチャプター 懇親会" style="width: 100%; height: 250px; object-fit: cover; display: block;">
                 </div>
-
-                <div class="activity-card">
-                    <div class="activity-image">
-                        <i class="fas fa-user-plus"></i>
-                    </div>
-                    <div class="activity-content">
-                        <span class="activity-date">2024年11月13日</span>
-                        <h3 class="activity-title">新メンバー加入!チームがさらに強化</h3>
-                        <p class="activity-description">
-                            ITコンサルタントの〇〇さんが正式メンバーに!22名の多様な専門家チームがさらにパワーアップしました。
-                        </p>
-                        <div class="activity-tags">
-                            <span class="activity-tag">#新メンバー</span>
-                            <span class="activity-tag">#ITコンサル</span>
-                        </div>
-                    </div>
+                <div class="activity-photo-card">
+                    <img src="images/activity-photo-2.jpg" alt="BNI だんじりチャプター 懇親会" style="width: 100%; height: 250px; object-fit: cover; display: block;">
                 </div>
-
-                <div class="activity-card">
-                    <div class="activity-image">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="activity-content">
-                        <span class="activity-date">2024年11月6日</span>
-                        <h3 class="activity-title">教育プログラム「効果的な紹介の方法」</h3>
-                        <p class="activity-description">
-                            メンバー向け教育プログラムを実施。質の高い紹介を生み出すためのノウハウを全員で学びました。
-                        </p>
-                        <div class="activity-tags">
-                            <span class="activity-tag">#教育</span>
-                            <span class="activity-tag">#スキルアップ</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="activity-card">
-                    <div class="activity-image">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="activity-content">
-                        <span class="activity-date">2024年10月30日</span>
-                        <h3 class="activity-title">月間紹介数が過去最高を記録!</h3>
-                        <p class="activity-description">
-                            10月の紹介総数が24件と過去最高を記録!メンバー全員の「Givers Gain®」精神が結実した1ヶ月でした。
-                        </p>
-                        <div class="activity-tags">
-                            <span class="activity-tag">#月間レポート</span>
-                            <span class="activity-tag">#過去最高</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="activity-card">
-                    <div class="activity-image">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <div class="activity-content">
-                        <span class="activity-date">2024年10月23日</span>
-                        <h3 class="activity-title">ビジター見学者5名をお迎えしました</h3>
-                        <p class="activity-description">
-                            今週は5名のビジター見学者をお迎え!オンライン開催の利点を活かし、東京・福岡からも参加いただきました。
-                        </p>
-                        <div class="activity-tags">
-                            <span class="activity-tag">#ビジター</span>
-                            <span class="activity-tag">#全国展開</span>
-                        </div>
-                    </div>
+                <div class="activity-photo-card">
+                    <img src="images/activity-photo-3.jpg" alt="BNI だんじりチャプター 懇親会" style="width: 100%; height: 250px; object-fit: cover; display: block;">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 成功事例 -->
     <section class="success-stories">
         <div class="container">
-            <h2 class="section-title center white">成功事例</h2>
-            <p class="section-subtitle center white">メンバー間の紹介から生まれた成果</p>
+            <h2 class="section-title center white">準備中</h2>
+            <p class="section-subtitle center white">メンバー間の紹介から生まれた成果をご紹介予定</p>
             
             <div style="margin-top: 48px;">
                 <div class="success-card">
                     <div class="success-header">
                         <div class="success-icon">
-                            <i class="fas fa-trophy"></i>
+                            <i class="fas fa-rocket"></i>
                         </div>
                         <div class="success-info">
-                            <h3>税理士 × 不動産 コラボ案件</h3>
-                            <p>相続税対策を含む不動産売却サポート</p>
+                            <h3>ブランディング × HP制作（ビジョン整理）</h3>
+                            <p>事業の本質を見つめ直し、一気通貫で事業成長を支援</p>
                         </div>
                     </div>
                     <div class="success-body">
                         <p>
-                            税理士の中野さんが、相続税対策で悩むクライアントを不動産メンバーに紹介。
-                            税務面と不動産売却の両面からサポートすることで、クライアントの課題を包括的に解決しました。
+                            HP制作を担当する平岡さんが、クライアント企業のWebサイトリニューアルを進める中で、「本当に伝えたいメッセージが明確になっていない」という課題に気づきました。そこで、BNIメンバーのブランディング専門家・遠藤さんを紹介。
+                        </p>
+                        <p style="margin-top: 16px;">
+                            遠藤さんが丁寧にヒアリングを重ね、企業のビジョン・ミッション・バリューを明確化。クライアントはブランディングの重要性を深く理解し、「企業の軸」を定めることができました。その整理されたビジョンを基に、平岡さんが視覚的に表現する洗練された Web サイトを構築。HP 制作の価値も大きく向上しました。
+                        </p>
+                        <p style="margin-top: 16px;">
+                            この連携により、経営者自身が迷わず意思決定できる土台が完成。社内の一体感も向上し、採用や営業活動にもプラスの影響が波及しています。
                         </p>
                     </div>
                     <div class="success-result">
-                        <strong>結果:</strong> クライアントの相続税負担を40%削減し、不動産売却も成功。
-                        紹介元・紹介先双方に大きな売上貢献が生まれました。
-                    </div>
-                </div>
-
-                <div class="success-card">
-                    <div class="success-header">
-                        <div class="success-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="success-info">
-                            <h3>ブランディング × Web制作 連携</h3>
-                            <p>新規事業の立ち上げ支援</p>
-                        </div>
-                    </div>
-                    <div class="success-body">
-                        <p>
-                            ブランディング設計の遠藤さんが、起業準備中のクライアントをWebクリエイターに紹介。
-                            ブランドコンセプトからWebサイト制作まで一貫してサポートし、事業の成功をバックアップしました。
-                        </p>
-                    </div>
-                    <div class="success-result">
-                        <strong>結果:</strong> クライアントの事業が順調にスタート。
-                        初年度売上目標を6ヶ月で達成する快挙を成し遂げました。
-                    </div>
-                </div>
-
-                <div class="success-card">
-                    <div class="success-header">
-                        <div class="success-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <div class="success-info">
-                            <h3>整体 × 保険 クロス紹介</h3>
-                            <p>健康とお金の不安を同時解決</p>
-                        </div>
-                    </div>
-                    <div class="success-body">
-                        <p>
-                            整体院の中井さんが、身体の不調で悩むクライアントに保険メンバーを紹介。
-                            逆に保険メンバーからは健康不安を抱えるクライアントが整体院に紹介され、双方向の紹介が実現しました。
-                        </p>
-                    </div>
-                    <div class="success-result">
-                        <strong>結果:</strong> 月間で双方向5件ずつの紹介が継続中。
-                        信頼関係がさらに深まり、長期的なパートナーシップが構築されました。
+                        <strong>結果:</strong> クライアントは「事業の軸が明確になり、チーム全体の方向性が揃った」と大変満足。現在進行中の案件として、ブランディングと HP 制作の相乗効果を実感いただいています。
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- メンバーの声 -->
     <section class="testimonials">
         <div class="container">
             <h2 class="section-title center">メンバーの声</h2>
@@ -497,10 +413,10 @@
                     </p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">
-                            <i class="fas fa-user"></i>
+                            <img src="images/IMG_8028.JPG" alt="中野 亘" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
                         </div>
                         <div class="testimonial-info">
-                            <h4>中野 豊</h4>
+                            <h4>中野 亘</h4>
                             <p>わたる税理士事務所</p>
                         </div>
                     </div>
@@ -512,7 +428,7 @@
                     </p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">
-                            <i class="fas fa-user"></i>
+                            <img src="images/IMG_9884.JPG" alt="遠藤 大輔" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
                         </div>
                         <div class="testimonial-info">
                             <h4>遠藤 大輔</h4>
@@ -523,15 +439,15 @@
 
                 <div class="testimonial-card">
                     <p class="testimonial-content">
-                        「22名の多様な専門家と深い信頼関係を築けたことが最大の財産です。困ったときに頼れる仲間がいるって、本当に心強いです!」
+                        「21名の多様な専門家と深い信頼関係を築けたことが最大の財産です。困ったときに頼れる仲間がいるって、本当に心強いです!」
                     </p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">
-                            <i class="fas fa-user"></i>
+                            <img src="images/IMG_8024.JPG" alt="井上 理衣" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
                         </div>
                         <div class="testimonial-info">
-                            <h4>中井 葵</h4>
-                            <p>整体院ICHI</p>
+                            <h4>井上 理衣</h4>
+                            <p>株式会社TERASS</p>
                         </div>
                     </div>
                 </div>
@@ -539,7 +455,6 @@
         </div>
     </section>
 
-    <!-- CTA -->
     <section class="final-cta">
         <div class="container">
             <div class="final-cta-content">
@@ -552,7 +467,6 @@
         </div>
     </section>
 
-    <!-- フッター -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -574,7 +488,7 @@
                     <h4>定例会情報</h4>
                     <ul class="footer-info">
                         <li><i class="fas fa-calendar-alt"></i> 毎週水曜日</li>
-                        <li><i class="fas fa-clock"></i> 10:30〜12:00</li>
+                        <li><i class="fas fa-clock"></i> 10:15〜12:30</li>
                         <li><i class="fas fa-video"></i> Zoom開催</li>
                         <li><i class="fas fa-map-marker-alt"></i> 大阪東エリア</li>
                     </ul>
@@ -593,5 +507,72 @@
     </footer>
 
     <script src="js/main.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // PHPプロキシファイルのURL
+            const phpUrl = 'get_note.php';
+            // サムネイルがない場合の代替画像
+            const defaultImage = 'https://assets.st-note.com/production/uploads/images/note-ogp.png';
+
+            fetch(phpUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(jsonData => {
+                    const container = document.getElementById('note-feed-grid');
+                    
+                    // note API v2のデータ構造を確認して処理
+                    // jsonData.data.contents に記事配列が入っていることを想定
+                    if (jsonData && jsonData.data && jsonData.data.contents && jsonData.data.contents.length > 0) {
+                        // 読み込み中表示を削除
+                        container.innerHTML = '';
+                        
+                        // 最新3件を表示
+                        const articles = jsonData.data.contents.slice(0, 3);
+                        
+                        articles.forEach(item => {
+                            // タイトル
+                            const title = item.name;
+                            // 記事URL（自動構築：ユーザーID + 記事キー）
+                            // APIのrawデータから確実に正しいリンクを生成します
+                            const link = 'https://note.com/bni_danjiri/n/' + item.key;
+                            
+                            // アイキャッチ画像 (eyecatchが存在すれば使用、なければデフォルト)
+                            const thumbUrl = item.eyecatch ? item.eyecatch : defaultImage;
+                            
+                            // 日付のフォーマット (ISO文字列から変換)
+                            const date = new Date(item.publish_at);
+                            const formattedDate = date.getFullYear() + '.' + (date.getMonth() + 1) + '.' + date.getDate();
+
+                            // カードのHTML生成
+                            const cardHtml = `
+                                <a href="${link}" target="_blank" class="note-article-card">
+                                    <img src="${thumbUrl}" alt="${title}" class="note-thumbnail" loading="lazy">
+                                    <div class="note-content">
+                                        <span class="note-date">${formattedDate}</span>
+                                        <h3 class="note-title">${title}</h3>
+                                        <div class="note-read-more">
+                                            続きを読む <i class="fas fa-chevron-right" style="font-size: 12px;"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            `;
+                            container.insertAdjacentHTML('beforeend', cardHtml);
+                        });
+                    } else {
+                        container.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">記事が見つかりませんでした。</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Note fetch error:', error);
+                    document.getElementById('note-feed-grid').innerHTML = 
+                        '<p style="grid-column: 1/-1; text-align: center;">記事の読み込みに失敗しました。</p>';
+                });
+        });
+    </script>
 </body>
 </html>
