@@ -1,0 +1,97 @@
+/* Independent A4 catalog. Web directory remains untouched; page count is driven by live cards. */
+#memberPrintCatalog{display:none;font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;color:#243143}
+#memberPrintCatalog *{box-sizing:border-box}
+#memberPrintCatalog .mc-page{position:relative;width:210mm;height:297mm;box-sizing:border-box;background:white;overflow:hidden;padding:13mm 13mm 13mm}
+#memberPrintCatalog .mc-page-footer{position:absolute;left:13mm;right:13mm;bottom:9mm;border-top:1px solid #d8dce3;padding-top:3.2mm;display:flex;justify-content:space-between;gap:10px;font-family:Arial,sans-serif;letter-spacing:.035em;color:#748093;font-size:7pt;line-height:1}
+#memberPrintCatalog .mc-cover{background:#fff}
+#memberPrintCatalog .mc-cover:before{content:"";position:absolute;top:0;left:0;width:8mm;height:100%;background:linear-gradient(180deg,#bd1838,#770d27)}
+#memberPrintCatalog .mc-cover-visual{position:relative;height:100%;padding:9mm 4mm 8mm 8mm}
+#memberPrintCatalog .mc-cover-super{font-family:Arial,sans-serif;font-size:12pt;color:#a4193b;font-weight:800;letter-spacing:.13em;display:block}
+#memberPrintCatalog .mc-cover-edition{display:block;color:#728093;letter-spacing:.16em;font-size:7pt;margin-top:3mm;font-weight:750}
+#memberPrintCatalog .mc-cover-rule{height:1px;background:#e0e3e9;margin-top:8mm}
+#memberPrintCatalog .mc-cover-content{padding-top:12mm}
+#memberPrintCatalog .mc-cover-lead{font-size:11pt;font-weight:900;color:#af2140;margin:0 0 6mm}
+#memberPrintCatalog .mc-cover-title{white-space:pre-line;font-size:34pt;line-height:1.35;letter-spacing:.035em;margin:0 0 10mm;color:#15283e;font-weight:900}
+#memberPrintCatalog .mc-cover-sub{white-space:pre-line;color:#5d6b7e;font-size:12pt;line-height:2;margin:0 0 13mm}
+#memberPrintCatalog .mc-cover-figures{display:flex;gap:9mm;border-top:1px solid #e5e7ed;border-bottom:1px solid #e5e7ed;padding:7mm 0;margin-bottom:8mm}
+#memberPrintCatalog .mc-cover-figure{display:flex;flex-direction:column;gap:2mm;min-width:70mm}
+#memberPrintCatalog .mc-cover-figure strong{font-family:Arial,sans-serif;font-size:35pt;color:#aa1a3b;line-height:1}
+#memberPrintCatalog .mc-cover-figure span{font-family:Arial,sans-serif;font-size:8pt;letter-spacing:.065em;font-weight:800;color:#566477}
+#memberPrintCatalog .mc-cover-small-title{font-size:11pt;color:#29394f;font-weight:900;margin:0 0 5mm}
+#memberPrintCatalog .mc-cover-groups{display:flex;flex-wrap:wrap;gap:3mm;margin-bottom:7mm}
+#memberPrintCatalog .mc-cover-groups span{background:#f8edf1;border:1px solid #f1d4dd;border-radius:99px;color:#971937;font-size:8pt;font-weight:850;padding:2.1mm 3.8mm;white-space:nowrap}
+#memberPrintCatalog .mc-cover-cta{border-radius:3mm;padding:7mm 8mm;background:#1d2b40;color:#fff}
+#memberPrintCatalog .mc-cover-cta-kicker{font:800 7pt Arial,sans-serif;letter-spacing:.12em;color:#e0b5c0}
+#memberPrintCatalog .mc-cover-cta p{font-size:10pt;line-height:1.8;margin:2mm 0 0;color:#eff0f3}
+#memberPrintCatalog .mc-listing-head{height:35mm;border-bottom:2px solid #ae1a38;margin-bottom:6mm;display:flex;align-items:start;justify-content:space-between;gap:5mm}
+#memberPrintCatalog .mc-listing-kicker{display:block;font:800 7pt Arial,sans-serif;letter-spacing:.12em;color:#b11b3a;margin:0 0 3.5mm}
+#memberPrintCatalog .mc-listing-title{font-size:17pt;letter-spacing:.015em;line-height:1.3;color:#243347;font-weight:900;margin:0 0 2.4mm}
+#memberPrintCatalog .mc-listing-sub{font-size:8pt;color:#657285;line-height:1.6;margin:0}
+#memberPrintCatalog .mc-listing-page{font:800 9pt Arial,sans-serif;color:#9f1535;white-space:nowrap;letter-spacing:.1em;margin-top:3mm}
+#memberPrintCatalog .mc-grid{height:226mm;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));gap:4mm}
+#memberPrintCatalog .mc-card{border:1px solid #dfe3ea;border-radius:2.6mm;display:flex;flex-direction:column;padding:4mm 4.1mm 3.5mm;min-width:0;min-height:0;overflow:hidden;break-inside:avoid;page-break-inside:avoid;box-shadow:none}
+#memberPrintCatalog .mc-card-top{display:flex;align-items:center;gap:3.2mm;padding-bottom:3mm;border-bottom:1px solid #e6e8ee;min-height:22mm}
+#memberPrintCatalog .mc-photo-wrap{width:18mm;height:18mm;flex:0 0 18mm;background:#f2edf1;border-radius:2mm;overflow:hidden}
+#memberPrintCatalog .mc-photo{display:block;width:100%;height:100%;object-fit:cover}
+#memberPrintCatalog .mc-identity{min-width:0;flex:1}
+#memberPrintCatalog .mc-group-chip{display:inline-block;font-size:6.4pt;font-weight:850;background:#fbeef2;color:#9c1635;border-radius:99px;padding:.8mm 2mm;line-height:1.35}
+#memberPrintCatalog .mc-name{font-size:11pt;line-height:1.3;letter-spacing:.015em;font-weight:900;color:#233449;margin:1.5mm 0 .5mm}
+#memberPrintCatalog .mc-specialty{font-size:7.7pt;font-weight:850;line-height:1.35;color:#354457;margin:0;overflow-wrap:anywhere}
+#memberPrintCatalog .mc-company{font-size:6.7pt;color:#738092;line-height:1.2;margin:1mm 0 0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+#memberPrintCatalog .mc-card-body{display:flex;flex:1;flex-direction:column;gap:2.5mm;padding-top:2.7mm;min-height:0}
+#memberPrintCatalog .mc-field-label{display:block;color:#a91a38;font:850 6.5pt Arial,"Noto Sans JP",sans-serif;letter-spacing:.035em;margin-bottom:1.2mm}
+#memberPrintCatalog .mc-main{font-size:8.1pt;line-height:1.54;margin:0;font-weight:720;color:#29384c;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;line-clamp:4;overflow-wrap:anywhere}
+#memberPrintCatalog .mc-referral{border-left:2px solid #d8a7b4;padding-left:2.5mm;min-height:0}
+#memberPrintCatalog .mc-ref-text{font-size:7.5pt;line-height:1.46;color:#536175;margin:0;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow-wrap:anywhere}
+#memberPrintCatalog .mc-card-footer{display:flex;justify-content:space-between;align-items:center;gap:2mm;border-top:1px solid #e9eaf0;margin-top:auto;padding-top:2.1mm;color:#8791a0;font:750 6.6pt Arial,"Noto Sans JP",sans-serif}
+#memberPrintCatalog .mc-see-web{color:#a7193a;white-space:nowrap;font:800 6.3pt Arial,sans-serif}
+#memberPrintCatalog .mc-last-message{grid-column:span 2;background:linear-gradient(125deg,#f9ebf0,#f3f5f8);border:1px solid #eadbe1;border-radius:3mm;padding:10mm;display:flex;flex-direction:column;justify-content:center}
+#memberPrintCatalog .mc-last-eyebrow{font:800 7pt Arial,sans-serif;letter-spacing:.13em;color:#ab193a}
+#memberPrintCatalog .mc-last-message h3{white-space:pre-line;color:#243348;font-size:21pt;line-height:1.4;margin:4mm 0 3mm}
+#memberPrintCatalog .mc-last-message p{font-size:10pt;line-height:1.8;color:#576577;margin:0 0 5mm}
+#memberPrintCatalog .mc-last-message strong{font:800 9pt Arial,sans-serif;color:#a11838}
+/* Screen preview is optional, normal member directory remains unchanged. */
+.mc-preview-toolbar{display:none}
+@media screen{
+ body.catalog-preview{background:#edf0f5!important}
+ body.catalog-preview>:not(#memberPrintCatalog):not(.mc-preview-toolbar){display:none!important}
+ body.catalog-preview #memberPrintCatalog{display:block;width:210mm;max-width:100%;margin:21px auto 45px;box-shadow:none}
+ body.catalog-preview #memberPrintCatalog .mc-page{margin:0 auto 18px;max-width:100%;box-shadow:0 9px 35px rgba(20,29,45,.17)}
+ body.catalog-preview .mc-preview-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;position:sticky;top:0;z-index:1000;padding:12px 18px;background:#fff;box-shadow:0 3px 13px rgba(20,30,45,.09);font:800 13px/1.5 "Noto Sans JP",sans-serif}
+ body.catalog-preview .mc-preview-back{color:#40506a;text-decoration:none}
+ body.catalog-preview .mc-preview-print{border:0;border-radius:8px;background:#b4193b;color:#fff;padding:12px 16px;font:800 13px "Noto Sans JP",sans-serif;cursor:pointer}
+ @media(max-width:830px){
+  body.catalog-preview #memberPrintCatalog{width:100%;padding:0 8px}
+  body.catalog-preview #memberPrintCatalog .mc-page{width:100%;height:auto;min-height:0;padding:18px 15px 48px;overflow:visible}
+  body.catalog-preview #memberPrintCatalog .mc-cover{min-height:720px}
+  body.catalog-preview #memberPrintCatalog .mc-cover-visual{padding:20px}
+  body.catalog-preview #memberPrintCatalog .mc-cover-content{padding-top:35px}
+  body.catalog-preview #memberPrintCatalog .mc-cover-title{font-size:30px}
+  body.catalog-preview #memberPrintCatalog .mc-cover-sub{font-size:13px}
+  body.catalog-preview #memberPrintCatalog .mc-cover-figures{gap:15px}
+  body.catalog-preview #memberPrintCatalog .mc-cover-figure{min-width:0}
+  body.catalog-preview #memberPrintCatalog .mc-cover-figure strong{font-size:31px}
+  body.catalog-preview #memberPrintCatalog .mc-cover-cta{padding:15px}
+  body.catalog-preview #memberPrintCatalog .mc-cover-cta p{font-size:11px}
+  body.catalog-preview #memberPrintCatalog .mc-listing-head{height:auto;min-height:90px}
+  body.catalog-preview #memberPrintCatalog .mc-listing-title{font-size:17px}
+  body.catalog-preview #memberPrintCatalog .mc-grid{height:auto;grid-template-columns:1fr;grid-template-rows:none}
+  body.catalog-preview #memberPrintCatalog .mc-card{min-height:205px}
+  body.catalog-preview #memberPrintCatalog .mc-card-top{min-height:76px}
+  body.catalog-preview #memberPrintCatalog .mc-last-message{grid-column:auto}
+  body.catalog-preview #memberPrintCatalog .mc-page-footer{left:15px;right:15px;bottom:16px;font-size:7px}
+  body.catalog-preview .mc-preview-toolbar{flex-wrap:wrap;font-size:11px;padding:10px}
+  body.catalog-preview .mc-preview-print{font-size:12px;padding:9px 12px}
+ }
+}
+@page{size:A4 portrait;margin:0}
+@media print{
+ html,body{margin:0!important;padding:0!important;background:#fff!important;width:210mm!important;min-width:0!important;height:auto!important;overflow:visible!important}
+ body>:not(#memberPrintCatalog){display:none!important}
+ #memberPrintCatalog{display:block!important;position:static!important;margin:0!important;padding:0!important;width:210mm!important;color:#243143!important}
+ #memberPrintCatalog, #memberPrintCatalog *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+ #memberPrintCatalog .mc-page{display:block!important;width:210mm!important;height:297mm!important;max-height:297mm!important;page-break-after:always;break-after:page;box-shadow:none!important;margin:0!important;overflow:hidden!important}
+ #memberPrintCatalog .mc-page:last-child{page-break-after:auto;break-after:auto}
+ #memberPrintCatalog .mc-grid{display:grid!important;height:226mm!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:repeat(3,minmax(0,1fr))!important}
+ #memberPrintCatalog .mc-card{display:flex!important;break-inside:avoid!important;page-break-inside:avoid!important}
+}
