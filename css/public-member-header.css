@@ -1,0 +1,100 @@
+/* BNI Danjiri public members header — follows /index.html's original header.
+   Narrow-screen navigation reproduces the original left sliding panel. */
+:root{--danjiri-nav-height:82px}
+.header.public-site-header{
+  position:fixed;inset:0 0 auto 0;width:100%;min-height:82px;
+  z-index:1500;background:#fff;padding:0;
+  border:0;box-shadow:0 2px 8px rgba(0,0,0,.10);
+}
+.header.public-site-header .nav.container{
+  max-width:1200px;min-height:82px;margin:0 auto;padding:16px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:0;
+}
+.header.public-site-header .nav-logo{
+  display:flex;align-items:center;gap:12px;flex-shrink:0;
+  text-decoration:none;color:inherit;
+}
+.header.public-site-header .logo-img{
+  height:50px;width:auto;max-width:none;object-fit:contain;
+}
+.header.public-site-header .chapter-name{
+  font-size:20px;line-height:1.7;font-weight:700;
+  color:#1a1a1a;white-space:nowrap;letter-spacing:0;
+}
+.header.public-site-header .nav-menu{
+  display:flex;align-items:center;gap:16px;list-style:none;
+  padding:0;margin:0;
+}
+.header.public-site-header .nav-menu li{list-style:none;margin:0;padding:0}
+.header.public-site-header .nav-link{
+  display:inline-block;color:#333;background:transparent;
+  font-size:15px;line-height:normal;font-weight:500;
+  padding:8px 12px;border-radius:8px;
+  text-decoration:none;white-space:nowrap;
+  transition:background-color .2s,color .2s;
+}
+.header.public-site-header .nav-link:hover{background:#f8f9fa;color:#e31c24;opacity:1}
+.header.public-site-header .nav-link.btn-primary-nav{
+  background:#e31c24;color:#fff!important;font-weight:500
+}
+.header.public-site-header .nav-link.btn-primary-nav:hover{background:#c41118;color:#fff!important}
+.header.public-site-header .nav-toggle{
+  display:none;flex-direction:column;gap:5px;align-items:center;justify-content:center;
+  border:0;background:transparent;padding:0;cursor:pointer;
+  width:25px;height:19px;flex-shrink:0;
+}
+.header.public-site-header .nav-toggle span{
+  display:block;width:25px;height:3px;background:#1a1a1a;border-radius:0;
+  transition:transform .2s,opacity .2s;
+}
+.header.public-site-header .nav-toggle[aria-expanded="true"] span:first-child{transform:translateY(8px) rotate(45deg)}
+.header.public-site-header .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.header.public-site-header .nav-toggle[aria-expanded="true"] span:last-child{transform:translateY(-8px) rotate(-45deg)}
+/* Members directory is public; no members-only controls or private routes in navigation. */
+body:has(.public-site-header) .members-hero{margin-top:var(--danjiri-nav-height)}
+body:has(.public-site-header) .filter-section{top:var(--danjiri-nav-height);z-index:900}
+body:has(.public-site-header) .category-section,
+body:has(.public-site-header) .wanted-section,
+body:has(.public-site-header) #membersDirectory{scroll-margin-top:155px}
+@media(max-width:768px){
+ .header.public-site-header .nav.container{
+   min-height:82px;padding:16px 24px;gap:0;
+ }
+ .header.public-site-header .nav-logo{gap:12px}
+ .header.public-site-header .logo-img{height:50px;width:auto}
+ .header.public-site-header .chapter-name{font-size:20px;line-height:1.7}
+ .header.public-site-header .nav-toggle{display:flex}
+ .header.public-site-header .nav-menu{
+   position:fixed;top:80px;left:-100%;right:auto;
+   width:100%;height:calc(100dvh - 80px);max-height:none;
+   overflow-y:auto;display:flex;flex-direction:column;
+   align-items:center;justify-content:flex-start;gap:16px;
+   padding:48px;background:#fff;
+   box-shadow:0 8px 20px rgba(0,0,0,.12);
+   transform:none;opacity:1;visibility:visible;pointer-events:auto;
+   transition:left .3s ease;z-index:1501;
+ }
+ .header.public-site-header .nav-menu.active{
+   left:0;transform:none;opacity:1;visibility:visible;pointer-events:auto;
+ }
+ .header.public-site-header .nav-menu li{width:auto}
+ .header.public-site-header .nav-menu .nav-link{
+   display:block;font-size:15px;line-height:normal;font-weight:500;
+   padding:8px 12px;text-align:center;
+ }
+ body:has(.public-site-header) .filter-section{top:var(--danjiri-nav-height)}
+}
+@media(max-width:420px){
+ .header.public-site-header .nav-logo{gap:9px}
+ .header.public-site-header .logo-img{height:45px}
+ .header.public-site-header .chapter-name{font-size:17px}
+}
+@media(max-width:355px){
+ .header.public-site-header .nav.container{padding-left:15px;padding-right:15px}
+ .header.public-site-header .logo-img{height:42px}
+ .header.public-site-header .chapter-name{font-size:15px}
+}
+@media print{
+ .header.public-site-header{display:none!important}
+ body:has(.public-site-header) .members-hero{margin-top:0!important}
+}
