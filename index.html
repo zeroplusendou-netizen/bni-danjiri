@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=20261105ej1">
     
     <style>
         .visitor-hero {
@@ -766,28 +766,13 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="css/public-member-header.css?v=20261105shared1">
+    <link rel="stylesheet" href="css/member-login-entry.css?v=20261105b">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav container">
-            <a href="/" class="nav-logo" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px;">
-                <img src="images/bni-logo.png" alt="BNI Logo" class="logo-img">
-                <span class="chapter-name">だんじりチャプター</span>
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="メニュー">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">トップ</a></li>
-                <li><a href="members.html" class="nav-link">メンバー紹介</a></li>
-                <li><a href="about-bni.html" class="nav-link">BNIとは</a></li>
-                <li><a href="activity.html" class="nav-link">活動報告</a></li>
-                <li><a href="contact.html" class="nav-link btn-primary-nav">見学申込</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="danjiri-shared-header"></div>
+    <script src="js/danjiri-shared-header.js?v=20261105a"></script>
+    <noscript><div class="header-noscript"><a href="index.html">BNI だんじりチャプター</a> <a href="/member/">メンバー用ログイン</a></div></noscript>
 
     <section class="visitor-hero">
         <div class="container">
@@ -1636,10 +1621,12 @@
             <div class="footer-bottom">
                 <p>&copy; 2024 BNI だんじりチャプター. All Rights Reserved.</p>
                 <p class="footer-disclaimer">BNI®およびGivers Gain®は、BNI Global, LLCの登録商標です。</p>
+                <p class="ej-website-credit">Webサイト企画・デザイン・システム開発：<strong>Enter Japan（遠藤大輔）</strong><span>&copy; 2026 Enter Japan — Original Web Design &amp; Development</span></p>
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/home-member-count-sync.js?v=20261106" defer></script>
 </body>
 </html>
