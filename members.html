@@ -7,11 +7,13 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <title>メンバー一覧 | BNI だんじりチャプター</title>
+    <title>信頼できる専門家を探す | BNI だんじりチャプター</title>
+    <meta name="description" content="住まい、経営、集客、クリエイティブ、飲食などの専門家を探せるBNIだんじりチャプターの専門家紹介。お悩みに合う相談相手を見つけてください。">
+    <meta property="og:type" content="website"><meta property="og:title" content="信頼できる専門家を探す｜BNIだんじり"><meta property="og:image" content="https://bni-danjiri.jp/images/OGP.png">
     
     <link rel="icon" href="images/0000111222333444.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css?v=20260902_v5_card_design">
+    <link rel="stylesheet" href="css/styles.css?v=20261105ej1">
     
     <style>
         /* =========================================
@@ -147,6 +149,7 @@ body {background:#f5f6f8;color:#20242b;line-height:1.6}
 .filter-btn:hover{border-color:#ce2139;color:#ab142a}
 .filter-btn.active{background:#bf1630;border-color:#bf1630;box-shadow:0 4px 10px rgba(191,22,48,.18)}
 .print-btn{white-space:nowrap;border-radius:9px;background:#29313e;padding:13px 18px}
+.catalog-preview-link{display:inline-flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;color:#fff;border:1px solid #424d5e;background:#465468}.catalog-preview-link:hover{background:#354154;color:white}.member-tools{flex-wrap:wrap}
 .members-main{padding-top:26px;padding-bottom:75px}
 .search-result-info{color:#697280;font-size:13px;text-align:right;margin:0 0 12px}
 .no-members{padding:40px;background:#fff;text-align:center;border-radius:14px;color:#697280}
@@ -309,40 +312,36 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
 @media print{.leadership-strip,.site-nav,.wanted-section{display:none!important}}
 
     </style>
+<link rel="stylesheet" href="public-experts.css?v=20261104b">
+<link rel="stylesheet" href="member-catalog.css?v=20261106catalog2">
 <style>.managed-social-links{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}.managed-social-links .member-link-btn{border:1px solid #d8dbe1;border-radius:8px;background:#fff;color:#303744;padding:10px 13px;min-height:40px;font-size:12px;text-decoration:none}.managed-social-links .member-link-btn:hover{background:#faf0f2}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/public-member-header.css?v=20261105shared1">
+    <link rel="stylesheet" href="css/member-login-entry.css?v=20261105b">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <a href="index.html" class="nav-logo">
-                <img src="images/bni-logo.png" alt="BNI Logo">
-                <span class="chapter-name">だんじりチャプター</span>
-            </a>
-            <nav class="site-nav" aria-label="ページナビゲーション">
-              <a href="index.html">ホーム</a>
-              <a href="#membersDirectory">メンバー一覧</a>
-              <a href="#wantedTitle">つながりたい業種</a>
-              <a class="nav-member" href="/member/">メンバー専用</a>
-              <a href="contact.html" class="nav-contact"><i class="fas fa-envelope"></i> 見学・お問い合わせ</a>
-            </nav>
-        </div>
-    </header>
+    <div id="danjiri-shared-header"></div>
+    <script src="js/danjiri-shared-header.js?v=20261105a"></script>
+    <noscript><div class="header-noscript"><a href="index.html">BNI だんじりチャプター</a> <a href="/member/">メンバー用ログイン</a></div></noscript>
 
     <section class="members-hero">
         <div class="container">
             <div class="hero-eyebrow">BNI DANJIRI CHAPTER / OUR MEMBERS</div>
-            <h1>メンバー紹介</h1>
-            <p>信頼でつながる<strong id="memberTotal">23</strong>名の専門家</p><div class="hero-description">得意分野でつながる、信頼できるビジネスパートナーをご紹介します。</div>
+            <h1>あなたのお悩みに、信頼できる専門家を。</h1>
+            <p>信頼でつながる<strong id="memberTotal">27</strong>名の専門家</p><div class="hero-description">経営・住まい・集客・クリエイティブなど、多彩な分野の専門家をご紹介します。</div>
         </div>
     </section>
 
 <section class="leadership-strip" aria-label="チャプター運営3役"><div class="container leadership-inner"><div class="leader-profile"><img src="images/IMG_8027.JPG" alt="夫津木 雅也" loading="lazy"><div><span class="leader-badge">プレジデント</span><strong>夫津木 雅也</strong></div></div><div class="leader-profile"><img src="images/IMG_8028.JPG" alt="中野 亘" loading="lazy"><div><span class="leader-badge">バイスプレジデント</span><strong>中野 亘</strong></div></div><div class="leader-profile"><img src="images/IMG_8035.JPG" alt="田北 亨子" loading="lazy"><div><span class="leader-badge">書記兼会計</span><strong>田北 亨子</strong></div></div></div></section>
+    <section class="directory-intro" aria-label="専門家の探し方"><div class="container"><h2>相談したいことから、専門家を探せます。</h2><p>「こんなことを相談できる人はいないかな？」そんなときは、分野やキーワードで探してみてください。気になる専門家の詳細を見ると、サービスや実績、公式サイトを確認できます。</p><div class="directory-points"><span>01 悩み・キーワードで検索</span><span>02 専門家の詳細を確認</span><span>03 お問い合わせ</span></div></div></section>
     <!-- フィルターボタン -->
     <div class="filter-section">
         <div class="container">
             <div class="member-tools">
-                <label class="member-search"><i class="fas fa-search" aria-hidden="true"></i><input id="memberSearch" type="search" placeholder="名前・カテゴリー・会社名・キーワードで探す" aria-label="メンバーを検索"></label>
-                <button class="print-btn" onclick="window.print()"><i class="fas fa-print"></i> 印刷</button>
+                <label class="member-search"><i class="fas fa-search" aria-hidden="true"></i><input id="memberSearch" type="search" placeholder="お悩み・業種・サービス・名前で探す" aria-label="メンバーを検索"></label>
+                <a href="members.html?catalog=1" class="print-btn catalog-preview-link" title="A4カタログの確認・PDF保存"><i class="fas fa-book-open" aria-hidden="true"></i> カタログを見る</a><button type="button" class="print-btn" onclick="window.print()" title="A4メンバーカタログを印刷・PDF保存"><i class="fas fa-print" aria-hidden="true"></i> 印刷・PDF</button>
               </div>
               <div class="filter-buttons" aria-label="カテゴリーで絞り込み">
                 <button class="filter-btn active" data-filter="all">全て表示</button>
@@ -357,6 +356,11 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
     </div>
 
     <div class="container">
+        <p id="searchResultInfo" class="search-result-info" role="status" aria-live="polite">27名のメンバーを表示しています</p>
+        <p id="noMembers" class="no-members" hidden>条件に一致するメンバーが見つかりませんでした。検索キーワードやカテゴリーを変更してください。</p>
+    </div>
+
+    <div class="container">
         <!-- 住宅関連 -->
         <section class="category-section" id="housing">
             <div class="category-header">住宅関連</div>
@@ -366,16 +370,14 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
                     <div class="card-header-flex">
                         <img src="images/IMG_8025.JPG" class="avatar-img" alt="村上 貴昭">
                         <div class="header-info">
-                            <span class="member-category-tag">不動産賃貸</span>
+                            <span class="member-category-tag">家主のパートナー</span>
                             <h3 class="member-name">村上 貴昭</h3>
                             <p class="member-company">株式会社神武堂</p>
                         </div>
                     </div>
                     <div class="member-usp-box">急かさず、本音を引き出す丁寧な傾聴と寄り添い。家族の未来まで見据えた住まい選びを伴走。</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>
-                        夜間や仕事後の相談にも柔軟対応。条件整理から物件比較・内見手配までワンストップサポート。
-                    </div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>夜間や仕事後の相談にも柔軟対応。条件整理から物件比較・内見手配までワンストップサポート。</div>
                     <div class="member-links">
                         <a href="https://jinbudo.jp/" target="_blank" class="member-link-btn web"><i class="fas fa-globe"></i> HP</a>
                     </div>
@@ -386,16 +388,14 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
                     <div class="card-header-flex">
                         <img src="images/IMG_8024.JPG" class="avatar-img" alt="井上 理衣">
                         <div class="header-info">
-                            <span class="member-category-tag">不動産売買</span>
+                            <span class="member-category-tag">売主のパートナー</span>
                             <h3 class="member-name">井上 理衣</h3>
                             <p class="member-company">株式会社TERASS</p>
                         </div>
                     </div>
                     <div class="member-usp-box">単なる仲介ではなく、売主のメリットを最優先し、利益最大化と損しない売却方法を提案します。</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>
-                        購入・売却両方の経験豊富で戦略的な提案が可能。女性の方にもご相談いただきやすいです。
-                    </div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>購入・売却両方の経験豊富で戦略的な提案が可能。女性の方にもご相談いただきやすいです。</div>
                     <div class="member-links">
                         <a href="https://terass.com/agent/agentclass/GdM937Mo" target="_blank" class="member-link-btn web"><i class="fas fa-globe"></i> HP</a>
                     </div>
@@ -406,17 +406,15 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
                     <div class="card-header-flex">
                         <img src="images/IMG_8035.JPG" class="avatar-img" alt="田北 亨子">
                         <div class="header-info">
-                            <span class="member-category-tag">就労支援（中古家具家電）</span>
-                            <span class="member-role-badge">書記兼会計</span>
+                            <span class="member-category-tag">就労支援(中古家具家電販売)</span>
+<span class="member-role-badge">書記兼会計</span>
                             <h3 class="member-name">田北 亨子</h3>
                             <p class="member-company">合同会社地域活動支援センターきずな</p>
                         </div>
                     </div>
                     <div class="member-usp-box">就労支援で中古家具家電を販売。お手軽なお値段で家具家電が揃えられます。</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>
-                        民泊・グループホーム経営者様や学生マンションを取り扱う不動産の方へ。
-                    </div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>民泊・グループホーム経営者様や学生マンションを取り扱う不動産の方へ。</div>
                     <div class="member-links">
                         <a href="https://www.workspace-kizuna.jp/" target="_blank" class="member-link-btn web"><i class="fas fa-globe"></i> HP</a>
                     </div>
@@ -434,9 +432,7 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
                     </div>
                     <div class="member-usp-box">住まいの価値を高める高品質なリフォーム提案。</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>
-                        お客様の理想の暮らしを実現するための丁寧な施工。
-                    </div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>お客様の理想の暮らしを実現するための丁寧な施工。</div>
                     <button class="detail-btn"><i class="fas fa-expand-arrows-alt"></i> 写真を詳しく見る</button>
                 </div>
                 <!-- 勝賀野 太郎 -->
@@ -451,9 +447,7 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
                     </div>
                     <div class="member-usp-box">モノを片づけるだけではなく、人と想いに向き合う遺品整理。</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>
-                        ご事情やご都合に合わせて柔軟に対応。整理・搬出はもちろん、大切な品の...
-                    </div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>ご事情やご都合に合わせて柔軟に対応。整理・搬出はもちろん、大切な品の...</div>
                     <div class="member-links">
                         <a href="https://zennobate.com/" target="_blank" class="member-link-btn web"><i class="fas fa-globe"></i> HP</a>
                     </div>
@@ -466,6 +460,28 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
         <section class="category-section" id="management">
             <div class="category-header">経営サポート</div>
             <div class="members-grid">
+
+                <div class="member-card">
+                    <div class="card-header-flex">
+                        <img src="images/member-avatar-placeholder.svg" class="avatar-img" alt="馬渕 憲">
+                        <div class="header-info"><span class="member-category-tag">DC(企業型確定拠出年金)</span><h3 class="member-name">馬渕 憲</h3><p class="member-company"></p></div>
+                    </div>
+                    <div class="member-usp-box"></div>
+                    <div class="member-appeal-box"><div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div></div>
+                    
+                    <button class="detail-btn"><i class="fas fa-expand-arrows-alt"></i> 写真を詳しく見る</button>
+                </div>
+
+                <div class="member-card">
+                    <div class="card-header-flex">
+                        <img src="images/member-avatar-placeholder.svg" class="avatar-img" alt="浅井 颯人">
+                        <div class="header-info"><span class="member-category-tag">転職支援</span><h3 class="member-name">浅井 颯人</h3><p class="member-company"></p></div>
+                    </div>
+                    <div class="member-usp-box"></div>
+                    <div class="member-appeal-box"><div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div></div>
+                    
+                    <button class="detail-btn"><i class="fas fa-expand-arrows-alt"></i> 写真を詳しく見る</button>
+                </div>
                 <!-- 上塩入 大樹 -->
                 <div class="member-card">
                     <div class="card-header-flex">
@@ -478,9 +494,7 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
                     </div>
                     <div class="member-usp-box">専門性が高く、医療事件・労使間紛争・相続・後見などの豊富な経験をもとに介護分野に注力。</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>
-                        顧問契約に積極的な経営者様やM&Aの法務DDをご希望の方へ。
-                    </div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>顧問契約に積極的な経営者様やM&amp;Aの法務DDをご希望の方へ。</div>
                     <div class="member-links">
                         <a href="https://kamishioiri-law.com/" target="_blank" class="member-link-btn web"><i class="fas fa-globe"></i> HP</a>
                     </div>
@@ -491,16 +505,14 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
                     <div class="card-header-flex">
                         <img src="images/IMG_8031.JPG" class="avatar-img" alt="二階堂 文哉">
                         <div class="header-info">
-                            <span class="member-category-tag">生命保険（個人）</span>
+                            <span class="member-category-tag">生命保険(個人)</span>
                             <h3 class="member-name">二階堂 文哉</h3>
                             <p class="member-company">生命保険プランニング</p>
                         </div>
                     </div>
                     <div class="member-usp-box">事業主が挑戦できる土台作りの提供。働けなくなったときの給料そっくりさんを作ります。</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>
-                        面白く話しやすい人柄。3期目以上の事業主や既存の提案にうんざりしている方へ。
-                    </div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>面白く話しやすい人柄。3期目以上の事業主や既存の提案にうんざりしている方へ。</div>
                     <button class="detail-btn"><i class="fas fa-expand-arrows-alt"></i> 写真を詳しく見る</button>
                 </div>
                 <!-- 中野 亘 -->
@@ -509,16 +521,14 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
                         <img src="images/IMG_8028.JPG" class="avatar-img" alt="中野 亘">
                         <div class="header-info">
                             <span class="member-category-tag">税理士</span>
-                            <span class="member-role-badge">バイスプレジデント</span>
+<span class="member-role-badge">バイスプレジデント</span>
                             <h3 class="member-name">中野 亘</h3>
                             <p class="member-company">中野亘税理士事務所</p>
                         </div>
                     </div>
                     <div class="member-usp-box">見た目に反して愛が溢れる税理士！税金対策だけでなく年間の売上目標達成を伴走。</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>
-                        事業拡大を強く望む個人・法人の経営者様へ。
-                    </div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>事業拡大を強く望む個人・法人の経営者様へ。</div>
                     <div class="member-links">
                         <a href="http://wataru-tax.jp" target="_blank" class="member-link-btn web"><i class="fas fa-globe"></i> HP</a>
                     </div>
@@ -536,9 +546,7 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
                     </div>
                     <div class="member-usp-box">日本で一番コミュ力が高い司法書士。街の気軽な法律家として幅広い相談に対応。</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>
-                        商業登記・相続登記・遺言相談などの相続手続き全般。
-                    </div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>商業登記・相続登記・遺言相談などの相続手続き全般。</div>
                     <div class="member-links">
                         <a href="https://enterjapan.jp/mitsuyama" target="_blank" class="member-link-btn web"><i class="fas fa-globe"></i> HP</a>
                     </div>
@@ -556,16 +564,14 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
                     <div class="card-header-flex">
                         <img src="images/IMG_9003.JPG" class="avatar-img" alt="後藤 智子">
                         <div class="header-info">
-                            <span class="member-category-tag">携帯料金見直し</span>
+                            <span class="member-category-tag">通信費見直し（携帯・Wi-Fi）</span>
                             <h3 class="member-name">後藤 智子</h3>
                             <p class="member-company">箕面モバイル.com</p>
                         </div>
                     </div>
-                    <div class="member-usp-box">明細書をもとに最適なスマホ料金診断を実施。スマホ修理・コーティングの資格も保有。</div>
+                    <div class="member-usp-box">明細書を元に無料で最適なスマホとWi-Fiの料金診断を行います。スマホ修理とコーティングの有資格者。</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>
-                        個人・法人問わずスマホ専属担当者としてトータルサポート。
-                    </div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>個人・法人問わずスマホ専属担当者としてトータルサポート。</div>
                     <div class="member-links">
                         <a href="https://lpxx.jp/keitai/" target="_blank" class="member-link-btn web"><i class="fas fa-globe"></i> HP</a>
                     </div>
@@ -576,16 +582,14 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
                     <div class="card-header-flex">
                         <img src="images/IMG_8036.JPG" class="avatar-img" alt="中野 亮">
                         <div class="header-info">
-                            <span class="member-category-tag">就労支援（雑務代行）</span>
+                            <span class="member-category-tag">就労支援(作業まるごと代行)</span>
                             <h3 class="member-name">中野 亮</h3>
                             <p class="member-company">株式会社ミセスロザリー</p>
                         </div>
                     </div>
                     <div class="member-usp-box">封入・清掃から動画編集・議事録作成まで雑務を代行。雇うほどではない雑務に効果的。</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>
-                        雑務に困っている1人社長様や福祉事業者様へ。
-                    </div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>雑務に困っている1人社長様や福祉事業者様へ。</div>
                     <button class="detail-btn"><i class="fas fa-expand-arrows-alt"></i> 写真を詳しく見る</button>
                 </div>
                 <!-- 夫津木 雅也 -->
@@ -593,17 +597,15 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
                     <div class="card-header-flex">
                         <img src="images/IMG_8027.JPG" class="avatar-img" alt="夫津木 雅也">
                         <div class="header-info">
-                            <span class="member-category-tag">生命保険（法人）</span>
-                            <span class="member-role-badge">プレジデント</span>
+                            <span class="member-category-tag">生命保険(法人)</span>
+<span class="member-role-badge">プレジデント</span>
                             <h3 class="member-name">夫津木 雅也</h3>
                             <p class="member-company">FP</p>
                         </div>
                     </div>
                     <div class="member-usp-box">年間のお金の流れを1枚の「未来マネーマップ」で可視化するFP顧問。</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>
-                        税金・保険・投資タイミングが明確になり不安を安心の計画に変える。
-                    </div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>税金・保険・投資タイミングが明確になり不安を安心の計画に変える。</div>
                     <div class="member-links">
                         <a href="https://enterjapan.jp/futsuki/" target="_blank" class="member-link-btn web"><i class="fas fa-globe"></i> HP</a>
                     </div>
@@ -621,9 +623,7 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
                     </div>
                     <div class="member-usp-box">月1万円代〜社外人事部を導入。人事労務・給与計算のワンストップサポート。</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>
-                        支援実績500社超。助成金活用で人件費100万円以上削減実績。
-                    </div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>支援実績500社超。助成金活用で人件費100万円以上削減実績。</div>
                     <button class="detail-btn"><i class="fas fa-expand-arrows-alt"></i> 写真を詳しく見る</button>
                 </div>
             </div>
@@ -633,6 +633,19 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
         <section class="category-section" id="growth">
             <div class="category-header">事業成長サポート</div>
             <div class="members-grid">
+
+                <div class="member-card">
+                    <div class="card-header-flex">
+                        <img src="images/member-avatar-placeholder.svg" class="avatar-img" alt="松岡 宏和">
+                        <div class="header-info"><span class="member-category-tag">営業代行(ウォーターサーバー)</span><h3 class="member-name">松岡 宏和</h3><p class="member-company"></p></div>
+                    </div>
+                    <div class="member-usp-box"></div>
+                    <div class="member-appeal-box"><div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div></div>
+                    
+                    <button class="detail-btn"><i class="fas fa-expand-arrows-alt"></i> 写真を詳しく見る</button>
+                </div>
+
+                
                 <!-- 遠藤 大輔 -->
                 <div class="member-card">
                     <div class="card-header-flex">
@@ -643,29 +656,33 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
                             <p class="member-company">Enter Japan</p>
                         </div>
                     </div>
-                    <div class="member-usp-box">強みの策定と戦略導線設計の視覚化が得意。飲食店10年黒字経営の実績も保有。</div>
+                    <div class="member-usp-box">強みの策定と戦略導線設計の視覚化が得意。飲食店10年黒字経営の実績も保有。<br />
+「“選ばれる理由を言葉と仕組みに変える” IT・店舗プロデュースとWeb戦略サポート」</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>リアル×デジタル戦略で年商1億以上を目指す経営者様のフルパッケージブランディング。</div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>・注文3年待ちのチーズテリーヌ専門店「KURATA」プロデュース（フジテレビ等メディア掲載多数）<br />
+・東京・ヨドバシカメラで3年間経営ノウハウを修得後、自社カメラ店で年商3億9千万円、売出し3日で3千万円の実績<br />
+・10年間の飲食店経営経験を活かした店舗立ち上げ・運営改善実績多数<br />
+・写真家として「二科展入賞」「富士コン入賞」<br />
+・結婚式撮影・商品撮影・記念撮影の撮影実績15年以上<br />
+・看板制作・メニュー作成・名刺作成などデザイン実績多数</div>
                     <div class="member-links">
                         <a href="https://www.enterjapan.jp" target="_blank" class="member-link-btn web"><i class="fas fa-globe"></i> HP</a>
                     </div>
-                    <button class="detail-btn"><i class="fas fa-expand-arrows-alt"></i> 写真を詳しく見る</button>
+                    <div class="managed-social-links"><a href="https://www.instagram.com/___endoooo___/" target="_blank" rel="noopener noreferrer" class="member-link-btn web">Instagram</a><a href="https://www.threads.net/@___endoooo___" target="_blank" rel="noopener noreferrer" class="member-link-btn web">Threads</a><a href="https://twitter.com/ZERO_dsk" target="_blank" rel="noopener noreferrer" class="member-link-btn web">X</a><a href="https://www.facebook.com/daisuke.endou.35" target="_blank" rel="noopener noreferrer" class="member-link-btn web">Facebook</a><a href="https://youtu.be/himPiOQIW70" target="_blank" rel="noopener noreferrer" class="member-link-btn web">その他</a></div><button class="detail-btn"><i class="fas fa-expand-arrows-alt"></i> 写真を詳しく見る</button>
                 </div>
                 <!-- 平岡 広章 -->
                 <div class="member-card">
                     <div class="card-header-flex">
                         <img src="images/IMG_9001.jpg" class="avatar-img" alt="平岡 広章">
                         <div class="header-info">
-                            <span class="member-category-tag">HP制作（ビジョン整理）</span>
+                            <span class="member-category-tag">ホームページ制作(ビジョン整理)</span>
                             <h3 class="member-name">平岡 広章</h3>
                             <p class="member-company">ラフスタイル</p>
                         </div>
                     </div>
                     <div class="member-usp-box">ヒアリングを通じてクライアントの強みや個性をビジョン整理し、武器にするブランディング支援。</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>
-                        法人20年目、2000件以上の実績。上場準備まで伴走型でWeb成果を狙う。
-                    </div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>法人20年目、2000件以上の実績。上場準備まで伴走型でWeb成果を狙う。</div>
                     <div class="member-links">
                         <a href="https://laughstyle.net/" target="_blank" class="member-link-btn web"><i class="fas fa-globe"></i> HP</a>
                     </div>
@@ -683,9 +700,7 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
                     </div>
                     <div class="member-usp-box">1社につき10名のインフルエンサーが伴走し、集客・採用・ブランドづくりを仕組み化。</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>
-                        実践に基づく改善案で自走できる成果へ。採用・集客の課題解決に。
-                    </div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>実践に基づく改善案で自走できる成果へ。採用・集客の課題解決に。</div>
                     <div class="member-links">
                         <a href="https://reventtokyo.my.canva.site/" target="_blank" class="member-link-btn web"><i class="fas fa-globe"></i> HP</a>
                     </div>
@@ -698,6 +713,16 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
         <section class="category-section" id="creative">
             <div class="category-header">クリエイティブ</div>
             <div class="members-grid">
+<div class="member-card">
+                    <div class="card-header-flex">
+                        <img src="images/member-avatar-placeholder.svg" class="avatar-img" alt="村田 直輝">
+                        <div class="header-info"><span class="member-category-tag">ボディーメイクコーチング</span><h3 class="member-name">村田 直輝</h3><p class="member-company"></p></div>
+                    </div>
+                    <div class="member-usp-box"></div>
+                    <div class="member-appeal-box"><div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div></div>
+                    
+                    <button class="detail-btn"><i class="fas fa-expand-arrows-alt"></i> 写真を詳しく見る</button>
+                </div>
                 <!-- 川﨑 景 -->
                 <div class="member-card">
                     <div class="card-header-flex">
@@ -710,9 +735,7 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
                     </div>
                     <div class="member-usp-box">サイズを「合わせる」のではなく「デザイン」し、印象を劇的に高めるオーダースーツ。</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>
-                        有名ブランドの商品企画(MD)経験豊富。経営者や壇上に立つ方の勝負服に。
-                    </div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>有名ブランドの商品企画(MD)経験豊富。経営者や壇上に立つ方の勝負服に。</div>
                     <div class="member-links">
                         <a href="https://enterjapan.jp/kawasaki" target="_blank" class="member-link-btn web"><i class="fas fa-globe"></i> HP</a>
                     </div>
@@ -723,33 +746,29 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
                     <div class="card-header-flex">
                         <img src="images/IMG_9005.JPG" class="avatar-img" alt="藤本 浩明">
                         <div class="header-info">
-                            <span class="member-category-tag">CM映像制作</span>
+                            <span class="member-category-tag">イベント企画・運営</span>
                             <h3 class="member-name">藤本 浩明</h3>
                             <p class="member-company">映像クリエイター</p>
                         </div>
                     </div>
                     <div class="member-usp-box">大阪を中心に飲食、美容、ファッション等のハイクオリティCM映像制作を実施。</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>
-                        企業ブランディングを高める美しい映像表現を提供します。
-                    </div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>企業ブランディングを高める美しい映像表現を提供します。</div>
                     <button class="detail-btn"><i class="fas fa-expand-arrows-alt"></i> 写真を詳しく見る</button>
                 </div>
                 <!-- 土林 巧 -->
                 <div class="member-card">
                     <div class="card-header-flex">
-                        <img src="images/IMG_9007.JPG" class="avatar-img" alt="土林 巧">
+                        <img src="images/member-uploads/member_19_a52550e8c97f1108550e6845.png" class="avatar-img" alt="土林 巧">
                         <div class="header-info">
-                            <span class="member-category-tag">オリジナルグッズ</span>
+                            <span class="member-category-tag">オリジナルグッズ制作</span>
                             <h3 class="member-name">土林 巧</h3>
-                            <p class="member-company">土林設計</p>
+                            <p class="member-company">合同会社7次元革命</p>
                         </div>
                     </div>
                     <div class="member-usp-box">手描きのアイデアから設計・試作・小ロット量産まで最速解決する商品開発屋さん。</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>
-                        アクリル・金属・大型造形に対応。アイデアを形にしたい企業様へ。
-                    </div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>アクリル・金属・大型造形に対応。アイデアを形にしたい企業様へ。</div>
                     <button class="detail-btn"><i class="fas fa-expand-arrows-alt"></i> 写真を詳しく見る</button>
                 </div>
                 <!-- 大森 隆之介 -->
@@ -764,9 +783,7 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
                     </div>
                     <div class="member-usp-box">アマチュア日本一、KO率70％。業界イメージを変える絶対的チャンピオン候補。</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>
-                        スポンサー料は経費計上可能。スポーツ振興・夢を追う人を応援したい社長様へ。
-                    </div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>スポンサー料は経費計上可能。スポーツ振興・夢を追う人を応援したい社長様へ。</div>
                     <button class="detail-btn"><i class="fas fa-expand-arrows-alt"></i> 写真を詳しく見る</button>
                 </div>
             </div>
@@ -781,16 +798,14 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
                     <div class="card-header-flex">
                         <img src="images/misima.png" class="avatar-img" alt="三島 宏幸">
                         <div class="header-info">
-                            <span class="member-category-tag">ワインと洋食</span>
+                            <span class="member-category-tag">日本ワインと大人の洋食</span>
                             <h3 class="member-name">三島 宏幸</h3>
                             <p class="member-company">en34</p>
                         </div>
                     </div>
                     <div class="member-usp-box">日本ワインとこだわり洋食が楽しめる洗練された個室空間。</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>
-                        接待や特別な日の会食に最適なプライベート空間をご提供します。
-                    </div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>接待や特別な日の会食に最適なプライベート空間をご提供します。</div>
                     <div class="member-links">
                         <a href="https://maps.app.goo.gl/dNanqtXpeCnQhXCG6" target="_blank" class="member-link-btn web"><i class="fas fa-map-marker-alt"></i> MAP</a>
                     </div>
@@ -801,16 +816,14 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
                     <div class="card-header-flex">
                         <img src="images/maeda.png" class="avatar-img" alt="前田 耕平">
                         <div class="header-info">
-                            <span class="member-category-tag">JAZZレストラン</span>
+                            <span class="member-category-tag">JAZZミュージックレストラン</span>
                             <h3 class="member-name">前田 耕平</h3>
                             <p class="member-company">JAZZ BERRY</p>
                         </div>
                     </div>
                     <div class="member-usp-box">上質なJAZZ生演奏とお食事を愉しめる贅沢な空間。</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>
-                        音楽と美食が交差する大人のためのレストランバー。
-                    </div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>音楽と美食が交差する大人のためのレストランバー。</div>
                     <div class="member-links">
                         <a href="https://maps.app.goo.gl/kk8BeUjthHDemAnJ7" target="_blank" class="member-link-btn web"><i class="fas fa-map-marker-alt"></i> MAP</a>
                     </div>
@@ -821,16 +834,14 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
                     <div class="card-header-flex">
                         <img src="images/fujiwara.png" class="avatar-img" alt="藤原 健司">
                         <div class="header-info">
-                            <span class="member-category-tag">団体貸切（飲食店）</span>
+                            <span class="member-category-tag">団体貸切</span>
                             <h3 class="member-name">藤原 健司</h3>
                             <p class="member-company">Safari（サファリ）</p>
                         </div>
                     </div>
                     <div class="member-usp-box">団体様のパーティー・イベント・二次会等に最適な貸切専門空間。</div>
                     <div class="member-appeal-box">
-                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>
-                        大人数での集まりを盛り上げるための設備・サービスが充実。
-                    </div>
+                        <div class="box-title"><i class="fas fa-gift"></i> アピールポイント</div>大人数での集まりを盛り上げるための設備・サービスが充実。</div>
                     <div class="member-links">
                         <a href="https://maps.app.goo.gl/RTLsfpRhsrwYvg9j9" target="_blank" class="member-link-btn web"><i class="fas fa-map-marker-alt"></i> MAP</a>
                     </div>
@@ -868,6 +879,9 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
         </div>
     </div>
 
+    <dialog id="expertDetail" class="expert-modal" aria-label="専門家の詳細プロフィール"><div class="expert-detail-inner"><div class="expert-detail-top"><strong>BNI DANJIRI / SPECIALIST PROFILE</strong><button type="button" class="expert-detail-close" aria-label="閉じる">&times;</button></div><div class="expert-detail-body"></div></div></dialog>
+    <script src="member-catalog.js?v=20261106catalog1" defer></script>
+    <script src="public-experts.js?v=20261104b" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // カテゴリー絞り込みとフリーワード検索の組み合わせ
@@ -885,7 +899,7 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
                     const selected = selectedCategory === 'all' || selectedCategory === section.id;
                     let sectionVisible = 0;
                     section.querySelectorAll('.member-card').forEach(card => {
-                        const match = selected && (!query || card.textContent.toLocaleLowerCase('ja-JP').includes(query));
+                        const match = selected && (!query || (card.dataset.search || card.textContent.toLocaleLowerCase('ja-JP')).includes(query));
                         card.hidden = !match;
                         card.style.display = match ? '' : 'none';
                         if(match) { visible++; sectionVisible++; }
@@ -913,7 +927,7 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
             const modalCaption = document.getElementById('modal-caption');
             const modalClose = document.querySelector('.modal-close');
 
-            document.querySelectorAll('.detail-btn, .avatar-img').forEach(el => {
+            document.querySelectorAll('.avatar-img').forEach(el => {
                 el.addEventListener('click', (e) => {
                     const card = e.target.closest('.member-card');
                     const imgSrc = card.querySelector('.avatar-img').src;
@@ -938,5 +952,7 @@ body {font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;bac
             });
         });
     </script>
+
+<footer class="footer ej-members-footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 BNI だんじりチャプター. All Rights Reserved.</p><p class="footer-disclaimer">BNI®およびGivers Gain®は、BNI Global, LLCの登録商標です。</p><p class="ej-website-credit">Webサイト企画・デザイン・システム開発：<strong>Enter Japan（遠藤大輔）</strong><span>&copy; 2026 Enter Japan — Original Web Design &amp; Development</span></p></div></div></footer>
 </body>
 </html>
