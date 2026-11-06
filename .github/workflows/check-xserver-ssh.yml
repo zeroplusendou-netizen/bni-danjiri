@@ -1,0 +1,34 @@
+name: XServer SSH connectivity check (read-only)
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/check-xserver-ssh.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ssh-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Check connection and public directory without modifying server
+        env:
+          SSH_KEY: ${{ secrets.XSERVER_SSH_KEY }}
+          SSH_HOST: ${{ secrets.XSERVER_HOST }}
+          SSH_USER: ${{ secrets.XSERVER_USER }}
+          SSH_PORT: ${{ secrets.XSERVER_PORT }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$SSH_KEY" && test -n "$SSH_HOST" && test -n "$SSH_USER" && test -n "$SSH_PORT"
+          install -d -m 700 "$HOME/.ssh"
+          keyfile=$(mktemp)
+          trap 'rm -f "$keyfile"' EXIT
+          printf '%s\n' "$SSH_KEY" > "$keyfile"
+          chmod 600 "$keyfile"
+          ssh-keyscan -T 8 -p "$SSH_PORT" -H "$SSH_HOST" > "$HOME/.ssh/known_hosts" 2>/dev/null
+          test -s "$HOME/.ssh/known_hosts"
+          ssh -i "$keyfile" -p "$SSH_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=12 -o ServerAliveInterval=5 -o ServerAliveCountMax=2 "$SSH_USER@$SSH_HOST" 'set -eu; test -f "$HOME/bni-danjiri.jp/public_html/index.html"; test -f "$HOME/bni-danjiri.jp/public_html/members.html"; echo "SSH_CONNECTION_OK"; echo "PUBLIC_DIR_OK"; echo "NO_FILES_CHANGED"'
