@@ -1144,3 +1144,10 @@ a:hover {
         font-size: 16px;
     }
 }
+/* Enter Japan: original web design and system development credits. */
+.footer .ej-website-credit{margin:15px auto 4px;font-size:12px;line-height:1.9;letter-spacing:.015em;color:rgba(255,255,255,.83);text-align:center;max-width:920px}
+.footer .ej-website-credit strong{font-size:12px;font-weight:800;color:#fff}
+.footer .ej-website-credit span{display:block;font-size:10px;line-height:1.65;color:rgba(255,255,255,.62);letter-spacing:.02em}
+.ej-members-footer{padding:36px 16px 28px;background:#202732;color:#fff}
+.ej-members-footer .container{max-width:1200px;margin:0 auto}
+@media(max-width:600px){.footer .ej-website-credit{font-size:11px;padding:0 10px}.footer .ej-website-credit strong{font-size:11px}.footer .ej-website-credit span{font-size:10px}}
