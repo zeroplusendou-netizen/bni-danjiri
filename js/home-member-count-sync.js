@@ -23,3 +23,4 @@ const run=async()=>{
 };
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run,{once:true});else run();
 })();
+/* Approved sync smoke test: 2026-11-06 */
